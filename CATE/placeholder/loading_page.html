@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<script>
+            #{JQUERY_JS_STRING}
+    </script>
+    <script>
+            #{BOOTSTRAP_JS_STRING}
+    </script>
+    <script>
+            #{EXTRACTION_TOOLS_JS_STRING}
+    </script>
+    <style type="text/css">
+            #{BOOTSTRAP_CSS_STRING}
+    </style><style>
+            #{LOADING_PAGE_CSS_STRING}
+    </style>
+		<script>
+			$(document).ready(function () {
+				//load_cate_page('https://lmj112:738dba965D@cate.doc.ic.ac.uk/');
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<div id="banner">
+			<h3>Loading CATe...</h3>
+			<div id="loading_bar" class="progress progress-striped active">
+				<div class="bar" style="width : 20%;"></div>
+			</div>
+		</div>
+
+	</body>
+
+	<div id="main_page_xml" class="hidden">
+        #{MAIN_PAGE_BODY_STRING}
+	</div>
+	<div id="exercise_page_xml" class="hidden">
+        #{EXERCISE_PAGE_BODY_STRING}
+	</div>
+	<div id="grades_page_xml" class="hidden">
+        #{GRADES_PAGE_BODY_STRING}
+	</div>
+
+</html>

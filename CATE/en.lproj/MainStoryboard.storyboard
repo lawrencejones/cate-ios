@@ -337,11 +337,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cog.png" width="30" height="30"/>
-        <image name="dashboard.png" width="30" height="30"/>
-        <image name="pencil.png" width="30" height="30"/>
-        <image name="thb12.jpg" width="353" height="470"/>
-        <image name="thumbs.png" width="30" height="30"/>
+        <image name="cog.png" width="16" height="16"/>
+        <image name="dashboard.png" width="16" height="16"/>
+        <image name="pencil.png" width="16" height="16"/>
+        <image name="thb12.jpg" width="16" height="16"/>
+        <image name="thumbs.png" width="16" height="16"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
