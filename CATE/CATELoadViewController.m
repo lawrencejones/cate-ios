@@ -151,7 +151,6 @@
   NSString *extraction_tools = [self getFileContent:@"extraction_tools" :@"js"];
   NSString *loading_css = [self getFileContent:@"loading_page" :@"css"];
   
-  
   htmlString = [self replace:htmlString:@"#{JQUERY_JS_STRING}":jquery_js];
   htmlString = [self replace:htmlString:@"#{BOOTSTRAP_JS_STRING}":bootstrap_js];
   htmlString = [self replace:htmlString:@"#{EXTRACTION_TOOLS_JS_STRING}":extraction_tools];
