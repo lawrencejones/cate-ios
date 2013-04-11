@@ -37,6 +37,9 @@
   // Disables the web view from being scrollable
   self.loadingWeb.scrollView.scrollEnabled = NO;
   self.loadingWeb.scrollView.bounces = NO; // (old) dot notation
+  NSLog(@"Giving it a go...");
+  [self getHtmlStringForLink:@"https://cate.doc.ic.ac.uk/"];
+  
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,17 +47,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-/*
- 
- 
- 
- */
-
-
-
-
 
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -141,6 +133,42 @@
 
 }
 
+#pragma mark - URL Requester
+
+
+-(void) getHtmlStringForLink: (NSString *) link{
+  NSURL * url = [NSURL URLWithString:link];
+  NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
+  [request addValue:@"text/html" forHTTPHeaderField:@"Content-Type"];
+  [request setHTTPMethod:@"GET"];
+  [[NSURLConnection alloc]initWithRequest:request delegate:self startImmediately:YES];
+}
+
+- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
+  if([protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodHTTPBasic])
+  {
+    return YES;
+  } else return NO;
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+  NSLog(@"Challenging...");
+  NSURLCredential *creden = [[NSURLCredential alloc] initWithUser:@"lmj112" password:@"738dba965D" persistence:NSURLCredentialPersistenceForSession];
+  [[challenge sender] useCredential:creden forAuthenticationChallenge:challenge];
+
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+  
+  NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  NSLog(s);
+  
+}
+
+
+#pragma mark - Populate Html
+
 -(NSString*)getFileContent:(NSString *) res :
                            (NSString *) file_type {
   NSString *filePath
@@ -157,24 +185,24 @@
 - (void)makeLoadingViewLoad {
   // Pulls in the loading_page.html along with all related scripts and css
   // files. Displays loading_page, and inner scripts access CATE, scrape,
-  // and provide helper methods (such as getDashboardXml() which return, as a
+  // and provide helper methods such as getDashboardXml() which return, as a
   // string, the relevant xml data.
   
   // (1) Pull the HTML in loading_page.html into htmlString
-  NSString *htmlString    = [self getFileContent:@"loading_page" :@"html"];
-  NSString *bootstrap_js  = [self getFileContent:@"bootstrap.min" :@"js"];
-  NSString *bootstrap_css = [self getFileContent:@"bootstrap.min" :@"css"];
-  NSString *jquery_js = [self getFileContent:@"jquery-1.9.1.min" :@"js"];
-  NSString *extraction_tools = [self getFileContent:@"extraction_tools" :@"js"];
-  NSString *loading_css = [self getFileContent:@"loading_page" :@"css"];
+  NSString *htmlString       = [ self getFileContent:@"loading_page"     :@"html" ];
+  NSString *bootstrap_js     = [ self getFileContent:@"bootstrap.min"    :@"js"   ];
+  NSString *bootstrap_css    = [ self getFileContent:@"bootstrap.min"    :@"css"  ];
+  NSString *jquery_js        = [ self getFileContent:@"jquery-1.9.1.min" :@"js"   ];
+  NSString *extraction_tools = [ self getFileContent:@"extraction_tools" :@"js"   ];
+  NSString *loading_css      = [ self getFileContent:@"loading_page"     :@"css"  ];
   
-  htmlString = [self replace:htmlString:@"#{JQUERY_JS_STRING}":jquery_js];
-  htmlString = [self replace:htmlString:@"#{BOOTSTRAP_JS_STRING}":bootstrap_js];
-  htmlString = [self replace:htmlString:@"#{EXTRACTION_TOOLS_JS_STRING}":extraction_tools];
-  htmlString = [self replace:htmlString:@"#{BOOTSTRAP_CSS_STRING}":bootstrap_css];
-  htmlString = [self replace:htmlString:@"#{LOADING_PAGE_CSS_STRING}":loading_css];
+  htmlString = [ self replace:htmlString:@"#{JQUERY_JS_STRING}"           :jquery_js        ];
+  htmlString = [ self replace:htmlString:@"#{BOOTSTRAP_JS_STRING}"        :bootstrap_js     ];
+  htmlString = [ self replace:htmlString:@"#{EXTRACTION_TOOLS_JS_STRING}" :extraction_tools ];
+  htmlString = [ self replace:htmlString:@"#{BOOTSTRAP_CSS_STRING}"       :bootstrap_css    ];
+  htmlString = [ self replace:htmlString:@"#{LOADING_PAGE_CSS_STRING}"    :loading_css      ];
   
-  NSLog(htmlString);
+  //NSLog(htmlString);
   
   // (2) Tell the web view to load the HTML in the string
   [self.loadingWeb
