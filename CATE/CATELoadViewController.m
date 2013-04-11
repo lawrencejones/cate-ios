@@ -8,7 +8,17 @@
 
 #import "CATELoadViewController.h"
 
-@interface CATELoadViewController ()
+@interface CATELoadViewController () {
+  NSMutableData *main_data;
+  NSMutableData *ex_data;
+  NSMutableData *grade_data;
+  int count;
+}
+
+@property(retain,nonatomic) NSData *main_data;
+@property(retain,nonatomic) NSData *ex_data;
+@property(retain,nonatomic) NSData *grade_data;
+@property(retain,nonatomic) NSString *htmlString;
 
 @end
 
@@ -37,8 +47,6 @@
   // Disables the web view from being scrollable
   self.loadingWeb.scrollView.scrollEnabled = NO;
   self.loadingWeb.scrollView.bounces = NO; // (old) dot notation
-  NSLog(@"Giving it a go...");
-  [self getHtmlStringForLink:@"https://cate.doc.ic.ac.uk/"];
   
 }
 
@@ -135,14 +143,28 @@
 
 #pragma mark - URL Requester
 
-
--(void) getHtmlStringForLink: (NSString *) link{
-  NSURL * url = [NSURL URLWithString:link];
-  NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
-  [request addValue:@"text/html" forHTTPHeaderField:@"Content-Type"];
-  [request setHTTPMethod:@"GET"];
-  [[NSURLConnection alloc]initWithRequest:request delegate:self startImmediately:YES];
+-(NSArray *) getRequestArrayForStringLinks: (NSArray *) str_links{
+  NSMutableArray *requests = [NSMutableArray arrayWithCapacity:[str_links count]];
+  for (int i = 0; i < [str_links count]; i++) {
+    NSMutableURLRequest *request =
+      [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[str_links objectAtIndex:i]]];
+    [request addValue:@"text/html" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"GET"];
+    [requests insertObject:request atIndex:i];
+  }
+  NSLog(@"Processed requests.");
+  return requests;
 }
+
+-(void) getHtmlStringForRequests: (NSArray *) requestsArray{
+  
+  count = [requestsArray count];
+  for (NSURLRequest *request in requestsArray) {
+    [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+  }
+
+}
+
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
   if([protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodHTTPBasic])
@@ -153,7 +175,6 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
-  NSLog(@"Challenging...");
   NSURLCredential *creden = [[NSURLCredential alloc] initWithUser:@"lmj112" password:@"738dba965D" persistence:NSURLCredentialPersistenceForSession];
   [[challenge sender] useCredential:creden forAuthenticationChallenge:challenge];
 
@@ -161,11 +182,35 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
   
-  NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-  NSLog(s);
-  
+  NSString *path = [[[connection originalRequest] URL] relativePath];
+  NSLog(@"More data!");
+  if ([path isEqualToString:@"/"]) {
+    main_data = data;
+    NSLog(@"Main data updated!");
+  } else if ([path rangeOfString:@"timetable"].location != NSNotFound) {
+    [ex_data appendData:data];
+  } else if ([path rangeOfString:@"student"].location != NSNotFound) {
+    [grade_data appendData:data];
+  }
 }
 
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+  NSLog(@"One more completed!");
+  count--;
+  if (count == 0) {
+    [self inject_cate_html];
+  }
+}
+
+- (void)inject_cate_html {
+  NSString *javascript = [NSString stringWithFormat:
+                          @"$('body').append('hello!');"];
+                        //  ;
+  NSString *html = [[NSString alloc] initWithData:main_data
+                               encoding:NSUTF8StringEncoding];
+  
+  NSLog(html);
+}
 
 #pragma mark - Populate Html
 
@@ -182,13 +227,8 @@
   return [source stringByReplacingOccurrencesOfString:target withString:goal];
 }
 
-- (void)makeLoadingViewLoad {
-  // Pulls in the loading_page.html along with all related scripts and css
-  // files. Displays loading_page, and inner scripts access CATE, scrape,
-  // and provide helper methods such as getDashboardXml() which return, as a
-  // string, the relevant xml data.
+- (void)initialWebViewSetup {
   
-  // (1) Pull the HTML in loading_page.html into htmlString
   NSString *htmlString       = [ self getFileContent:@"loading_page"     :@"html" ];
   NSString *bootstrap_js     = [ self getFileContent:@"bootstrap.min"    :@"js"   ];
   NSString *bootstrap_css    = [ self getFileContent:@"bootstrap.min"    :@"css"  ];
@@ -202,13 +242,30 @@
   htmlString = [ self replace:htmlString:@"#{BOOTSTRAP_CSS_STRING}"       :bootstrap_css    ];
   htmlString = [ self replace:htmlString:@"#{LOADING_PAGE_CSS_STRING}"    :loading_css      ];
   
-  //NSLog(htmlString);
-  
   // (2) Tell the web view to load the HTML in the string
   [self.loadingWeb
-    loadHTMLString:htmlString
-    baseURL:[NSURL
-    fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+         loadHTMLString:htmlString
+                baseURL:[NSURL
+        fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+  
+  NSArray *requests =
+    [self getRequestArrayForStringLinks:
+     [NSArray arrayWithObjects:@"https://cate.doc.ic.ac.uk/",
+                               @"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:3:c1:lmj112",
+                               @"https://cate.doc.ic.ac.uk/student.cgi?key=2012:c1:lmj112", nil]];
+  [self getHtmlStringForRequests:requests];
+}
+
+- (void)makeLoadingViewLoad {
+  // Pulls in the loading_page.html along with all related scripts and css
+  // files. Displays loading_page, and inner scripts access CATE, scrape,
+  // and provide helper methods such as getDashboardXml() which return, as a
+  // string, the relevant xml data.
+  
+  // (1) Pull the HTML in loading_page.html into htmlString
+  NSLog(@"Trying...");
+  [self initialWebViewSetup];
+
 }
 
 @end
