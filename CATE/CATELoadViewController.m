@@ -9,16 +9,17 @@
 #import "CATELoadViewController.h"
 
 @interface CATELoadViewController () {
-  NSMutableData *main_data;
-  NSMutableData *ex_data;
-  NSMutableData *grade_data;
+  NSString *main_data;
+  NSString *ex_data;
+  NSString *grade_data;
+  NSString *full_html;
   int count;
 }
 
-@property(retain,nonatomic) NSData *main_data;
-@property(retain,nonatomic) NSData *ex_data;
-@property(retain,nonatomic) NSData *grade_data;
-@property(retain,nonatomic) NSString *htmlString;
+@property(retain,nonatomic) NSString *main_data;
+@property(retain,nonatomic) NSString *ex_data;
+@property(retain,nonatomic) NSString *grade_data;
+@property(retain,nonatomic) NSString *full_html;
 
 @end
 
@@ -157,12 +158,10 @@
 }
 
 -(void) getHtmlStringForRequests: (NSArray *) requestsArray{
-  
   count = [requestsArray count];
   for (NSURLRequest *request in requestsArray) {
     [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
   }
-
 }
 
 
@@ -185,34 +184,34 @@
   NSString *path = [[[connection originalRequest] URL] relativePath];
   NSLog(@"More data!");
   if ([path isEqualToString:@"/"]) {
-    main_data = data;
+    main_data = [[NSString alloc] initWithData:data
+                                      encoding:NSUTF8StringEncoding];
     NSLog(@"Main data updated!");
   } else if ([path rangeOfString:@"timetable"].location != NSNotFound) {
-    [ex_data appendData:data];
+    ex_data = [[NSString alloc] initWithData:data
+                                    encoding:NSUTF8StringEncoding];
   } else if ([path rangeOfString:@"student"].location != NSNotFound) {
-    [grade_data appendData:data];
+    grade_data = [[NSString alloc] initWithData:data
+                                       encoding:NSUTF8StringEncoding];
   }
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-  NSLog(@"One more completed!");
+  [self inject_cate_html:connection];
   count--;
   if (count == 0) {
-    [self inject_cate_html];
+    [self.loadingWeb loadHTMLString:full_html baseURL:NULL];
   }
 }
 
-- (void)inject_cate_html {
-  NSString *javascript = [NSString stringWithFormat:
-                          @"$('body').append('hello!');"];
-                        //  ;
-  NSString *html = [[NSString alloc] initWithData:main_data
-                               encoding:NSUTF8StringEncoding];
-  
-  NSLog(html);
-}
-
 #pragma mark - Populate Html
+
+
+- (void)makeLoadingViewLoad {
+  
+  [self initialWebViewSetup];
+  
+}
 
 -(NSString*)getFileContent:(NSString *) res :
                            (NSString *) file_type {
@@ -232,15 +231,16 @@
   NSString *htmlString       = [ self getFileContent:@"loading_page"     :@"html" ];
   NSString *bootstrap_js     = [ self getFileContent:@"bootstrap.min"    :@"js"   ];
   NSString *bootstrap_css    = [ self getFileContent:@"bootstrap.min"    :@"css"  ];
-  NSString *jquery_js        = [ self getFileContent:@"jquery-1.9.1.min" :@"js"   ];
   NSString *extraction_tools = [ self getFileContent:@"extraction_tools" :@"js"   ];
   NSString *loading_css      = [ self getFileContent:@"loading_page"     :@"css"  ];
   
-  htmlString = [ self replace:htmlString:@"#{JQUERY_JS_STRING}"           :jquery_js        ];
   htmlString = [ self replace:htmlString:@"#{BOOTSTRAP_JS_STRING}"        :bootstrap_js     ];
   htmlString = [ self replace:htmlString:@"#{EXTRACTION_TOOLS_JS_STRING}" :extraction_tools ];
   htmlString = [ self replace:htmlString:@"#{BOOTSTRAP_CSS_STRING}"       :bootstrap_css    ];
   htmlString = [ self replace:htmlString:@"#{LOADING_PAGE_CSS_STRING}"    :loading_css      ];
+  
+  // Copy the htmlString once initialised into the instance property
+  full_html = htmlString;
   
   // (2) Tell the web view to load the HTML in the string
   [self.loadingWeb
@@ -256,16 +256,32 @@
   [self getHtmlStringForRequests:requests];
 }
 
-- (void)makeLoadingViewLoad {
-  // Pulls in the loading_page.html along with all related scripts and css
-  // files. Displays loading_page, and inner scripts access CATE, scrape,
-  // and provide helper methods such as getDashboardXml() which return, as a
-  // string, the relevant xml data.
+- (void)inject_cate_html:(NSURLConnection *)connection {
   
-  // (1) Pull the HTML in loading_page.html into htmlString
-  NSLog(@"Trying...");
-  [self initialWebViewSetup];
-
+  NSString *data, *target, *start = @"<body bgcolor=\"#e0f9f9\">";
+  NSString *path = [[[connection originalRequest] URL] relativePath];
+  
+  if ([path isEqualToString:@"/"])
+  {
+    data = main_data;
+    target = @"#{MAIN_PAGE_BODY_STRING}";
+  }
+  else if ([path isEqualToString:@"timetable?"])
+  {
+    data = ex_data; start = @"<body>";
+    target = @"#{EXERCISE_PAGE_BODY_STRING}";
+  }
+  else if ([path isEqualToString:@"student?"])
+  {
+    data = grade_data;
+    target = @"#{GRADES_PAGE_BODY_STRING}";
+  }
+  
+  NSArray *body = [data componentsSeparatedByString: start];
+  body = [[[body objectAtIndex:1] componentsSeparatedByString:@"</body>"] objectAtIndex:0];
+  
+  full_html = [ self replace:full_html:target:body];
+  
 }
 
 @end

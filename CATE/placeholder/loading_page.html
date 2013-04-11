@@ -12,11 +12,17 @@
     <style type="text/css">
             #{BOOTSTRAP_CSS_STRING}
     </style><style>
-            #{LOADING_PAGE_CSS_STRING}
+      
+      body { width : 320px; }
+      #banner { position : fixed; width : 320px; top : 25%; }
+      #banner h3 { text-align: center; }
+      #loading_bar { width : 85%; margin : 0 auto 0 auto; }
+      .hidden { visibility: none; }
+      
     </style>
 		<script>
 			$(document).ready(function () {
-                        //$('.hidden').hide();
+        $('.hidden').hide();
 			});
 		</script>
 
