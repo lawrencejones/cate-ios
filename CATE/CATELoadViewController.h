@@ -11,5 +11,7 @@
 @interface CATELoadViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIWebView *loadingWeb;
 
+-(NSString*)getFileContent:(NSString *) res :(NSString *) file_type;
+
 
 @end

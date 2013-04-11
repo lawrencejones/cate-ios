@@ -47,6 +47,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
   
+  /*
   // Fetches the myScript.js file, and ultimately pulls its contents into
   // a string, jsString.
   NSString *filePath
@@ -124,17 +125,40 @@
     }
     
   }
+   */
 
 }
 
-- (void)makeLoadingViewLoad {
-  // (1) Pull the HTML in loading.html into htmlString
+-(NSString*)getFileContent:(NSString *) res :
+                           (NSString *) file_type {
   NSString *filePath
-    = [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"html"];
+    = [[NSBundle mainBundle] pathForResource:res ofType:file_type];
   NSData *fileData
     = [NSData dataWithContentsOfFile:filePath];
-  NSString *htmlString
-    = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
+  return [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
+}
+
+-(NSString*)replace:(NSString *) source : (NSString *) target : (NSString *) goal {
+  return [source stringByReplacingOccurrencesOfString:target withString:goal];
+}
+
+- (void)makeLoadingViewLoad {
+  // (1) Pull the HTML in loading_page.html into htmlString
+  NSString *htmlString = [self getFileContent:@"loading_page" :@"html"];
+  NSString *bootstrap_js = [self getFileContent:@"bootstrap.min" :@"js"];
+  NSString *bootstrap_css = [self getFileContent:@"bootstrap.min" :@"css"];
+  NSString *jquery_js = [self getFileContent:@"jquery-1.9.1.min" :@"js"];
+  NSString *extraction_tools = [self getFileContent:@"extraction_tools" :@"js"];
+  NSString *loading_css = [self getFileContent:@"loading_page" :@"css"];
+  
+  
+  htmlString = [self replace:htmlString:@"#{JQUERY_JS_STRING}":jquery_js];
+  htmlString = [self replace:htmlString:@"#{BOOTSTRAP_JS_STRING}":bootstrap_js];
+  htmlString = [self replace:htmlString:@"#{EXTRACTION_TOOLS_JS_STRING}":extraction_tools];
+  htmlString = [self replace:htmlString:@"#{BOOTSTRAP_CSS_STRING}":bootstrap_css];
+  htmlString = [self replace:htmlString:@"#{LOADING_PAGE_CSS_STRING}":loading_css];
+  
+  NSLog(htmlString);
   
   // (2) Tell the web view to load the HTML in the string
   [self.loadingWeb
