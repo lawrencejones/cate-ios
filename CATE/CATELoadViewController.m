@@ -62,7 +62,7 @@
   [webView stringByEvaluatingJavaScriptFromString:jsString];
   
   // Calls helper functions in the script just injected, and stores their
-  // results in string variables.
+  // results in string variables.  
   // Ultimately, the values returned will be xml.
   NSString *dashString
     = [webView stringByEvaluatingJavaScriptFromString:@"dealWithDashboard()"];
@@ -76,56 +76,34 @@
   
   // iOS will wait for the above JS to execute (delayTry), before continuing...
   // Perfect!
-  if ([dashString isEqualToString:@"error"]) {
-    // Error occurred loading dashboard: don't continue
+  
+  if ([dashString isEqualToString:@"error"] ||
+      [exercisesString isEqualToString:@"error"] ||
+      [gradesString isEqualToString:@"error"]) {
     
-    UIAlertView *alert
-    = [[UIAlertView alloc] initWithTitle:@"Error"
-                                 message:@"An error occurred loading the dashboard"
-                                delegate:nil
-                       cancelButtonTitle:@"OK"
-                       otherButtonTitles:nil];
-    [alert show];
+    // An error occurred pulling in the xml of at least one of the pages
+    [self performSegueWithIdentifier:@"LoadingToLogin" sender:self];
     
   } else {
     
-    if ([exercisesString isEqualToString:@"error"]) {
-      // Error occurred loading exercises: don't continue
-      
-      UIAlertView *alert
-      = [[UIAlertView alloc] initWithTitle:@"Error"
-                                   message:@"An error occurred loading the exercises"
-                                  delegate:nil
-                         cancelButtonTitle:@"OK"
-                         otherButtonTitles:nil];
-      [alert show];
-      
-    } else {
-      
-      if ([gradesString isEqualToString:@"error"]) {
-        // Error occurred loading grades: don't continue
-        
-        UIAlertView *alert
-        = [[UIAlertView alloc] initWithTitle:@"Error"
-                                     message:@"An error occurred loading the grades"
-                                    delegate:nil
-                           cancelButtonTitle:@"OK"
-                           otherButtonTitles:nil];
-        [alert show];
-        
-      } else {
-        
-        // Populate views!
-        
-        [self performSegueWithIdentifier:@"LoadMainView" sender:self];
-        
-      }
-      
-    }
+    // All xml pulled with success, and stored in *String
+    [self performSegueWithIdentifier:@"LoadMainView" sender:self];
     
   }
 
 }
+
+/*
+ 
+ - (void)viewDidLoad {
+ [super viewDidLoad];
+ NSString *fullURL = @"http://conecode.com";
+ NSURL *url = [NSURL URLWithString:fullURL];
+ NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+ [_viewWeb loadRequest:requestObj];
+ }
+ 
+*/
 
 - (void)makeLoadingViewLoad {
   // (1) Pull the HTML in loading.html into htmlString

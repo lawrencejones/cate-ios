@@ -54,6 +54,7 @@
 		0889F0141716687500FEB988 /* myScript.js in Sources */ = {isa = PBXBuildFile; fileRef = 0889F0121716687500FEB988 /* myScript.js */; };
 		0889F0171716727E00FEB988 /* loading.html in Resources */ = {isa = PBXBuildFile; fileRef = 0889F0161716727E00FEB988 /* loading.html */; };
 		0889F0181716727E00FEB988 /* loading.html in Resources */ = {isa = PBXBuildFile; fileRef = 0889F0161716727E00FEB988 /* loading.html */; };
+		08ED50B9171700F600FCA6E8 /* CATELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08ED50B8171700F600FCA6E8 /* CATELoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,8 @@
 		0889F00D1716585B00FEB988 /* CATELoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATELoadViewController.m; sourceTree = "<group>"; };
 		0889F0121716687500FEB988 /* myScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = myScript.js; sourceTree = "<group>"; };
 		0889F0161716727E00FEB988 /* loading.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = loading.html; sourceTree = "<group>"; };
+		08ED50B7171700F600FCA6E8 /* CATELoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATELoginViewController.h; sourceTree = "<group>"; };
+		08ED50B8171700F600FCA6E8 /* CATELoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATELoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +180,8 @@
 				0889EF681716299600FEB988 /* CATEAppDelegate.h */,
 				0889EF691716299600FEB988 /* CATEAppDelegate.m */,
 				0889EF711716299600FEB988 /* MainStoryboard.storyboard */,
+				08ED50B7171700F600FCA6E8 /* CATELoginViewController.h */,
+				08ED50B8171700F600FCA6E8 /* CATELoginViewController.m */,
 				0889F00C1716585B00FEB988 /* CATELoadViewController.h */,
 				0889F00D1716585B00FEB988 /* CATELoadViewController.m */,
 				0889EFA11716340F00FEB988 /* CATEThirdViewController.h */,
@@ -404,6 +409,7 @@
 				0889EFA31716340F00FEB988 /* CATEThirdViewController.m in Sources */,
 				0889EFA61716341D00FEB988 /* CATEFourthViewController.m in Sources */,
 				0889F00E1716585B00FEB988 /* CATELoadViewController.m in Sources */,
+				08ED50B9171700F600FCA6E8 /* CATELoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
