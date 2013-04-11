@@ -337,12 +337,41 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cog.png" width="16" height="16"/>
-        <image name="dashboard.png" width="16" height="16"/>
-        <image name="pencil.png" width="16" height="16"/>
-        <image name="thb12.jpg" width="16" height="16"/>
-        <image name="thumbs.png" width="16" height="16"/>
+        <image name="cog.png" width="30" height="30"/>
+        <image name="dashboard.png" width="30" height="30"/>
+        <image name="pencil.png" width="30" height="30"/>
+        <image name="thb12.jpg" width="353" height="470"/>
+        <image name="thumbs.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="CATEFirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CATEFirstViewController.h"/>
+        </class>
+        <class className="CATEFourthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CATEFourthViewController.h"/>
+        </class>
+        <class className="CATELoadViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CATELoadViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="loadingWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="CATELoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CATELoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loginAttempt:"/>
+            </relationships>
+        </class>
+        <class className="CATESecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CATESecondViewController.h"/>
+        </class>
+        <class className="CATEThirdViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CATEThirdViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
