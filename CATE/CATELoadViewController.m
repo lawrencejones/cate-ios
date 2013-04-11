@@ -144,8 +144,8 @@
 
 - (void)makeLoadingViewLoad {
   // (1) Pull the HTML in loading_page.html into htmlString
-  NSString *htmlString = [self getFileContent:@"loading_page" :@"html"];
-  NSString *bootstrap_js = [self getFileContent:@"bootstrap.min" :@"js"];
+  NSString *htmlString    = [self getFileContent:@"loading_page" :@"html"];
+  NSString *bootstrap_js  = [self getFileContent:@"bootstrap.min" :@"js"];
   NSString *bootstrap_css = [self getFileContent:@"bootstrap.min" :@"css"];
   NSString *jquery_js = [self getFileContent:@"jquery-1.9.1.min" :@"js"];
   NSString *extraction_tools = [self getFileContent:@"extraction_tools" :@"js"];
