@@ -45,6 +45,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+/*
+ 
+ 
+ 
+ */
+
+
+
+
+
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
   
   /*
@@ -143,6 +155,11 @@
 }
 
 - (void)makeLoadingViewLoad {
+  // Pulls in the loading_page.html along with all related scripts and css
+  // files. Displays loading_page, and inner scripts access CATE, scrape,
+  // and provide helper methods (such as getDashboardXml() which return, as a
+  // string, the relevant xml data.
+  
   // (1) Pull the HTML in loading_page.html into htmlString
   NSString *htmlString    = [self getFileContent:@"loading_page" :@"html"];
   NSString *bootstrap_js  = [self getFileContent:@"bootstrap.min" :@"js"];
