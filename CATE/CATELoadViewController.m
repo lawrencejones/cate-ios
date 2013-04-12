@@ -7,6 +7,7 @@
 //
 
 #import "CATELoadViewController.h"
+#import "SMXMLDocument.h"
 
 @interface CATELoadViewController ()
 
@@ -31,6 +32,9 @@
   [super viewDidLoad];
 	// Do any additional setup after loading the view.
   
+  // Create appDelegate for sharing data between views
+  appDelegate = [[UIApplication sharedApplication] delegate];
+  
   // Calls helper method, makeLoadingViewLoad
   [self makeLoadingViewLoad];
   
@@ -46,20 +50,47 @@
 }
 
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+  // Called when the web page has finished loading
+  // At this point, all scrape/parsing scripts have been executed
+  
+  // Injects myScript.js into the webView
+  NSString *filePath
+  = [[NSBundle mainBundle] pathForResource:@"myScript" ofType:@"js"];
+  NSData *fileData
+  = [NSData dataWithContentsOfFile:filePath];
+  NSString *jsString
+  = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
+  [webView stringByEvaluatingJavaScriptFromString:jsString];
+  
+  // Calls get_main_xml()
+  NSString *mainXmlString
+  = [webView stringByEvaluatingJavaScriptFromString:@"get_main_xml()"];
+  NSData *mainXml = [mainXmlString dataUsingEncoding:NSUTF8StringEncoding];
+  
+  
+  NSString *xmlFilePath
+  = [[NSBundle mainBundle] pathForResource:@"exerciseData" ofType:@"xml"];
+  NSData *xmlFileData
+  = [NSData dataWithContentsOfFile:xmlFilePath];
+  NSString *xmlString
+  = [[NSString alloc] initWithData:xmlFileData encoding:NSUTF8StringEncoding];
+
+  CATEIdentity *identity = [CATEIdentity identity_with_data:mainXml];
+  CATETerm *term = [CATETerm term_with_data:xmlFileData];
+  
+  NSLog(@"Done!");
+  
+  appDelegate.identity = identity;
+  [appDelegate cache_term:&*term];
+  
+  [self performSegueWithIdentifier:@"LoadMainView" sender:self];
+}
+
+
 /*
- 
- 
- 
- */
-
-
-
-
-
-
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
   
-  /*
   // Fetches the myScript.js file, and ultimately pulls its contents into
   // a string, jsString.
   NSString *filePath
@@ -137,9 +168,9 @@
     }
     
   }
-   */
 
 }
+*/
 
 -(NSString*)getFileContent:(NSString *) res :
                            (NSString *) file_type {

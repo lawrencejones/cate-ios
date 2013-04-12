@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		087FC01317178E7300529DC5 /* exerciseData.xml in Resources */ = {isa = PBXBuildFile; fileRef = 087FC01217178E7300529DC5 /* exerciseData.xml */; };
 		0889EF5A1716299600FEB988 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889EF591716299600FEB988 /* UIKit.framework */; };
 		0889EF5C1716299600FEB988 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889EF5B1716299600FEB988 /* Foundation.framework */; };
 		0889EF5E1716299600FEB988 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889EF5D1716299600FEB988 /* CoreGraphics.framework */; };
@@ -52,7 +53,12 @@
 		0889F00F1716585B00FEB988 /* CATELoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0889F00D1716585B00FEB988 /* CATELoadViewController.m */; };
 		0889F0131716687500FEB988 /* myScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 0889F0121716687500FEB988 /* myScript.js */; };
 		0889F0141716687500FEB988 /* myScript.js in Sources */ = {isa = PBXBuildFile; fileRef = 0889F0121716687500FEB988 /* myScript.js */; };
+		08C67C2117174C07007D4C77 /* CATEIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C67C2017174C07007D4C77 /* CATEIdentity.m */; };
+		08C67C2717176CA1007D4C77 /* CATEExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C67C2617176CA1007D4C77 /* CATEExercise.m */; };
+		08C67C2A17177DA9007D4C77 /* CATEModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C67C2917177DA9007D4C77 /* CATEModule.m */; };
+		08C67C2D17177F58007D4C77 /* CATETerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C67C2C17177F58007D4C77 /* CATETerm.m */; };
 		08E5C6D8171713BA008DFED8 /* CATELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E5C6D7171713BA008DFED8 /* CATELoginViewController.m */; };
+		08E5C6E4171724A0008DFED8 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E5C6E3171724A0008DFED8 /* SMXMLDocument.m */; };
 		FE54171D1716FCAA00B3E497 /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = FE5417171716FCAA00B3E497 /* bootstrap.min.css */; };
 		FE54171E1716FCAA00B3E497 /* bootstrap.min.js in Sources */ = {isa = PBXBuildFile; fileRef = FE5417181716FCAA00B3E497 /* bootstrap.min.js */; };
 		FE54171F1716FCAA00B3E497 /* jquery-1.9.1.min.js in Sources */ = {isa = PBXBuildFile; fileRef = FE5417191716FCAA00B3E497 /* jquery-1.9.1.min.js */; };
@@ -72,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		087FC01217178E7300529DC5 /* exerciseData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = exerciseData.xml; sourceTree = "<group>"; };
 		0889EF561716299600FEB988 /* CATE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CATE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0889EF591716299600FEB988 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0889EF5B1716299600FEB988 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,7 +92,7 @@
 		0889EF6B1716299600FEB988 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0889EF6D1716299600FEB988 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0889EF6F1716299600FEB988 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		0889EF721716299600FEB988 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		0889EF721716299600FEB988 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		0889EF741716299600FEB988 /* CATEFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATEFirstViewController.h; sourceTree = "<group>"; };
 		0889EF751716299600FEB988 /* CATEFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATEFirstViewController.m; sourceTree = "<group>"; };
 		0889EF771716299600FEB988 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
@@ -116,8 +123,18 @@
 		0889F00C1716585B00FEB988 /* CATELoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATELoadViewController.h; sourceTree = "<group>"; };
 		0889F00D1716585B00FEB988 /* CATELoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATELoadViewController.m; sourceTree = "<group>"; };
 		0889F0121716687500FEB988 /* myScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = myScript.js; sourceTree = "<group>"; };
+		08C67C1F17174C07007D4C77 /* CATEIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEIdentity.h; sourceTree = "<group>"; };
+		08C67C2017174C07007D4C77 /* CATEIdentity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEIdentity.m; sourceTree = "<group>"; };
+		08C67C2517176CA1007D4C77 /* CATEExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEExercise.h; sourceTree = "<group>"; };
+		08C67C2617176CA1007D4C77 /* CATEExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEExercise.m; sourceTree = "<group>"; };
+		08C67C2817177DA9007D4C77 /* CATEModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEModule.h; sourceTree = "<group>"; };
+		08C67C2917177DA9007D4C77 /* CATEModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEModule.m; sourceTree = "<group>"; };
+		08C67C2B17177F58007D4C77 /* CATETerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATETerm.h; sourceTree = "<group>"; };
+		08C67C2C17177F58007D4C77 /* CATETerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATETerm.m; sourceTree = "<group>"; };
 		08E5C6D6171713BA008DFED8 /* CATELoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATELoginViewController.h; sourceTree = "<group>"; };
 		08E5C6D7171713BA008DFED8 /* CATELoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATELoginViewController.m; sourceTree = "<group>"; };
+		08E5C6E2171724A0008DFED8 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
+		08E5C6E3171724A0008DFED8 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
 		FE5417171716FCAA00B3E497 /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
 		FE5417181716FCAA00B3E497 /* bootstrap.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.min.js; sourceTree = "<group>"; };
 		FE5417191716FCAA00B3E497 /* jquery-1.9.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.9.1.min.js"; sourceTree = "<group>"; };
@@ -183,24 +200,15 @@
 		0889EF5F1716299600FEB988 /* CATE */ = {
 			isa = PBXGroup;
 			children = (
-				FE5417151716FC8F00B3E497 /* placeholder */,
-				0889F0111716686600FEB988 /* jScripts */,
-				0889F010171665EE00FEB988 /* img */,
+				08C67C2417176C5F007D4C77 /* Data Structures */,
+				08C67C2317174C59007D4C77 /* Plugins */,
+				08C67C2217174C38007D4C77 /* Views */,
+				FE5417151716FC8F00B3E497 /* Placeholder */,
+				0889F0111716686600FEB988 /* JavaScripts */,
+				0889F010171665EE00FEB988 /* Images */,
 				0889EF681716299600FEB988 /* CATEAppDelegate.h */,
 				0889EF691716299600FEB988 /* CATEAppDelegate.m */,
 				0889EF711716299600FEB988 /* MainStoryboard.storyboard */,
-				08E5C6D6171713BA008DFED8 /* CATELoginViewController.h */,
-				08E5C6D7171713BA008DFED8 /* CATELoginViewController.m */,
-				0889F00C1716585B00FEB988 /* CATELoadViewController.h */,
-				0889F00D1716585B00FEB988 /* CATELoadViewController.m */,
-				0889EFA11716340F00FEB988 /* CATEThirdViewController.h */,
-				0889EFA21716340F00FEB988 /* CATEThirdViewController.m */,
-				0889EFA41716341C00FEB988 /* CATEFourthViewController.h */,
-				0889EFA51716341D00FEB988 /* CATEFourthViewController.m */,
-				0889EF741716299600FEB988 /* CATEFirstViewController.h */,
-				0889EF751716299600FEB988 /* CATEFirstViewController.m */,
-				0889EF7B1716299600FEB988 /* CATESecondViewController.h */,
-				0889EF7C1716299600FEB988 /* CATESecondViewController.m */,
 				0889EF601716299600FEB988 /* Supporting Files */,
 			);
 			path = CATE;
@@ -239,7 +247,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0889F010171665EE00FEB988 /* img */ = {
+		0889F010171665EE00FEB988 /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				0889EF771716299600FEB988 /* first.png */,
@@ -256,18 +264,62 @@
 				0889EFAD171642F600FEB988 /* thumbs.png */,
 				0889EFAE171642F600FEB988 /* thumbs@2x.png */,
 			);
-			name = img;
+			name = Images;
 			sourceTree = "<group>";
 		};
-		0889F0111716686600FEB988 /* jScripts */ = {
+		0889F0111716686600FEB988 /* JavaScripts */ = {
 			isa = PBXGroup;
 			children = (
 				0889F0121716687500FEB988 /* myScript.js */,
+				087FC01217178E7300529DC5 /* exerciseData.xml */,
 			);
-			name = jScripts;
+			name = JavaScripts;
 			sourceTree = "<group>";
 		};
-		FE5417151716FC8F00B3E497 /* placeholder */ = {
+		08C67C2217174C38007D4C77 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				08E5C6D6171713BA008DFED8 /* CATELoginViewController.h */,
+				08E5C6D7171713BA008DFED8 /* CATELoginViewController.m */,
+				0889F00C1716585B00FEB988 /* CATELoadViewController.h */,
+				0889F00D1716585B00FEB988 /* CATELoadViewController.m */,
+				0889EF741716299600FEB988 /* CATEFirstViewController.h */,
+				0889EF751716299600FEB988 /* CATEFirstViewController.m */,
+				0889EF7B1716299600FEB988 /* CATESecondViewController.h */,
+				0889EF7C1716299600FEB988 /* CATESecondViewController.m */,
+				0889EFA11716340F00FEB988 /* CATEThirdViewController.h */,
+				0889EFA21716340F00FEB988 /* CATEThirdViewController.m */,
+				0889EFA41716341C00FEB988 /* CATEFourthViewController.h */,
+				0889EFA51716341D00FEB988 /* CATEFourthViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		08C67C2317174C59007D4C77 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				08E5C6E2171724A0008DFED8 /* SMXMLDocument.h */,
+				08E5C6E3171724A0008DFED8 /* SMXMLDocument.m */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+		08C67C2417176C5F007D4C77 /* Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				08C67C1F17174C07007D4C77 /* CATEIdentity.h */,
+				08C67C2017174C07007D4C77 /* CATEIdentity.m */,
+				08C67C2517176CA1007D4C77 /* CATEExercise.h */,
+				08C67C2617176CA1007D4C77 /* CATEExercise.m */,
+				08C67C2817177DA9007D4C77 /* CATEModule.h */,
+				08C67C2917177DA9007D4C77 /* CATEModule.m */,
+				08C67C2B17177F58007D4C77 /* CATETerm.h */,
+				08C67C2C17177F58007D4C77 /* CATETerm.m */,
+			);
+			name = "Data Structures";
+			sourceTree = "<group>";
+		};
+		FE5417151716FC8F00B3E497 /* Placeholder */ = {
 			isa = PBXGroup;
 			children = (
 				FE5417161716FCAA00B3E497 /* bootstrap */,
@@ -275,7 +327,7 @@
 				FE54171B1716FCAA00B3E497 /* loading_page.css */,
 				FE54171C1716FCAA00B3E497 /* loading_page.html */,
 			);
-			name = placeholder;
+			name = Placeholder;
 			sourceTree = "<group>";
 		};
 		FE5417161716FCAA00B3E497 /* bootstrap */ = {
@@ -383,6 +435,7 @@
 				FE54171D1716FCAA00B3E497 /* bootstrap.min.css in Resources */,
 				FE5417211716FCAA00B3E497 /* loading_page.css in Resources */,
 				FE5417221716FCAA00B3E497 /* loading_page.html in Resources */,
+				087FC01317178E7300529DC5 /* exerciseData.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +490,11 @@
 				FE54171F1716FCAA00B3E497 /* jquery-1.9.1.min.js in Sources */,
 				FE5417201716FCAA00B3E497 /* extraction_tools.js in Sources */,
 				08E5C6D8171713BA008DFED8 /* CATELoginViewController.m in Sources */,
+				08E5C6E4171724A0008DFED8 /* SMXMLDocument.m in Sources */,
+				08C67C2117174C07007D4C77 /* CATEIdentity.m in Sources */,
+				08C67C2717176CA1007D4C77 /* CATEExercise.m in Sources */,
+				08C67C2A17177DA9007D4C77 /* CATEModule.m in Sources */,
+				08C67C2D17177F58007D4C77 /* CATETerm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +605,7 @@
 		0889EF9A1716299600FEB988 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CATE/CATE-Prefix.pch";
 				INFOPLIST_FILE = "CATE/CATE-Info.plist";
@@ -562,6 +621,7 @@
 		0889EF9B1716299600FEB988 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CATE/CATE-Prefix.pch";
 				INFOPLIST_FILE = "CATE/CATE-Info.plist";

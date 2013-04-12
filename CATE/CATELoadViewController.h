@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CATEAppDelegate.h"
 
 @interface CATELoadViewController : UIViewController
+{
+  CATEAppDelegate *appDelegate;
+}
+
 @property (strong, nonatomic) IBOutlet UIWebView *loadingWeb;
 
 -(NSString*)getFileContent:(NSString *) res :(NSString *) file_type;

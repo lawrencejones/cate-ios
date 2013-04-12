@@ -7,8 +7,17 @@
 //
 
 #import "CATEAppDelegate.h"
+#import "CATETerm.h"
 
 @implementation CATEAppDelegate
+
+@synthesize identity;
+
+- (void)cache_term:(CATETerm *)term {  
+  // find out what term (or break) we have
+  // e.g.
+  // termAutumnBreak = term;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

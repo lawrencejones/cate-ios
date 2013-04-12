@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CATEAppDelegate.h"
 
 @interface CATEFirstViewController : UIViewController
+{
+  CATEAppDelegate *appDelegate;
+}
+
+@property (retain, nonatomic) IBOutlet UILabel *nameLabel;
+@property (retain, nonatomic) IBOutlet UILabel *loginLabel;
+
+- (void)changeNameLabel: (NSString *)name;
+- (void)changeLoginLabel: (NSString *)login;
 
 @end

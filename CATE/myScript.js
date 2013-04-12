@@ -24,40 +24,18 @@ function tryDelayHelp() {
 
 
 
-/*
- This is an example of what this script will look like:
- 
- function dealWithDashboard() {
-   # scrapes the dashboard page
-   # formats data as xml
-
-   return xml
- }
- 
- function dealWithExercises() {
-   # scrapes the exercises page
-   # formats data as xml
- 
-   return xml
- }
- 
- function dealWithGrades() {
-   # scrapes the grades page
-   # formats data as xml
- 
-   return xml
- }
- 
-*/
-
-function dealWithDashboard() {
-  return "dealt with dashboard";
+function get_main_xml() {
+  return "<data><profile_image_src>thb12.jpg</profile_image_src>" +
+         "<first_name>Thomas</first_name><last_name>Burnell</last_name>" +
+         "<login>thb12</login><category>c1</category>" +
+         "<candidate_number>123456</candidate_number><cid>654321</cid>" +
+         "<personal_tutor>Ian Hodkinson</personal_tutor></data>";
 }
 
-function dealWithExercises() {
+function get_exercises_xml() {
   return "dealt with exercises";
 }
 
-function dealWithGrades() {
+function get_grades_xml() {
   return "dealt with grades";
 }
