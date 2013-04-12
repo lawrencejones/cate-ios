@@ -381,6 +381,10 @@ extract_project_page_data = (html) ->
 # html - A jQuery object representing the page body
 ###############################################################################
 extract_grades_page_data = (html) ->
+
+  text_extract = (html) ->
+    html.text().trim().replace(/(\r\n|\n|\r)/gm,"");
+
   process_header_row = (row) ->
     # TODO: Regex out the fluff
     return {
@@ -439,3 +443,29 @@ extract_grades_page_data = (html) ->
     required_modules: required_modules
     optional_modules: optional_modules
   }
+
+window.process_grades_xml = ->
+  
+  vars = extract_grades_page_data $('#grades_page_xml')
+
+  xml = $('<data/>')
+
+  $('<stats/>').appendTo(xml).append \
+    $('<last_update/>').html(vars.stats.subscription_last_updated),
+    $('<submissions_completed/>').html(vars.stats.submissions_completed),
+    $('<submissions_extended/>').html(vars.stats.submissions_extended),
+    $('<submissions_late/>').html(vars.stats.submissions_late)
+  
+  for module in vars.required_modules.concat(vars.optional_modules)
+    $('<module/>').appendTo(xml).append  \
+      $('<name/>').html(module.name),
+      $('<term/>').html(module.term),
+      $('<submission/>').html(module.submission),
+      $('<level/>').html(module.level),
+      (exs = $('<exercises/>'))
+    for exercise in module.exercises
+      e = $('<exercise/>').appendTo exs
+      for own key, value of exercise
+        e.append $("<#{key}/>").html(value)
+
+  return xml.wrap('p').parent().html()

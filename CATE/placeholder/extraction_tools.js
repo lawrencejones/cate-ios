@@ -506,7 +506,10 @@
   };
 
   extract_grades_page_data = function(html) {
-    var extract_modules, optional_modules, process_grade_row, process_header_row, required_modules, submissions_completed, submissions_extended, submissions_late, subscription_last_updated;
+    var extract_modules, optional_modules, process_grade_row, process_header_row, required_modules, submissions_completed, submissions_extended, submissions_late, subscription_last_updated, text_extract;
+    text_extract = function(html) {
+      return html.text().trim().replace(/(\r\n|\n|\r)/gm, "");
+    };
     process_header_row = function(row) {
       return {
         name: text_extract(row.find('td:eq(0)')),
@@ -565,6 +568,29 @@
       required_modules: required_modules,
       optional_modules: optional_modules
     };
+  };
+
+  window.process_grades_xml = function() {
+    var e, exercise, exs, key, module, value, vars, xml, _i, _j, _len, _len1, _ref, _ref1;
+    vars = extract_grades_page_data($('#grades_page_xml'));
+    xml = $('<data/>');
+    $('<stats/>').appendTo(xml).append($('<last_update/>').html(vars.stats.subscription_last_updated), $('<submissions_completed/>').html(vars.stats.submissions_completed), $('<submissions_extended/>').html(vars.stats.submissions_extended), $('<submissions_late/>').html(vars.stats.submissions_late));
+    _ref = vars.required_modules.concat(vars.optional_modules);
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      module = _ref[_i];
+      $('<module/>').appendTo(xml).append($('<name/>').html(module.name), $('<term/>').html(module.term), $('<submission/>').html(module.submission), $('<level/>').html(module.level), (exs = $('<exercises/>')));
+      _ref1 = module.exercises;
+      for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+        exercise = _ref1[_j];
+        e = $('<exercise/>').appendTo(exs);
+        for (key in exercise) {
+          if (!__hasProp.call(exercise, key)) continue;
+          value = exercise[key];
+          e.append($("<" + key + "/>").html(value));
+        }
+      }
+    }
+    return xml.wrap('p').parent().html();
   };
 
 }).call(this);

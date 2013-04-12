@@ -63,7 +63,7 @@
   
   
 
-  NSString *result = [webView stringByEvaluatingJavaScriptFromString:@"process_exercise_xml();"];
+  NSString *result = [webView stringByEvaluatingJavaScriptFromString:@"process_grades_xml();"];
   NSLog(result);
 
   
