@@ -62,24 +62,23 @@
   };
 
   window.process_main_xml = function() {
-    var key, keys, v, value, vars, vs, xml, _i, _len;
+    var key, v, value, vars, xml, year, _i, _len;
     vars = extract_main_page_data($('#main_page_xml'));
-    xml = '<data>\n';
-    keys = [];
+    xml = $('<data/>');
     for (key in vars) {
       if (!__hasProp.call(vars, key)) continue;
       value = vars[key];
       if (key === 'available_years') {
-        vs = '';
+        year = $('<year/>').appendTo(xml);
         for (_i = 0, _len = value.length; _i < _len; _i++) {
           v = value[_i];
-          vs += $('<year/>').html("<y>" + v.text + "</y><a>" + v.href + "</a>").wrap('<p>').parent().html();
+          $('<year/>').append("<y>" + v.text + "</y><a>" + v.href + "</a>").appendTo(year);
         }
-        value = vs;
+      } else {
+        xml.append($("<" + key + "/>").html(value));
       }
-      xml = xml + $("<" + key + "/>").html(value.toString()).wrap('<p>').parent().html() + '\n';
     }
-    return xml + '</data>';
+    return xml.wrap('p').html();
   };
 
   extract_exercise_page_data = function(html) {
@@ -343,6 +342,27 @@
       end: dates.end,
       term_title: term_title
     };
+  };
+
+  window.process_exercise_xml = function() {
+    var e, exercise, exs, i, m, module, vars, xml, _i, _j, _len, _len1, _ref, _ref1;
+    vars = extract_exercise_page_data($('#exercise_page_xml'));
+    xml = $('<data/>');
+    xml.append($('<term_title/>').html(vars.term_title), $('<start/>').html(vars.start.getFullYear() + '-' + (vars.start.getMonth() + 1) + '-' + vars.start.getDate()), $('<end/>').html(vars.end.getFullYear() + '-' + (vars.end.getMonth() + 1) + '-' + vars.end.getDate()));
+    _ref = vars.modules;
+    for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
+      module = _ref[i];
+      m = $("<module/ num='" + i + "'>");
+      m.append($('<id/>').html(module.id), $('<name/>').html(module.name), $('<notesLink/>').html(module.notesLink));
+      exs = $('<exercises/>');
+      _ref1 = module.exercises;
+      for (i = _j = 0, _len1 = _ref1.length; _j < _len1; i = ++_j) {
+        exercise = _ref1[i];
+        e = $("<exercise/ num='" + i + "'>").appendTo(exs);
+        e.append($('<id/>').html(e.id), $('<type/>').html(e.type), $('<start/>').html());
+      }
+    }
+    return xml.wrap('p').html();
   };
 
   extract_notes_page_data = function(html) {
