@@ -61,37 +61,13 @@
     return;
   }
   
-  // Injects myScript.js into the webView
-  NSString *filePath
-  = [[NSBundle mainBundle] pathForResource:@"myScript" ofType:@"js"];
-  NSData *fileData
-  = [NSData dataWithContentsOfFile:filePath];
-  NSString *jsString
-  = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
-  [webView stringByEvaluatingJavaScriptFromString:jsString];
   
-  // Calls get_main_xml()
-  NSString *mainXmlString
-  = [webView stringByEvaluatingJavaScriptFromString:@"get_main_xml()"];
-  NSData *mainXml = [mainXmlString dataUsingEncoding:NSUTF8StringEncoding];
-  
-  
-  NSString *xmlFilePath
-  = [[NSBundle mainBundle] pathForResource:@"exerciseData" ofType:@"xml"];
-  NSData *xmlFileData
-  = [NSData dataWithContentsOfFile:xmlFilePath];
-  NSString *xmlString
-  = [[NSString alloc] initWithData:xmlFileData encoding:NSUTF8StringEncoding];
 
-  CATEIdentity *identity = [CATEIdentity identity_with_data:mainXml];
-  CATETerm *term = [CATETerm term_with_data:xmlFileData];
+  NSString *result = [webView stringByEvaluatingJavaScriptFromString:@"process_main_xml();"];
+  NSLog(result);
+
   
-  NSLog(@"Done!");
-  
-  appDelegate.identity = identity;
-  [appDelegate cache_term:&*term];
-  
-  [self performSegueWithIdentifier:@"LoadMainView" sender:self]; 
+//  [self performSegueWithIdentifier:@"LoadMainView" sender:self];
 }
 
 
@@ -161,15 +137,13 @@
     self.full_html = [ self replace:self.full_html p2:@"id=\"progress\" style=\"width : 0%;"
                               p3:@"id=\"progress\" style=\"width : 100%;"];
     [self.loadingWeb loadHTMLString:self.full_html baseURL:NULL];
-//    [self scrapingDidFinish:self.loadingWeb];
   }
 }
 
 #pragma mark - Populate Html
 
 
--(NSString*)getFileContent:(NSString *) res :
-                           (NSString *) file_type {
+-(NSString*)getFileContent:(NSString *)res :(NSString *)file_type {
   NSString *filePath
     = [[NSBundle mainBundle] pathForResource:res ofType:file_type];
   NSData *fileData
@@ -178,18 +152,19 @@
 }
 
 -(NSString*)replace:(NSString *)source p2:(NSString *)target p3:(NSString *)goal {
-  NSLog(@"Test");
   return [source stringByReplacingOccurrencesOfString:target withString:goal];
 }
 
 - (NSString *)initialWebViewSetup {
   
   NSString *htmlString       = [ self getFileContent:@"loading_page"     :@"html" ];
+  NSString *jquery_js        = [ self getFileContent:@"jquery-1.9.1.min" :@"js"   ];
   NSString *bootstrap_js     = [ self getFileContent:@"bootstrap.min"    :@"js"   ];
   NSString *bootstrap_css    = [ self getFileContent:@"bootstrap.min"    :@"css"  ];
   NSString *extraction_tools = [ self getFileContent:@"extraction_tools" :@"js"   ];
   NSString *loading_css      = [ self getFileContent:@"loading_page"     :@"css"  ];
   
+  htmlString = [ self replace:htmlString p2:@"#{JQUERY_JS_STRING}"           p3:jquery_js        ];
   htmlString = [ self replace:htmlString p2:@"#{BOOTSTRAP_JS_STRING}"        p3:bootstrap_js     ];
   htmlString = [ self replace:htmlString p2:@"#{EXTRACTION_TOOLS_JS_STRING}" p3:extraction_tools ];
   htmlString = [ self replace:htmlString p2:@"#{BOOTSTRAP_CSS_STRING}"       p3:bootstrap_css    ];

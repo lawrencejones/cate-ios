@@ -65,6 +65,10 @@
 		FE5417201716FCAA00B3E497 /* extraction_tools.js in Sources */ = {isa = PBXBuildFile; fileRef = FE54171A1716FCAA00B3E497 /* extraction_tools.js */; };
 		FE5417211716FCAA00B3E497 /* loading_page.css in Resources */ = {isa = PBXBuildFile; fileRef = FE54171B1716FCAA00B3E497 /* loading_page.css */; };
 		FE5417221716FCAA00B3E497 /* loading_page.html in Resources */ = {isa = PBXBuildFile; fileRef = FE54171C1716FCAA00B3E497 /* loading_page.html */; };
+		FED2F2221717BE7700B9B439 /* CATEDataExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = FED2F2211717BE7700B9B439 /* CATEDataExtractor.m */; };
+		FED2F2231717CA7200B9B439 /* extraction_tools.js in Resources */ = {isa = PBXBuildFile; fileRef = FE54171A1716FCAA00B3E497 /* extraction_tools.js */; };
+		FED2F2241717CB5800B9B439 /* bootstrap.min.js in Resources */ = {isa = PBXBuildFile; fileRef = FE5417181716FCAA00B3E497 /* bootstrap.min.js */; };
+		FED2F2251717CB6C00B9B439 /* jquery-1.9.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = FE5417191716FCAA00B3E497 /* jquery-1.9.1.min.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +145,8 @@
 		FE54171A1716FCAA00B3E497 /* extraction_tools.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = extraction_tools.js; path = placeholder/extraction_tools.js; sourceTree = "<group>"; };
 		FE54171B1716FCAA00B3E497 /* loading_page.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = loading_page.css; path = placeholder/loading_page.css; sourceTree = "<group>"; };
 		FE54171C1716FCAA00B3E497 /* loading_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = loading_page.html; path = placeholder/loading_page.html; sourceTree = "<group>"; };
+		FED2F2201717BE7700B9B439 /* CATEDataExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEDataExtractor.h; sourceTree = "<group>"; };
+		FED2F2211717BE7700B9B439 /* CATEDataExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEDataExtractor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +321,8 @@
 				08C67C2917177DA9007D4C77 /* CATEModule.m */,
 				08C67C2B17177F58007D4C77 /* CATETerm.h */,
 				08C67C2C17177F58007D4C77 /* CATETerm.m */,
+				FED2F2201717BE7700B9B439 /* CATEDataExtractor.h */,
+				FED2F2211717BE7700B9B439 /* CATEDataExtractor.m */,
 			);
 			name = "Data Structures";
 			sourceTree = "<group>";
@@ -413,6 +421,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED2F2251717CB6C00B9B439 /* jquery-1.9.1.min.js in Resources */,
+				FED2F2241717CB5800B9B439 /* bootstrap.min.js in Resources */,
+				FED2F2231717CA7200B9B439 /* extraction_tools.js in Resources */,
 				0889F0131716687500FEB988 /* myScript.js in Resources */,
 				0889EF641716299600FEB988 /* InfoPlist.strings in Resources */,
 				0889EF6C1716299600FEB988 /* Default.png in Resources */,
@@ -495,6 +506,7 @@
 				08C67C2717176CA1007D4C77 /* CATEExercise.m in Sources */,
 				08C67C2A17177DA9007D4C77 /* CATEModule.m in Sources */,
 				08C67C2D17177F58007D4C77 /* CATETerm.m in Sources */,
+				FED2F2221717BE7700B9B439 /* CATEDataExtractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
