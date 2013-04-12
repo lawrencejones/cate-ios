@@ -223,9 +223,9 @@
 
 - (void)inject_cate_html:(NSURLConnection *)connection {
   
-  
   NSString *data, *target, *start = @"<body bgcolor=\"#e0f9f9\">";
   NSString *path = [[[connection originalRequest] URL] relativePath];
+    NSLog([NSString stringWithFormat:@"Injecting path %@", path]);
   
   if ([path isEqualToString:@"/"])
   {
@@ -237,7 +237,7 @@
     data = ex_data; start = @"<body>";
     target = @"#{EXERCISE_PAGE_BODY_STRING}";
   }
-  else if ([path isEqualToString:@"/student.cgi"])
+  else //([path isEqualToString:@"/student.cgi"])
   {
     data = grade_data;
     target = @"#{GRADES_PAGE_BODY_STRING}";
@@ -245,8 +245,11 @@
   
   NSArray *body = [data componentsSeparatedByString: start];
   body = [[[body objectAtIndex:1] componentsSeparatedByString:@"</body>"] objectAtIndex:0];
-  
-  full_html = [ self replace:full_html:target:body];
+  NSLog(@"Success! Now appending to the full_html...");
+  NSLog(body);
+  NSLog(full_html);
+  full_html = [ self replace:full_html:target:body ];
+  NSLog(@"DONE!");
   
 }
 
