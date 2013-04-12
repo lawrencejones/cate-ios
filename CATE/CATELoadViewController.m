@@ -38,7 +38,7 @@
   NSArray *requests =
   [self getRequestArrayForStringLinks:
    [NSArray arrayWithObjects:@"https://cate.doc.ic.ac.uk/",
-    @"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:4:c1:lmj112",
+    @"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:3:c1:lmj112",
     @"https://cate.doc.ic.ac.uk/student.cgi?key=2012:c1:lmj112", nil]];
   
   [self getHtmlStringForRequests:requests];
@@ -63,7 +63,7 @@
   
   
 
-  NSString *result = [webView stringByEvaluatingJavaScriptFromString:@"process_main_xml();"];
+  NSString *result = [webView stringByEvaluatingJavaScriptFromString:@"process_exercise_xml();"];
   NSLog(result);
 
   

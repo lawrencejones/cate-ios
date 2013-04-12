@@ -78,7 +78,7 @@
         xml.append($("<" + key + "/>").html(value));
       }
     }
-    return xml.wrap('p').html();
+    return xml.wrap('p').parent().html();
   };
 
   extract_exercise_page_data = function(html) {
@@ -345,24 +345,25 @@
   };
 
   window.process_exercise_xml = function() {
-    var e, exercise, exs, i, m, module, vars, xml, _i, _j, _len, _len1, _ref, _ref1;
+    var exercise, exs, format_date, i, m, module, vars, xml, _i, _j, _len, _len1, _ref, _ref1;
+    format_date = function(d) {
+      return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+    };
     vars = extract_exercise_page_data($('#exercise_page_xml'));
     xml = $('<data/>');
-    xml.append($('<term_title/>').html(vars.term_title), $('<start/>').html(vars.start.getFullYear() + '-' + (vars.start.getMonth() + 1) + '-' + vars.start.getDate()), $('<end/>').html(vars.end.getFullYear() + '-' + (vars.end.getMonth() + 1) + '-' + vars.end.getDate()));
+    xml.append($('<term_title/>').html(vars.term_title), $('<start/>').html(vars.start), $('<end/>').html(vars.end));
     _ref = vars.modules;
     for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
       module = _ref[i];
-      m = $("<module/ num='" + i + "'>");
-      m.append($('<id/>').html(module.id), $('<name/>').html(module.name), $('<notesLink/>').html(module.notesLink));
-      exs = $('<exercises/>');
+      m = $("<module/ num='" + i + "'>").appendTo(xml);
+      m.append($('<id/>').html(module.id), $('<name/>').html(module.name), $('<notesLink/>').html(module.notesLink), (exs = $('<exercises/>')));
       _ref1 = module.exercises;
       for (i = _j = 0, _len1 = _ref1.length; _j < _len1; i = ++_j) {
         exercise = _ref1[i];
-        e = $("<exercise/ num='" + i + "'>").appendTo(exs);
-        e.append($('<id/>').html(e.id), $('<type/>').html(e.type), $('<start/>').html());
+        $("<exercise/ num='" + i + "'>").appendTo(exs).append($('<id/>').html(exercise.id), $('<type/>').html(exercise.type), $('<start/>').html(format_date(exercise.start)), $('<end/>').html(format_date(exercise.end)), $('<moduleName/>').html(exercise.moduleName), $('<name/>').html(exercise.name), $('<mailto/>').html(exercise.mailto), $('<spec/>').html(exercise.spec), $('<givens/>').html(exercise.givens), $('<handin/>').html(exercise.handin));
       }
     }
-    return xml.wrap('p').html();
+    return xml.wrap('p').parent().html();
   };
 
   extract_notes_page_data = function(html) {
