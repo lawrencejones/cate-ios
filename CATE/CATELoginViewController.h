@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "CATELoadViewController.h"
 
-@interface CATELoginViewController : UIViewController {
-  
+@interface CATELoginViewController : UIViewController
+<UITextFieldDelegate> {
+  CATEAppDelegate *appDelegate;
 }
+
+@property (retain, nonatomic) IBOutlet UITextField *user;
+@property (retain, nonatomic) IBOutlet UITextField *password;
+
+@property (copy, nonatomic) NSString *userString;
+@property (copy, nonatomic) NSString *passwordString;
+
 
 - (IBAction)loginAttempt:(id)sender;
 

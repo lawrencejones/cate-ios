@@ -25,7 +25,7 @@ function tryDelayHelp() {
 
 
 function get_main_xml() {
-  return "<data><profile_image_src>thb12.jpg</profile_image_src>" +
+  return "<data><profile_image_src>/photo/student/pics12/thb12.jpg</profile_image_src>" +
          "<first_name>Thomas</first_name><last_name>Burnell</last_name>" +
          "<login>thb12</login><category>c1</category>" +
          "<candidate_number>123456</candidate_number><cid>654321</cid>" +

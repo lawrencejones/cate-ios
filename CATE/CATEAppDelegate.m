@@ -11,8 +11,9 @@
 
 @implementation CATEAppDelegate
 
-@synthesize identity;
+@synthesize identity, userAtLogin, passwordAtLogin, cateVersion;
 
+// TODO! IMPLEMENT THIS
 - (void)cache_term:(CATETerm *)term {  
   // find out what term (or break) we have
   // e.g.

@@ -30,6 +30,10 @@
   }
 }
 
+- (void)changePhoto:(UIImage *)photo {
+  self.photoImage.image = photo;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -38,6 +42,14 @@
   appDelegate = [[UIApplication sharedApplication] delegate];
   [self changeNameLabel:appDelegate.identity.fullName];
   [self changeLoginLabel:appDelegate.identity.login];
+  
+  
+  NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:
+                                                   [@"https://cate.doc.ic.ac.uk/"stringByAppendingString:appDelegate.identity.profileImageSrc]]];
+  UIImage *img = [[UIImage alloc] initWithData:imgData ];
+
+  [self changePhoto:img];
+  
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +61,7 @@
 - (void)dealloc {
     [_nameLabel release];
     [_loginLabel release];
+  [_photoImage release];
     [super dealloc];
 }
 @end

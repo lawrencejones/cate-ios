@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="thb12.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="80D-1E-Qu9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="80D-1E-Qu9">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="105" id="Lrp-Il-eMa"/>
                                     <constraint firstAttribute="height" constant="128" type="user" id="dzE-Ti-6Zl"/>
@@ -54,6 +54,7 @@
                     <connections>
                         <outlet property="loginLabel" destination="uZF-za-yHF" id="FzE-Ec-oKf"/>
                         <outlet property="nameLabel" destination="iP5-IF-oJX" id="L7e-i0-beM"/>
+                        <outlet property="photoImage" destination="80D-1E-Qu9" id="kO2-ZW-gz9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -238,16 +239,22 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4D-92-2Ho">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4D-92-2Ho">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="237" id="JwP-hE-cGG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="FNS-gp-gNX" id="7Nk-jP-qBm"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="41c-N0-281">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="41c-N0-281">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="FNS-gp-gNX" id="MWF-Hh-bdx"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rj3-76-7Ey">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -284,6 +291,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="password" destination="41c-N0-281" id="gU5-SV-iB3"/>
+                        <outlet property="user" destination="d4D-92-2Ho" id="ayy-fW-qC4"/>
                         <segue destination="yNZ-hp-i5X" kind="modal" identifier="LoginToLoading" animates="NO" id="74B-UH-IDg"/>
                     </connections>
                 </viewController>
@@ -359,7 +368,6 @@
         <image name="cog.png" width="30" height="30"/>
         <image name="dashboard.png" width="30" height="30"/>
         <image name="pencil.png" width="30" height="30"/>
-        <image name="thb12.jpg" width="353" height="470"/>
         <image name="thumbs.png" width="30" height="30"/>
     </resources>
     <classes>
@@ -368,6 +376,7 @@
             <relationships>
                 <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="photoImage" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="CATEFourthViewController" superclassName="UIViewController">
@@ -383,6 +392,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CATELoginViewController.h"/>
             <relationships>
                 <relationship kind="action" name="loginAttempt:"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="user" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="CATESecondViewController" superclassName="UIViewController">

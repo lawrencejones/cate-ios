@@ -16,8 +16,10 @@
 
 @property (retain, nonatomic) IBOutlet UILabel *nameLabel;
 @property (retain, nonatomic) IBOutlet UILabel *loginLabel;
+@property (retain, nonatomic) IBOutlet UIImageView *photoImage;
 
 - (void)changeNameLabel: (NSString *)name;
 - (void)changeLoginLabel: (NSString *)login;
+- (void)changePhoto: (UIImage *)photo;
 
 @end

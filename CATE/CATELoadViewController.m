@@ -35,11 +35,24 @@
   // Calls helper method, makeLoadingViewLoad
   self.full_html = [self initialWebViewSetup];
   
+  
+  /*
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:appDelegate.userAtLogin
+                                                  message:appDelegate.passwordAtLogin
+                                                 delegate:nil
+                                        cancelButtonTitle:@"...thanks?"
+                                        otherButtonTitles:nil];
+  [alert show];
+  */
+   
+  
+  
   NSArray *requests =
   [self getRequestArrayForStringLinks:
    [NSArray arrayWithObjects:@"https://cate.doc.ic.ac.uk/",
-    @"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:4:c1:lmj112",
-    @"https://cate.doc.ic.ac.uk/student.cgi?key=2012:c1:lmj112", nil]];
+    [@"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:4:c1:" stringByAppendingString:appDelegate.userAtLogin],
+    [@"https://cate.doc.ic.ac.uk/student.cgi?key=2012:c1:" stringByAppendingString:appDelegate.userAtLogin],
+    nil]];
   
   [self getHtmlStringForRequests:requests];
   
@@ -83,6 +96,9 @@
   NSString *xmlString
   = [[NSString alloc] initWithData:xmlFileData encoding:NSUTF8StringEncoding];
 
+  // here: take version and save it on the appdelegate
+  // appDelegate.cateVersion = @"V7.1";
+  
   CATEIdentity *identity = [CATEIdentity identity_with_data:mainXml];
   CATETerm *term = [CATETerm term_with_data:xmlFileData];
   
@@ -125,8 +141,14 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
-  NSURLCredential *creden = [[NSURLCredential alloc] initWithUser:@"lmj112" password:@"738dba965D" persistence:NSURLCredentialPersistenceForSession];
-  [[challenge sender] useCredential:creden forAuthenticationChallenge:challenge];
+//  NSURLCredential *creden = [[NSURLCredential alloc] initWithUser:@"lmj112" password:@"738dba965D" persistence:NSURLCredentialPersistenceForSession];
+  if ([challenge previousFailureCount] == 0) {
+    NSURLCredential *creden = [[NSURLCredential alloc] initWithUser:appDelegate.userAtLogin password:appDelegate.passwordAtLogin persistence:NSURLCredentialPersistenceForSession];
+    [[challenge sender] useCredential:creden forAuthenticationChallenge:challenge];
+  } else {
+    // couldn't connect!
+    [self performSegueWithIdentifier:@"LoadingToLogin" sender:self];
+  }
 
 }
 
@@ -161,7 +183,6 @@
     self.full_html = [ self replace:self.full_html p2:@"id=\"progress\" style=\"width : 0%;"
                               p3:@"id=\"progress\" style=\"width : 100%;"];
     [self.loadingWeb loadHTMLString:self.full_html baseURL:NULL];
-//    [self scrapingDidFinish:self.loadingWeb];
   }
 }
 

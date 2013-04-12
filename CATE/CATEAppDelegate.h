@@ -22,6 +22,13 @@
 @property (retain, nonatomic) CATETerm *termSummer;
 @property (retain, nonatomic) CATETerm *termSummerBreak;
 
+@property (retain, nonatomic) NSString *userAtLogin;
+@property (retain, nonatomic) NSString *passwordAtLogin;
+
+@property (retain, nonatomic) NSString *cateVersion;
+
+
+
 - (void) cache_term:(CATETerm *)term;
 
 @end
