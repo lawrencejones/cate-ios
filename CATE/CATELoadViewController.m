@@ -9,7 +9,18 @@
 #import "CATELoadViewController.h"
 #import "SMXMLDocument.h"
 
-@interface CATELoadViewController ()
+@interface CATELoadViewController () {
+  NSString *main_data;
+  NSString *ex_data;
+  NSString *grade_data;
+  NSString *full_html;
+  int count;
+}
+
+@property(retain,nonatomic) NSString *main_data;
+@property(retain,nonatomic) NSString *ex_data;
+@property(retain,nonatomic) NSString *grade_data;
+@property(retain,nonatomic) NSString *full_html;
 
 @end
 
@@ -41,6 +52,7 @@
   // Disables the web view from being scrollable
   self.loadingWeb.scrollView.scrollEnabled = NO;
   self.loadingWeb.scrollView.bounces = NO; // (old) dot notation
+  
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,89 +100,83 @@
 }
 
 
-/*
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-  
-  // Fetches the myScript.js file, and ultimately pulls its contents into
-  // a string, jsString.
-  NSString *filePath
-    = [[NSBundle mainBundle] pathForResource:@"myScript" ofType:@"js"];
-  NSData *fileData
-    = [NSData dataWithContentsOfFile:filePath];
-  NSString *jsString
-    = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
-  
-  // Injects the JS in jsString into the given web view. A string is returned,
-  // containing the result of running the script, but at this stage we don't
-  // require this so won't save it.
-  [webView stringByEvaluatingJavaScriptFromString:jsString];
-  
-  // Calls helper functions in the script just injected, and stores their
-  // results in string variables.
-  // Ultimately, the values returned will be xml.
-  NSString *dashString
-    = [webView stringByEvaluatingJavaScriptFromString:@"dealWithDashboard()"];
-  NSString *exercisesString
-    = [webView stringByEvaluatingJavaScriptFromString:@"dealWithExercises()"];
-  NSString *gradesString
-    = [webView stringByEvaluatingJavaScriptFromString:@"dealWithGrades()"];
-   
-  NSString *delayTry
-  = [webView stringByEvaluatingJavaScriptFromString:@"tryDelay()"];
-  
-  // iOS will wait for the above JS to execute (delayTry), before continuing...
-  // Perfect!
-  if ([dashString isEqualToString:@"error"]) {
-    // Error occurred loading dashboard: don't continue
-    
-    UIAlertView *alert
-    = [[UIAlertView alloc] initWithTitle:@"Error"
-                                 message:@"An error occurred loading the dashboard"
-                                delegate:nil
-                       cancelButtonTitle:@"OK"
-                       otherButtonTitles:nil];
-    [alert show];
-    
-  } else {
-    
-    if ([exercisesString isEqualToString:@"error"]) {
-      // Error occurred loading exercises: don't continue
-      
-      UIAlertView *alert
-      = [[UIAlertView alloc] initWithTitle:@"Error"
-                                   message:@"An error occurred loading the exercises"
-                                  delegate:nil
-                         cancelButtonTitle:@"OK"
-                         otherButtonTitles:nil];
-      [alert show];
-      
-    } else {
-      
-      if ([gradesString isEqualToString:@"error"]) {
-        // Error occurred loading grades: don't continue
-        
-        UIAlertView *alert
-        = [[UIAlertView alloc] initWithTitle:@"Error"
-                                     message:@"An error occurred loading the grades"
-                                    delegate:nil
-                           cancelButtonTitle:@"OK"
-                           otherButtonTitles:nil];
-        [alert show];
-        
-      } else {
-        
-        // Populate views!
-        
-        [self performSegueWithIdentifier:@"LoadMainView" sender:self];
-        
-      }
-      
-    }
-    
+#pragma mark - URL Requester
+
+-(NSArray *) getRequestArrayForStringLinks: (NSArray *) str_links{
+  NSMutableArray *requests = [NSMutableArray arrayWithCapacity:[str_links count]];
+  for (int i = 0; i < [str_links count]; i++) {
+    NSMutableURLRequest *request =
+      [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[str_links objectAtIndex:i]]];
+    [request addValue:@"text/html" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"GET"];
+    [requests insertObject:request atIndex:i];
   }
+  NSLog(@"Processed requests.");
+  return requests;
+}
+
+-(void) getHtmlStringForRequests: (NSArray *) requestsArray{
+  count = [requestsArray count];
+  for (NSURLRequest *request in requestsArray) {
+    [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+  }
+}
+
+- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
+  if([protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodHTTPBasic])
+  {
+    return YES;
+  } else return NO;
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+  NSURLCredential *creden = [[NSURLCredential alloc] initWithUser:@"lmj112" password:@"738dba965D" persistence:NSURLCredentialPersistenceForSession];
+  [[challenge sender] useCredential:creden forAuthenticationChallenge:challenge];
 
 }
-*/
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+  
+  NSString *path = [[[connection originalRequest] URL] relativePath];
+
+  if ([path isEqualToString:@"/"])
+  {
+    main_data  = [[NSString alloc] initWithData:data
+                                    encoding:NSUTF8StringEncoding];
+  }
+  else if ([path isEqualToString:@"/timetable.cgi"])
+  {
+    ex_data    = [[NSString alloc] initWithData:data
+                                    encoding:NSUTF8StringEncoding];
+  }
+  else if ([path isEqualToString:@"/student.cgi"])
+  {
+    grade_data = [[NSString alloc] initWithData:data
+                                    encoding:NSUTF8StringEncoding];
+  }
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+  [self inject_cate_html:connection];
+  [self.loadingWeb stringByEvaluatingJavaScriptFromString:
+   @"$('body').trigger('click');"];
+  count--;
+  if (count == 0) {
+    full_html = [ self replace:full_html :@"id=\"progress\" style=\"width : 0%;"
+                              :@"id=\"progress\" style=\"width : 100%;"];
+    [self.loadingWeb loadHTMLString:full_html baseURL:NULL];
+  }
+}
+
+#pragma mark - Populate Html
+
+
+- (void)makeLoadingViewLoad {
+  
+  [self initialWebViewSetup];
+  
+}
 
 -(NSString*)getFileContent:(NSString *) res :
                            (NSString *) file_type {
@@ -185,33 +191,63 @@
   return [source stringByReplacingOccurrencesOfString:target withString:goal];
 }
 
-- (void)makeLoadingViewLoad {
-  // Pulls in the loading_page.html along with all related scripts and css
-  // files. Displays loading_page, and inner scripts access CATE, scrape,
-  // and provide helper methods (such as getDashboardXml() which return, as a
-  // string, the relevant xml data.
+- (void)initialWebViewSetup {
   
-  // (1) Pull the HTML in loading_page.html into htmlString
-  NSString *htmlString    = [self getFileContent:@"loading_page" :@"html"];
-  NSString *bootstrap_js  = [self getFileContent:@"bootstrap.min" :@"js"];
-  NSString *bootstrap_css = [self getFileContent:@"bootstrap.min" :@"css"];
-  NSString *jquery_js = [self getFileContent:@"jquery-1.9.1.min" :@"js"];
-  NSString *extraction_tools = [self getFileContent:@"extraction_tools" :@"js"];
-  NSString *loading_css = [self getFileContent:@"loading_page" :@"css"];
+  NSString *htmlString       = [ self getFileContent:@"loading_page"     :@"html" ];
+  NSString *bootstrap_js     = [ self getFileContent:@"bootstrap.min"    :@"js"   ];
+  NSString *bootstrap_css    = [ self getFileContent:@"bootstrap.min"    :@"css"  ];
+  NSString *extraction_tools = [ self getFileContent:@"extraction_tools" :@"js"   ];
+  NSString *loading_css      = [ self getFileContent:@"loading_page"     :@"css"  ];
   
-  htmlString = [self replace:htmlString:@"#{JQUERY_JS_STRING}":jquery_js];
-  htmlString = [self replace:htmlString:@"#{BOOTSTRAP_JS_STRING}":bootstrap_js];
-  htmlString = [self replace:htmlString:@"#{EXTRACTION_TOOLS_JS_STRING}":extraction_tools];
-  htmlString = [self replace:htmlString:@"#{BOOTSTRAP_CSS_STRING}":bootstrap_css];
-  htmlString = [self replace:htmlString:@"#{LOADING_PAGE_CSS_STRING}":loading_css];
+  htmlString = [ self replace:htmlString:@"#{BOOTSTRAP_JS_STRING}"        :bootstrap_js     ];
+  htmlString = [ self replace:htmlString:@"#{EXTRACTION_TOOLS_JS_STRING}" :extraction_tools ];
+  htmlString = [ self replace:htmlString:@"#{BOOTSTRAP_CSS_STRING}"       :bootstrap_css    ];
+  htmlString = [ self replace:htmlString:@"#{LOADING_PAGE_CSS_STRING}"    :loading_css      ];
   
-  NSLog(htmlString);
+  // Copy the htmlString once initialised into the instance property
+  full_html = htmlString;
   
   // (2) Tell the web view to load the HTML in the string
   [self.loadingWeb
-    loadHTMLString:htmlString
-    baseURL:[NSURL
-    fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+         loadHTMLString:htmlString
+                baseURL:[NSURL
+        fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+  
+  NSArray *requests =
+    [self getRequestArrayForStringLinks:
+     [NSArray arrayWithObjects:@"https://cate.doc.ic.ac.uk/",
+                               @"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:3:c1:lmj112",
+                               @"https://cate.doc.ic.ac.uk/student.cgi?key=2012:c1:lmj112", nil]];
+  [self getHtmlStringForRequests:requests];
+}
+
+- (void)inject_cate_html:(NSURLConnection *)connection {
+  
+  
+  NSString *data, *target, *start = @"<body bgcolor=\"#e0f9f9\">";
+  NSString *path = [[[connection originalRequest] URL] relativePath];
+  
+  if ([path isEqualToString:@"/"])
+  {
+    data = main_data;
+    target = @"#{MAIN_PAGE_BODY_STRING}";
+  }
+  else if ([path isEqualToString:@"/timetable.cgi"])
+  {
+    data = ex_data; start = @"<body>";
+    target = @"#{EXERCISE_PAGE_BODY_STRING}";
+  }
+  else if ([path isEqualToString:@"/student.cgi"])
+  {
+    data = grade_data;
+    target = @"#{GRADES_PAGE_BODY_STRING}";
+  }
+  
+  NSArray *body = [data componentsSeparatedByString: start];
+  body = [[[body objectAtIndex:1] componentsSeparatedByString:@"</body>"] objectAtIndex:0];
+  
+  full_html = [ self replace:full_html:target:body];
+  
 }
 
 @end

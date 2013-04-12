@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CATELoadViewController.h"
 
-@interface CATELoginViewController : UIViewController
+@interface CATELoginViewController : UIViewController {
+  
+}
+
 - (IBAction)loginAttempt:(id)sender;
 
 @end
