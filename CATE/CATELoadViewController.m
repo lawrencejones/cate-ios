@@ -164,7 +164,6 @@
   }
 }
 
-
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
   if([protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodHTTPBasic])
   {
@@ -182,24 +181,32 @@
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
   
   NSString *path = [[[connection originalRequest] URL] relativePath];
-  NSLog(@"More data!");
-  if ([path isEqualToString:@"/"]) {
-    main_data = [[NSString alloc] initWithData:data
-                                      encoding:NSUTF8StringEncoding];
-    NSLog(@"Main data updated!");
-  } else if ([path rangeOfString:@"timetable"].location != NSNotFound) {
-    ex_data = [[NSString alloc] initWithData:data
+
+  if ([path isEqualToString:@"/"])
+  {
+    main_data  = [[NSString alloc] initWithData:data
                                     encoding:NSUTF8StringEncoding];
-  } else if ([path rangeOfString:@"student"].location != NSNotFound) {
+  }
+  else if ([path isEqualToString:@"/timetable.cgi"])
+  {
+    ex_data    = [[NSString alloc] initWithData:data
+                                    encoding:NSUTF8StringEncoding];
+  }
+  else if ([path isEqualToString:@"/student.cgi"])
+  {
     grade_data = [[NSString alloc] initWithData:data
-                                       encoding:NSUTF8StringEncoding];
+                                    encoding:NSUTF8StringEncoding];
   }
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
   [self inject_cate_html:connection];
+  [self.loadingWeb stringByEvaluatingJavaScriptFromString:
+   @"$('body').trigger('click');"];
   count--;
   if (count == 0) {
+    full_html = [ self replace:full_html :@"id=\"progress\" style=\"width : 0%;"
+                              :@"id=\"progress\" style=\"width : 100%;"];
     [self.loadingWeb loadHTMLString:full_html baseURL:NULL];
   }
 }
@@ -258,6 +265,7 @@
 
 - (void)inject_cate_html:(NSURLConnection *)connection {
   
+  
   NSString *data, *target, *start = @"<body bgcolor=\"#e0f9f9\">";
   NSString *path = [[[connection originalRequest] URL] relativePath];
   
@@ -266,12 +274,12 @@
     data = main_data;
     target = @"#{MAIN_PAGE_BODY_STRING}";
   }
-  else if ([path isEqualToString:@"timetable?"])
+  else if ([path isEqualToString:@"/timetable.cgi"])
   {
     data = ex_data; start = @"<body>";
     target = @"#{EXERCISE_PAGE_BODY_STRING}";
   }
-  else if ([path isEqualToString:@"student?"])
+  else if ([path isEqualToString:@"/student.cgi"])
   {
     data = grade_data;
     target = @"#{GRADES_PAGE_BODY_STRING}";
