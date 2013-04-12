@@ -19,6 +19,9 @@
 
 @property (copy, nonatomic) NSString *userString;
 @property (copy, nonatomic) NSString *passwordString;
+@property (retain, nonatomic) IBOutlet UIButton *button;
+
+
 
 
 - (IBAction)loginAttempt:(id)sender;

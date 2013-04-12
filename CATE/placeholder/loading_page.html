@@ -4,21 +4,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
     <script>
+            #{JQUERY_JS_STRING}
             #{BOOTSTRAP_JS_STRING}
-    </script>
-    <script>
             #{EXTRACTION_TOOLS_JS_STRING}
     </script>
-    <style type="text/css">
+    <style>
             #{BOOTSTRAP_CSS_STRING}
-    </style><style type="text/css">
-      
-      body { width : 320px; }
-      #banner { position : fixed; width : 320px; top : 25%; }
-      #banner h3 { text-align: center; }
-      #loading_bar { width : 85%; margin : 0 auto 0 auto; }
-      .hidden { visibility: none; }
-      
+            #{LOADING_PAGE_CSS_STRING}
     </style>
 		<script>
       var current_width = 0;

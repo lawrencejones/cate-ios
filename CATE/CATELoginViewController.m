@@ -45,6 +45,13 @@
   appDelegate.userAtLogin = self.userString;
   appDelegate.passwordAtLogin = self.passwordString;
   
+  self.user.enabled = NO;
+  self.user.alpha = 0.5;
+  self.password.enabled = NO;
+  self.password.alpha = 0.5;
+  self.button.enabled = NO;
+  [self.button setTitle:@"Logging in..." forState:UIControlStateNormal];
+  self.button.alpha = 0.5;
   
   NSMutableURLRequest *request =
   [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://cate.doc.ic.ac.uk"]];
@@ -52,7 +59,6 @@
   [request setHTTPMethod:@"GET"];
   
   [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
-
 }
 
 
@@ -78,6 +84,13 @@
                                           otherButtonTitles:nil];
     [alert show];
     self.password.text = @"";
+    self.user.enabled = YES;
+    self.user.alpha = 1;
+    self.password.enabled = YES;
+    self.password.alpha = 1;
+    self.button.enabled = YES;
+    [self.button setTitle:@"Login" forState:UIControlStateNormal];
+    self.button.alpha = 1;
   }
 }
 
@@ -99,11 +112,14 @@
 }
 
 
+
+
 - (void)dealloc {
   [_user release];
   [_password release];
   [_user release];
   [_password release];
+  [_button release];
   [super dealloc];
 }
 @end

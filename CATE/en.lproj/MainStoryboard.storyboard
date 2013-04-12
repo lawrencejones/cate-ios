@@ -243,14 +243,14 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="237" id="JwP-hE-cGG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="FNS-gp-gNX" id="7Nk-jP-qBm"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="41c-N0-281">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="FNS-gp-gNX" id="MWF-Hh-bdx"/>
@@ -278,19 +278,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d4D-92-2Ho" firstAttribute="trailing" secondItem="41c-N0-281" secondAttribute="trailing" type="default" id="1J0-jV-YEL"/>
-                            <constraint firstItem="41c-N0-281" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="242" id="4uE-tj-741"/>
+                            <constraint firstItem="d4D-92-2Ho" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="204" id="PQC-Hc-FVM"/>
                             <constraint firstItem="Rj3-76-7Ey" firstAttribute="leading" secondItem="41c-N0-281" secondAttribute="leading" type="default" id="Prf-68-VK2"/>
-                            <constraint firstItem="d4D-92-2Ho" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="183" id="T5z-cd-tRM"/>
                             <constraint firstItem="sNd-PU-Mh1" firstAttribute="leading" secondItem="ZxD-oU-oEI" secondAttribute="leading" type="default" id="UCX-7C-SFa"/>
                             <constraint firstItem="sNd-PU-Mh1" firstAttribute="trailing" secondItem="ZxD-oU-oEI" secondAttribute="trailing" type="default" id="VhP-fw-tnP"/>
                             <constraint firstItem="d4D-92-2Ho" firstAttribute="leading" secondItem="41c-N0-281" secondAttribute="leading" type="default" id="Yay-DX-fdd"/>
                             <constraint firstItem="Rj3-76-7Ey" firstAttribute="trailing" secondItem="41c-N0-281" secondAttribute="trailing" type="default" id="cb7-37-CMp"/>
                             <constraint firstItem="sNd-PU-Mh1" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" type="default" id="ciy-hn-8iy"/>
-                            <constraint firstItem="sNd-PU-Mh1" firstAttribute="centerX" secondItem="d4D-92-2Ho" secondAttribute="centerX" type="default" id="ejI-rn-9FG"/>
+                            <constraint firstItem="41c-N0-281" firstAttribute="top" secondItem="d4D-92-2Ho" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="id9-Mz-4AV"/>
                             <constraint firstAttribute="bottom" secondItem="Rj3-76-7Ey" secondAttribute="bottom" constant="129" id="rBk-WM-1tR"/>
+                            <constraint firstItem="d4D-92-2Ho" firstAttribute="centerX" secondItem="sNd-PU-Mh1" secondAttribute="centerX" type="default" id="zlT-us-eIX"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="button" destination="Rj3-76-7Ey" id="5va-H5-bNk"/>
                         <outlet property="password" destination="41c-N0-281" id="gU5-SV-iB3"/>
                         <outlet property="user" destination="d4D-92-2Ho" id="ayy-fW-qC4"/>
                         <segue destination="yNZ-hp-i5X" kind="modal" identifier="LoginToLoading" animates="NO" id="74B-UH-IDg"/>
@@ -392,6 +393,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CATELoginViewController.h"/>
             <relationships>
                 <relationship kind="action" name="loginAttempt:"/>
+                <relationship kind="outlet" name="button" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="user" candidateClass="UITextField"/>
             </relationships>

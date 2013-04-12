@@ -43,13 +43,11 @@
   [self changeNameLabel:appDelegate.identity.fullName];
   [self changeLoginLabel:appDelegate.identity.login];
   
-  
   NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:
                                                    [@"https://cate.doc.ic.ac.uk/"stringByAppendingString:appDelegate.identity.profileImageSrc]]];
   UIImage *img = [[UIImage alloc] initWithData:imgData ];
 
   [self changePhoto:img];
-  
 }
 
 - (void)didReceiveMemoryWarning
