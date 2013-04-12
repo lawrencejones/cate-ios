@@ -78,7 +78,7 @@
         xml.append($("<" + key + "/>").html(value));
       }
     }
-    return xml.wrap('p').html();
+    return xml.wrap('p').parent().html();
   };
 
   extract_exercise_page_data = function(html) {
@@ -345,24 +345,25 @@
   };
 
   window.process_exercise_xml = function() {
-    var e, exercise, exs, i, m, module, vars, xml, _i, _j, _len, _len1, _ref, _ref1;
+    var exercise, exs, format_date, i, m, module, vars, xml, _i, _j, _len, _len1, _ref, _ref1;
+    format_date = function(d) {
+      return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+    };
     vars = extract_exercise_page_data($('#exercise_page_xml'));
     xml = $('<data/>');
-    xml.append($('<term_title/>').html(vars.term_title), $('<start/>').html(vars.start.getFullYear() + '-' + (vars.start.getMonth() + 1) + '-' + vars.start.getDate()), $('<end/>').html(vars.end.getFullYear() + '-' + (vars.end.getMonth() + 1) + '-' + vars.end.getDate()));
+    xml.append($('<term_title/>').html(vars.term_title), $('<start/>').html(vars.start), $('<end/>').html(vars.end));
     _ref = vars.modules;
     for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
       module = _ref[i];
-      m = $("<module/ num='" + i + "'>");
-      m.append($('<id/>').html(module.id), $('<name/>').html(module.name), $('<notesLink/>').html(module.notesLink));
-      exs = $('<exercises/>');
+      m = $("<module/ num='" + i + "'>").appendTo(xml);
+      m.append($('<id/>').html(module.id), $('<name/>').html(module.name), $('<notesLink/>').html(module.notesLink), (exs = $('<exercises/>')));
       _ref1 = module.exercises;
       for (i = _j = 0, _len1 = _ref1.length; _j < _len1; i = ++_j) {
         exercise = _ref1[i];
-        e = $("<exercise/ num='" + i + "'>").appendTo(exs);
-        e.append($('<id/>').html(e.id), $('<type/>').html(e.type), $('<start/>').html());
+        $("<exercise/ num='" + i + "'>").appendTo(exs).append($('<id/>').html(exercise.id), $('<type/>').html(exercise.type), $('<start/>').html(format_date(exercise.start)), $('<end/>').html(format_date(exercise.end)), $('<moduleName/>').html(exercise.moduleName), $('<name/>').html(exercise.name), $('<mailto/>').html(exercise.mailto), $('<spec/>').html(exercise.spec), $('<givens/>').html(exercise.givens), $('<handin/>').html(exercise.handin));
       }
     }
-    return xml.wrap('p').html();
+    return xml.wrap('p').parent().html();
   };
 
   extract_notes_page_data = function(html) {
@@ -505,7 +506,10 @@
   };
 
   extract_grades_page_data = function(html) {
-    var extract_modules, optional_modules, process_grade_row, process_header_row, required_modules, submissions_completed, submissions_extended, submissions_late, subscription_last_updated;
+    var extract_modules, optional_modules, process_grade_row, process_header_row, required_modules, submissions_completed, submissions_extended, submissions_late, subscription_last_updated, text_extract;
+    text_extract = function(html) {
+      return html.text().trim().replace(/(\r\n|\n|\r)/gm, "");
+    };
     process_header_row = function(row) {
       return {
         name: text_extract(row.find('td:eq(0)')),
@@ -564,6 +568,29 @@
       required_modules: required_modules,
       optional_modules: optional_modules
     };
+  };
+
+  window.process_grades_xml = function() {
+    var e, exercise, exs, key, module, value, vars, xml, _i, _j, _len, _len1, _ref, _ref1;
+    vars = extract_grades_page_data($('#grades_page_xml'));
+    xml = $('<data/>');
+    $('<stats/>').appendTo(xml).append($('<last_update/>').html(vars.stats.subscription_last_updated), $('<submissions_completed/>').html(vars.stats.submissions_completed), $('<submissions_extended/>').html(vars.stats.submissions_extended), $('<submissions_late/>').html(vars.stats.submissions_late));
+    _ref = vars.required_modules.concat(vars.optional_modules);
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      module = _ref[_i];
+      $('<module/>').appendTo(xml).append($('<name/>').html(module.name), $('<term/>').html(module.term), $('<submission/>').html(module.submission), $('<level/>').html(module.level), (exs = $('<exercises/>')));
+      _ref1 = module.exercises;
+      for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+        exercise = _ref1[_j];
+        e = $('<exercise/>').appendTo(exs);
+        for (key in exercise) {
+          if (!__hasProp.call(exercise, key)) continue;
+          value = exercise[key];
+          e.append($("<" + key + "/>").html(value));
+        }
+      }
+    }
+    return xml.wrap('p').parent().html();
   };
 
 }).call(this);
