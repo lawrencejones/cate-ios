@@ -24,10 +24,12 @@
       var current_width = 0;
 			$(document).ready(function () {
         $('.hidden').hide();
-        $('body').click(function () {
-                        $('#progress').css('width',current_width)
-                        .animate({width:(current_width = current_width + 33)+'%'});
-        });
+        if ($('#progress').css('width') == '0px') {
+          $('body').click(function () {
+            current_width = current_width + 25;
+            $('#progress').animate({width:current_width+'%'});
+          }).trigger('click');
+        }
                         
 			});
       
