@@ -9,23 +9,9 @@
 #import "CATELoadViewController.h"
 #import "SMXMLDocument.h"
 
-@interface CATELoadViewController () {
-  NSString *main_data;
-  NSString *ex_data;
-  NSString *grade_data;
-  NSString *full_html;
-  int count;
-}
-
-@property(retain,nonatomic) NSString *main_data;
-@property(retain,nonatomic) NSString *ex_data;
-@property(retain,nonatomic) NSString *grade_data;
-@property(retain,nonatomic) NSString *full_html;
-
-@end
-
 @implementation CATELoadViewController
 
+@synthesize main_data, ex_data, grade_data, full_html;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,7 +33,15 @@
   appDelegate = [[UIApplication sharedApplication] delegate];
   
   // Calls helper method, makeLoadingViewLoad
-  [self makeLoadingViewLoad];
+  self.full_html = [self initialWebViewSetup];
+  
+  NSArray *requests =
+  [self getRequestArrayForStringLinks:
+   [NSArray arrayWithObjects:@"https://cate.doc.ic.ac.uk/",
+    @"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:4:c1:lmj112",
+    @"https://cate.doc.ic.ac.uk/student.cgi?key=2012:c1:lmj112", nil]];
+  
+  [self getHtmlStringForRequests:requests];
   
   // Disables the web view from being scrollable
   self.loadingWeb.scrollView.scrollEnabled = NO;
@@ -61,10 +55,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-  // Called when the web page has finished loading
-  // At this point, all scrape/parsing scripts have been executed
+  
+  if (!self->complete) {
+    return;
+  }
   
   // Injects myScript.js into the webView
   NSString *filePath
@@ -96,7 +91,7 @@
   appDelegate.identity = identity;
   [appDelegate cache_term:&*term];
   
-  [self performSegueWithIdentifier:@"LoadMainView" sender:self];
+  [self performSegueWithIdentifier:@"LoadMainView" sender:self]; 
 }
 
 
@@ -111,7 +106,6 @@
     [request setHTTPMethod:@"GET"];
     [requests insertObject:request atIndex:i];
   }
-  NSLog(@"Processed requests.");
   return requests;
 }
 
@@ -142,17 +136,17 @@
 
   if ([path isEqualToString:@"/"])
   {
-    main_data  = [[NSString alloc] initWithData:data
+    self.main_data  = [[NSString alloc] initWithData:data
                                     encoding:NSUTF8StringEncoding];
   }
   else if ([path isEqualToString:@"/timetable.cgi"])
   {
-    ex_data    = [[NSString alloc] initWithData:data
+    self.ex_data    = [[NSString alloc] initWithData:data
                                     encoding:NSUTF8StringEncoding];
   }
   else if ([path isEqualToString:@"/student.cgi"])
   {
-    grade_data = [[NSString alloc] initWithData:data
+    self.grade_data = [[NSString alloc] initWithData:data
                                     encoding:NSUTF8StringEncoding];
   }
 }
@@ -163,20 +157,16 @@
    @"$('body').trigger('click');"];
   count--;
   if (count == 0) {
-    full_html = [ self replace:full_html :@"id=\"progress\" style=\"width : 0%;"
-                              :@"id=\"progress\" style=\"width : 100%;"];
-    [self.loadingWeb loadHTMLString:full_html baseURL:NULL];
+    self->complete = true;
+    self.full_html = [ self replace:self.full_html p2:@"id=\"progress\" style=\"width : 0%;"
+                              p3:@"id=\"progress\" style=\"width : 100%;"];
+    [self.loadingWeb loadHTMLString:self.full_html baseURL:NULL];
+//    [self scrapingDidFinish:self.loadingWeb];
   }
 }
 
 #pragma mark - Populate Html
 
-
-- (void)makeLoadingViewLoad {
-  
-  [self initialWebViewSetup];
-  
-}
 
 -(NSString*)getFileContent:(NSString *) res :
                            (NSString *) file_type {
@@ -187,11 +177,12 @@
   return [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
 }
 
--(NSString*)replace:(NSString *) source : (NSString *) target : (NSString *) goal {
+-(NSString*)replace:(NSString *)source p2:(NSString *)target p3:(NSString *)goal {
+  NSLog(@"Test");
   return [source stringByReplacingOccurrencesOfString:target withString:goal];
 }
 
-- (void)initialWebViewSetup {
+- (NSString *)initialWebViewSetup {
   
   NSString *htmlString       = [ self getFileContent:@"loading_page"     :@"html" ];
   NSString *bootstrap_js     = [ self getFileContent:@"bootstrap.min"    :@"js"   ];
@@ -199,13 +190,10 @@
   NSString *extraction_tools = [ self getFileContent:@"extraction_tools" :@"js"   ];
   NSString *loading_css      = [ self getFileContent:@"loading_page"     :@"css"  ];
   
-  htmlString = [ self replace:htmlString:@"#{BOOTSTRAP_JS_STRING}"        :bootstrap_js     ];
-  htmlString = [ self replace:htmlString:@"#{EXTRACTION_TOOLS_JS_STRING}" :extraction_tools ];
-  htmlString = [ self replace:htmlString:@"#{BOOTSTRAP_CSS_STRING}"       :bootstrap_css    ];
-  htmlString = [ self replace:htmlString:@"#{LOADING_PAGE_CSS_STRING}"    :loading_css      ];
-  
-  // Copy the htmlString once initialised into the instance property
-  full_html = htmlString;
+  htmlString = [ self replace:htmlString p2:@"#{BOOTSTRAP_JS_STRING}"        p3:bootstrap_js     ];
+  htmlString = [ self replace:htmlString p2:@"#{EXTRACTION_TOOLS_JS_STRING}" p3:extraction_tools ];
+  htmlString = [ self replace:htmlString p2:@"#{BOOTSTRAP_CSS_STRING}"       p3:bootstrap_css    ];
+  htmlString = [ self replace:htmlString p2:@"#{LOADING_PAGE_CSS_STRING}"    p3:loading_css      ];
   
   // (2) Tell the web view to load the HTML in the string
   [self.loadingWeb
@@ -213,12 +201,8 @@
                 baseURL:[NSURL
         fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
   
-  NSArray *requests =
-    [self getRequestArrayForStringLinks:
-     [NSArray arrayWithObjects:@"https://cate.doc.ic.ac.uk/",
-                               @"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:3:c1:lmj112",
-                               @"https://cate.doc.ic.ac.uk/student.cgi?key=2012:c1:lmj112", nil]];
-  [self getHtmlStringForRequests:requests];
+  return htmlString;
+  
 }
 
 - (void)inject_cate_html:(NSURLConnection *)connection {
@@ -229,24 +213,26 @@
   
   if ([path isEqualToString:@"/"])
   {
-    data = main_data;
+    data = self.main_data;
     target = @"#{MAIN_PAGE_BODY_STRING}";
   }
   else if ([path isEqualToString:@"/timetable.cgi"])
   {
-    data = ex_data; start = @"<body>";
+    data = self.ex_data; start = @"<body>";
     target = @"#{EXERCISE_PAGE_BODY_STRING}";
   }
-  else if ([path isEqualToString:@"/student.cgi"])
+  else //if ([path isEqualToString:@"/student.cgi"])
   {
-    data = grade_data;
+    data = self.grade_data;
     target = @"#{GRADES_PAGE_BODY_STRING}";
   }
+    
+  NSArray *tmp = [data componentsSeparatedByString: start];
+  NSString *body = [tmp objectAtIndex:1];
+  tmp = [body componentsSeparatedByString:@"</body>"];
+  body = [tmp objectAtIndex:0];
   
-  NSArray *body = [data componentsSeparatedByString: start];
-  body = [[[body objectAtIndex:1] componentsSeparatedByString:@"</body>"] objectAtIndex:0];
-  
-  full_html = [ self replace:full_html:target:body];
+  self.full_html = [self.full_html stringByReplacingOccurrencesOfString:target withString:body];
   
 }
 
