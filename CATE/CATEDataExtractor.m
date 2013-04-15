@@ -18,7 +18,9 @@
   return [webview stringByEvaluatingJavaScriptFromString:@"process_exercise_xml();"];
 }
 
-//+(NSString*)get_grades_xml:(UIWebView*)webview;
++(NSString*)get_grades_xml:(UIWebView*)webview {
+  return [webview stringByEvaluatingJavaScriptFromString:@"process_grades_xml();"];
+}
 
 
 @end
