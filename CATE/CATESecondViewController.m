@@ -8,10 +8,6 @@
 
 #import "CATESecondViewController.h"
 
-@interface CATESecondViewController ()
-
-@end
-
 @implementation CATESecondViewController
 
 - (void)viewDidLoad

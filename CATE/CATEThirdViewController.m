@@ -8,10 +8,6 @@
 
 #import "CATEThirdViewController.h"
 
-@interface CATEThirdViewController ()
-
-@end
-
 @implementation CATEThirdViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

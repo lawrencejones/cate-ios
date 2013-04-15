@@ -34,7 +34,6 @@
     }
     
     modules = moduleArray;
-
   }
   
   return self;

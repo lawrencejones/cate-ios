@@ -8,10 +8,6 @@
 
 #import "CATEFourthViewController.h"
 
-@interface CATEFourthViewController ()
-
-@end
-
 @implementation CATEFourthViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -12,7 +12,7 @@
   NSString *profileImageSrc;
   NSString *firstName;
   NSString *lastName;
-  NSString *fullName; // Watch out!
+  NSString *fullName;
   NSString *login;
   NSString *category;
   NSString *candidateNumber;

@@ -15,12 +15,13 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (retain, nonatomic) CATEIdentity *identity;
-@property (retain, nonatomic) CATETerm *termAutumn;
-@property (retain, nonatomic) CATETerm *termAutumnBreak;
-@property (retain, nonatomic) CATETerm *termSpring;
-@property (retain, nonatomic) CATETerm *termSpringBreak;
-@property (retain, nonatomic) CATETerm *termSummer;
-@property (retain, nonatomic) CATETerm *termSummerBreak;
+@property (retain, nonatomic) CATETerm *autumn;
+@property (retain, nonatomic) CATETerm *spring;
+@property (retain, nonatomic) CATETerm *summer;
+@property (retain, nonatomic) CATETerm *christmas;
+@property (retain, nonatomic) CATETerm *easter;
+@property (retain, nonatomic) CATETerm *june_july;
+@property (retain, nonatomic) CATETerm *august_september;
 
 @property (retain, nonatomic) NSString *userAtLogin;
 @property (retain, nonatomic) NSString *passwordAtLogin;

@@ -8,10 +8,6 @@
 
 #import "CATEFirstViewController.h"
 
-@interface CATEFirstViewController ()
-
-@end
-
 @implementation CATEFirstViewController
 
 - (void)changeNameLabel:(NSString *)name {
@@ -22,6 +18,7 @@
   }
 }
 
+
 - (void)changeLoginLabel:(NSString *)login {
   if ([login length] == 0) {
     self.loginLabel.text = @"Placeholder login";
@@ -30,36 +27,45 @@
   }
 }
 
+
 - (void)changePhoto:(UIImage *)photo {
   self.photoImage.image = photo;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+
+- (void)viewDidLoad {
   
-  // Create appDelegate for sharing data between views
+  [super viewDidLoad];
+  
   appDelegate = [[UIApplication sharedApplication] delegate];
+  
   [self changeNameLabel:appDelegate.identity.fullName];
   [self changeLoginLabel:appDelegate.identity.login];
   
-  NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:
-                                                   [@"https://cate.doc.ic.ac.uk/"stringByAppendingString:appDelegate.identity.profileImageSrc]]];
+  NSString *imgUrl
+  = [NSString stringWithFormat:@"https://cate.doc.ic.ac.uk/%@",
+     appDelegate.identity.profileImageSrc];
+  
+  NSData *imgData
+    = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgUrl]];
+  
   UIImage *img = [[UIImage alloc] initWithData:imgData ];
 
   [self changePhoto:img];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)didReceiveMemoryWarning {
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
+
 - (void)dealloc {
-    [_nameLabel release];
-    [_loginLabel release];
+  [_nameLabel release];
+  [_loginLabel release];
   [_photoImage release];
-    [super dealloc];
+  [super dealloc];
 }
+
 @end

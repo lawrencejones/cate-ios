@@ -8,6 +8,7 @@
 
 #import "CATEIdentity.h"
 #import "SMXMLDocument.h"
+#import "CATEUtilities.h"
 
 @implementation CATEIdentity
 
@@ -21,23 +22,17 @@
   
   self = [super init];
   
-  if (self) {
-    // parse given xml here, and set field values
-    
+  if (self) {    
     NSError *err = NULL;
     SMXMLDocument *document = [SMXMLDocument documentWithData:xml error:&err];
-    
-    NSString *firstSpace
-      = [[document.root valueWithPath:@"first_name"]
-         stringByAppendingString:@" "];
-    NSString *full
-      = [firstSpace stringByAppendingString:
-         [document.root valueWithPath:@"last_name"]];
+  
+    // Saves the CATe version to the delegate, via utility method
+    [CATEUtilities setCateVersion:[document.root valueWithPath:@"version"]];
     
     profileImageSrc = [document.root valueWithPath:@"profile_image_src"];
     firstName = [document.root valueWithPath:@"first_name"];
     lastName = [document.root valueWithPath:@"last_name"];
-    fullName = full;
+    fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
     login = [document.root valueWithPath:@"login"];
     category = [document.root valueWithPath:@"category"];
     candidateNumber = [document.root valueWithPath:@"candidate_number"];

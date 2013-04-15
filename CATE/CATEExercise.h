@@ -34,8 +34,8 @@
 @property (readonly) NSString *start;
 @property (readonly) NSString *end;
 
-- (id) init_with_data:(SMXMLElement *)xmlElem;
-+ (id) exercise_with_data:(SMXMLElement *)xmlElem;
+- (id) init_with_data:(SMXMLElement *)xmlElem module:(CATEModule *)module;
++ (id) exercise_with_data:(SMXMLElement *)xmlElem module:(CATEModule *)module;
 
 
 @end

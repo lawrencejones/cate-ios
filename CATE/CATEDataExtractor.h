@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface CATEDataExtractor : NSObject
-{
-}
 
 +(NSString*)get_main_xml:(UIWebView*)webview;
 

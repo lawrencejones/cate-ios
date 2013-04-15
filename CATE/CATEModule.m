@@ -18,7 +18,7 @@
   self = [super init];
   
   if (self) {
-    ident = [[xmlElem attributeNamed:@"num"] intValue];
+    ident = [[xmlElem valueWithPath:@"id"] intValue];
     name = [xmlElem valueWithPath:@"name"];
     notesLink = [xmlElem valueWithPath:@"notesLink"];
     
@@ -27,7 +27,7 @@
     NSMutableArray *exerciseArray = [[NSMutableArray alloc] init];
     
     for (SMXMLElement *exercise in [exercisesElem childrenNamed:@"exercise"]) {
-      [exerciseArray addObject:[CATEExercise exercise_with_data:&*exercise]];
+      [exerciseArray addObject:[CATEExercise exercise_with_data:&*exercise module:self]];
     }
     
     exercises = exerciseArray;
