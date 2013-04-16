@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CATELoadViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CATELoginViewController : UIViewController
 <UITextFieldDelegate> {
   CATEAppDelegate *appDelegate;
+  UIToolbar *keyboardToolbar;
+  UITextField *txtActiveField;
 }
 
 @property (retain, nonatomic) IBOutlet UITextField *user;
@@ -20,10 +23,13 @@
 @property (copy, nonatomic) NSString *userString;
 @property (copy, nonatomic) NSString *passwordString;
 @property (retain, nonatomic) IBOutlet UIButton *button;
+@property (retain, nonatomic) UIToolbar *keyboardToolbar;
+@property (retain, nonatomic) UITextField *txtActiveField;
 
 
 
 
 - (IBAction)loginAttempt:(id)sender;
+- (IBAction)touchUpMyBody:(id)sender;
 
 @end
