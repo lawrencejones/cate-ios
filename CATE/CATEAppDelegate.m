@@ -19,9 +19,7 @@
   
   NSString *period
     = [[term.title componentsSeparatedByString: @" "] objectAtIndex:0];
-  
-  NSLog(period);
-  
+    
   if ([period isEqualToString:@"Autumn"]) {
     self.autumn = term;
     

@@ -75,6 +75,11 @@
 		FED2F2231717CA7200B9B439 /* extraction_tools.js in Resources */ = {isa = PBXBuildFile; fileRef = FE54171A1716FCAA00B3E497 /* extraction_tools.js */; };
 		FED2F2241717CB5800B9B439 /* bootstrap.min.js in Resources */ = {isa = PBXBuildFile; fileRef = FE5417181716FCAA00B3E497 /* bootstrap.min.js */; };
 		FED2F2251717CB6C00B9B439 /* jquery-1.9.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = FE5417191716FCAA00B3E497 /* jquery-1.9.1.min.js */; };
+		FED2F22B171CCEAB00B9B439 /* basicLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2F227171CCEAB00B9B439 /* basicLogo.png */; };
+		FED2F22C171CCEAB00B9B439 /* basicLogo.psd in Resources */ = {isa = PBXBuildFile; fileRef = FED2F228171CCEAB00B9B439 /* basicLogo.psd */; };
+		FED2F22D171CCEAB00B9B439 /* stdBg.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2F229171CCEAB00B9B439 /* stdBg.png */; };
+		FED2F22E171CCEAB00B9B439 /* stdBg.psd in Resources */ = {isa = PBXBuildFile; fileRef = FED2F22A171CCEAB00B9B439 /* stdBg.psd */; };
+		FED2F239171CF6E400B9B439 /* btnLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2F238171CF6E400B9B439 /* btnLogin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +169,11 @@
 		FE54171C1716FCAA00B3E497 /* loading_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = loading_page.html; path = placeholder/loading_page.html; sourceTree = "<group>"; };
 		FED2F2201717BE7700B9B439 /* CATEDataExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEDataExtractor.h; sourceTree = "<group>"; };
 		FED2F2211717BE7700B9B439 /* CATEDataExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEDataExtractor.m; sourceTree = "<group>"; };
+		FED2F227171CCEAB00B9B439 /* basicLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basicLogo.png; sourceTree = "<group>"; };
+		FED2F228171CCEAB00B9B439 /* basicLogo.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = basicLogo.psd; sourceTree = "<group>"; };
+		FED2F229171CCEAB00B9B439 /* stdBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stdBg.png; sourceTree = "<group>"; };
+		FED2F22A171CCEAB00B9B439 /* stdBg.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = stdBg.psd; sourceTree = "<group>"; };
+		FED2F238171CF6E400B9B439 /* btnLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnLogin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +310,7 @@
 		0889EF5F1716299600FEB988 /* CATE */ = {
 			isa = PBXGroup;
 			children = (
+				FED2F226171CCEAB00B9B439 /* image_res */,
 				08A6327A17186F4E00986F47 /* Utilities */,
 				08C67C2417176C5F007D4C77 /* Data Structures */,
 				08C67C2317174C59007D4C77 /* Plugins */,
@@ -449,6 +460,18 @@
 			path = placeholder/bootstrap;
 			sourceTree = "<group>";
 		};
+		FED2F226171CCEAB00B9B439 /* image_res */ = {
+			isa = PBXGroup;
+			children = (
+				FED2F238171CF6E400B9B439 /* btnLogin.png */,
+				FED2F227171CCEAB00B9B439 /* basicLogo.png */,
+				FED2F228171CCEAB00B9B439 /* basicLogo.psd */,
+				FED2F229171CCEAB00B9B439 /* stdBg.png */,
+				FED2F22A171CCEAB00B9B439 /* stdBg.psd */,
+			);
+			path = image_res;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -548,6 +571,11 @@
 				FE5417221716FCAA00B3E497 /* loading_page.html in Resources */,
 				087FC01317178E7300529DC5 /* exerciseData.xml in Resources */,
 				08A63279171869EF00986F47 /* TestXml.xml in Resources */,
+				FED2F22B171CCEAB00B9B439 /* basicLogo.png in Resources */,
+				FED2F22C171CCEAB00B9B439 /* basicLogo.psd in Resources */,
+				FED2F22D171CCEAB00B9B439 /* stdBg.png in Resources */,
+				FED2F22E171CCEAB00B9B439 /* stdBg.psd in Resources */,
+				FED2F239171CF6E400B9B439 /* btnLogin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,6 +3,7 @@
 //  CATE
 //
 //  Created by Tom Burnell on 11/04/2013.
+//  ... AND Lawrence Jones. Pfft.
 //  Copyright (c) 2013 Tom Burnell. All rights reserved.
 //
 
@@ -13,8 +14,9 @@
 
 @synthesize userString = _userString;
 @synthesize passwordString = _passwordString;
+@synthesize keyboardToolbar, txtActiveField;
 
-
+#pragma mark- Initialisation
 - (id)initWithNibName:(NSString *)nib_name_or_nil
                bundle:(NSBundle *)nib_bunble_or_nil {
   
@@ -25,78 +27,73 @@
   return self;
 }
 
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   appDelegate = [[UIApplication sharedApplication] delegate];
+  [[self view] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"stdBg.png"]]];
+  [self setTextFieldProperties];
+  [self createInputAccessoryView];
 }
-
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
 
-
-- (IBAction)loginAttempt:(id)sender {
-  // Called when the login button is tapped
+#pragma mark- Setting UI Properties
+- (void)setTextFieldProperties {
+  [self.user setBackgroundColor:[UIColor clearColor]];
+  [self.user setBorderStyle:UITextBorderStyleNone];
+  [self.user setDelegate:self];
   
-  self.userString = self.user.text;
-  self.passwordString = self.password.text;
-  
-  appDelegate.userAtLogin = self.userString;
-  appDelegate.passwordAtLogin = self.passwordString;
-  
-  [self toggleLoginFieldsVisibility];
-  
-  // Ping the CATe server to check whether credentials are correct before
-  // loading transitioning to LoadView
-  [CATEUtilities initializeConnection:@"https://cate.doc.ic.ac.uk"
-                             delegate:self];
+  [self.password setBackgroundColor:[UIColor clearColor]];
+  [self.password setBorderStyle:UITextBorderStyleNone];
+  [self.password setDelegate:self];
 }
 
 
-- (BOOL)connection:(NSURLConnection *)connection
-        canAuthenticateAgainstProtectionSpace:
-            (NSURLProtectionSpace *)protectionSpace {
+#pragma mark- Text Entry Behaviour
+-(void)createInputAccessoryView
+{
+  self.keyboardToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+  self.keyboardToolbar.barStyle = UIBarStyleBlackTranslucent;
+  //self.keyboardToolbar.tintColor = [UIColor darkGrayColor];
   
-  if([protectionSpace.authenticationMethod
-      isEqualToString:NSURLAuthenticationMethodHTTPBasic]) {
-    return YES;
-  } else return NO;
+  UIBarButtonItem* previousButton = [[UIBarButtonItem alloc] initWithTitle:@"Previous" style:UIBarButtonItemStyleBordered target:self action:@selector(gotoPrevTextfield)];
+  UIBarButtonItem* nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered target:self action:@selector(gotoNextTextfield)];
+  UIBarButtonItem* flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+  UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(touchUpMyBody:)];
+  
+  [self.keyboardToolbar setItems:[NSArray arrayWithObjects: previousButton, nextButton, flexSpace, doneButton, nil]];
+  
+  [self.user setInputAccessoryView:self.keyboardToolbar];
+  [self.password setInputAccessoryView:self.keyboardToolbar];
 }
 
 
-- (void)connection:(NSURLConnection *)connection
-        didReceiveAuthenticationChallenge:
-            (NSURLAuthenticationChallenge *)challenge {
-  
-  if ([challenge previousFailureCount] == 0) {
-    NSURLCredential *creden
-      = [[NSURLCredential alloc]
-            initWithUser:appDelegate.userAtLogin
-                password:appDelegate.passwordAtLogin
-             persistence:NSURLCredentialPersistenceForSession];
-
-    [[challenge sender] useCredential:creden
-           forAuthenticationChallenge:challenge];
-    
-  } else {
-    
-    // Failed to authenticate
-    [CATEUtilities showAlert:@"Error" message:@"Invalid credentials" delegate:nil cancel_bottom:@"OK"];
-    [self toggleLoginFieldsVisibility];
+-(void)gotoPrevTextfield
+{
+  if (self.txtActiveField == self.user)
+  {
+    return;
+  }
+  else if (self.txtActiveField == self.password)
+  {
+    [self.user becomeFirstResponder];
   }
 }
 
-
-- (void)connection:(NSURLConnection *)connection
-    didReceiveData:(NSData *)data {
-  
-  // Authentication successful
-  [self performSegueWithIdentifier:@"LoginToLoading" sender:self];
+-(void)gotoNextTextfield
+{
+  if (self.txtActiveField == self.user)
+  {
+    [self.password becomeFirstResponder];
+  }
+  else if (self.txtActiveField == self.password)
+  {
+    return;
+  }
 }
-
 
 - (void) toggleLoginFieldsVisibility {
   
@@ -126,26 +123,84 @@
     [self.button setTitle:@"Login" forState:UIControlStateNormal];
     self.button.enabled = YES;
     self.button.alpha = 1;
-
+    
   }
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+  self.txtActiveField = textField;
+}
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-  if (theTextField == self.user ||
-      theTextField == self.password) {
-    [theTextField resignFirstResponder];
-  }
-  return YES;
+- (IBAction)touchUpMyBody:(id)sender {
+  [self.view endEditing:YES];
 }
 
 
+#pragma mark- CATe Connection
+- (IBAction)loginAttempt:(id)sender {
+  // Called when the login button is tapped
+  
+  self.userString = self.user.text;
+  self.passwordString = self.password.text;
+  
+  appDelegate.userAtLogin = self.userString;
+  appDelegate.passwordAtLogin = self.passwordString;
+  
+  [self toggleLoginFieldsVisibility];
+  
+  // Ping the CATe server to check whether credentials are correct before
+  // loading transitioning to LoadView
+  [CATEUtilities initializeConnection:@"https://cate.doc.ic.ac.uk"
+                             delegate:self];
+}
+
+#pragma mark- NSURLDelegate Methods
+
+- (BOOL)connection:(NSURLConnection *)connection
+        canAuthenticateAgainstProtectionSpace:
+            (NSURLProtectionSpace *)protectionSpace {
+  
+  if([protectionSpace.authenticationMethod
+      isEqualToString:NSURLAuthenticationMethodHTTPBasic]) {
+    return YES;
+  } else return NO;
+}
+
+- (void)connection:(NSURLConnection *)connection
+    didReceiveData:(NSData *)data {
+  // Authentication successful
+  [self performSegueWithIdentifier:@"LoginToLoading" sender:self];
+}
+
+- (void)connection:(NSURLConnection *)connection
+        didReceiveAuthenticationChallenge:
+            (NSURLAuthenticationChallenge *)challenge {
+  
+  if ([challenge previousFailureCount] == 0) {
+    NSURLCredential *creden
+      = [[NSURLCredential alloc]
+            initWithUser:appDelegate.userAtLogin
+                password:appDelegate.passwordAtLogin
+             persistence:NSURLCredentialPersistenceForSession];
+
+    [[challenge sender] useCredential:creden
+           forAuthenticationChallenge:challenge];
+  } else {
+    // Failed to authenticate
+    [CATEUtilities showAlert:@"Error" message:@"Invalid credentials" delegate:nil cancel_bottom:@"OK"];
+    [self toggleLoginFieldsVisibility];
+  }
+}
+
+#pragma mark- Release iVars
 - (void)dealloc {
   [_user release];
   [_password release];
   [_user release];
   [_password release];
   [_button release];
+  [keyboardToolbar release];
+  [txtActiveField release];
   [super dealloc];
 }
 @end
