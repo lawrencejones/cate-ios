@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   appDelegate = [[UIApplication sharedApplication] delegate];
-  [[self view] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"stdBg.png"]]];
+  //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"stdBg.png"]];
   [self setTextFieldProperties];
   [self createInputAccessoryView];
 }

@@ -235,11 +235,12 @@
         <scene sceneID="WH6-vT-bb2">
             <objects>
                 <viewController id="FNS-gp-gNX" customClass="CATELoginViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZxD-oU-oEI">
+                    <view key="view" contentMode="center" id="ZxD-oU-oEI">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byF-Jf-LUO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="stdBg.png" translatesAutoresizingMaskIntoConstraints="NO" id="9J2-jL-S1B"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byF-Jf-LUO" userLabel="ResignFRBtn">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -277,14 +278,6 @@
                                     <outlet property="delegate" destination="FNS-gp-gNX" id="MWF-Hh-bdx"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CATe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0j-38-tib">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="126" id="T9F-0y-J7s"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="110"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XER-oB-mRT" userLabel="BottomHR">
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                             </view>
@@ -321,29 +314,30 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="byF-Jf-LUO" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" type="default" id="0fF-Bt-CfC"/>
-                            <constraint firstItem="v0j-38-tib" firstAttribute="trailing" secondItem="ZxD-oU-oEI" secondAttribute="trailing" type="default" id="1cw-yg-XSV"/>
+                            <constraint firstItem="Ako-i4-NUl" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="226" id="0ol-0j-H2a"/>
                             <constraint firstItem="byF-Jf-LUO" firstAttribute="trailing" secondItem="ZxD-oU-oEI" secondAttribute="trailing" type="default" id="2xa-37-eFg"/>
+                            <constraint firstItem="fzM-hy-OTj" firstAttribute="trailing" secondItem="XER-oB-mRT" secondAttribute="trailing" type="default" id="6jv-wh-DLd"/>
                             <constraint firstItem="41c-N0-281" firstAttribute="trailing" secondItem="d4D-92-2Ho" secondAttribute="trailing" type="default" id="7HF-4g-IPO"/>
-                            <constraint firstItem="41c-N0-281" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="253" id="9d8-bY-uxt"/>
-                            <constraint firstAttribute="bottom" secondItem="XER-oB-mRT" secondAttribute="bottom" constant="262" id="BKB-q0-dP1"/>
                             <constraint firstItem="41c-N0-281" firstAttribute="leading" secondItem="d4D-92-2Ho" secondAttribute="leading" type="default" id="HDS-c4-iiU"/>
-                            <constraint firstItem="d4D-92-2Ho" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="204" id="PQC-Hc-FVM"/>
-                            <constraint firstItem="fzM-hy-OTj" firstAttribute="centerX" secondItem="v0j-38-tib" secondAttribute="centerX" type="default" id="Phf-ac-pV2"/>
-                            <constraint firstItem="XER-oB-mRT" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="285" id="Sgg-fP-JPt"/>
-                            <constraint firstItem="fzM-hy-OTj" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="233" id="WVx-gW-1sN"/>
-                            <constraint firstItem="v0j-38-tib" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="44" id="X6Z-hp-Eae"/>
+                            <constraint firstItem="d4D-92-2Ho" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="124" id="HP0-gD-NAX"/>
+                            <constraint firstItem="9J2-jL-S1B" firstAttribute="bottom" secondItem="byF-Jf-LUO" secondAttribute="bottom" type="default" id="J7R-hC-Yej"/>
+                            <constraint firstAttribute="bottom" secondItem="XER-oB-mRT" secondAttribute="bottom" constant="342" id="OcK-BI-aIg"/>
+                            <constraint firstItem="9J2-jL-S1B" firstAttribute="centerY" secondItem="ZxD-oU-oEI" secondAttribute="centerY" type="default" id="Oik-Hn-XlX"/>
+                            <constraint firstItem="XER-oB-mRT" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="205" id="UDN-MP-5od"/>
+                            <constraint firstItem="9J2-jL-S1B" firstAttribute="trailing" secondItem="ZxD-oU-oEI" secondAttribute="trailing" type="default" id="WVx-VB-tsJ"/>
                             <constraint firstItem="7g1-v5-b24" firstAttribute="centerY" secondItem="Ako-i4-NUl" secondAttribute="centerY" type="default" id="XRe-Jy-IVF"/>
-                            <constraint firstItem="fzM-hy-OTj" firstAttribute="centerX" secondItem="d4D-92-2Ho" secondAttribute="centerX" type="default" id="a95-uE-l9h"/>
-                            <constraint firstItem="byF-Jf-LUO" firstAttribute="centerY" secondItem="ZxD-oU-oEI" secondAttribute="centerY" type="default" id="bfM-Vb-acv"/>
                             <constraint firstItem="7g1-v5-b24" firstAttribute="centerX" secondItem="Ako-i4-NUl" secondAttribute="centerX" type="default" id="cZu-JW-f7t"/>
-                            <constraint firstItem="7g1-v5-b24" firstAttribute="centerX" secondItem="XER-oB-mRT" secondAttribute="centerX" type="default" id="elC-AL-WxG"/>
-                            <constraint firstItem="fzM-hy-OTj" firstAttribute="leading" secondItem="ZxD-oU-oEI" secondAttribute="leading" constant="36" id="fPI-Sf-J1H"/>
-                            <constraint firstItem="fzM-hy-OTj" firstAttribute="trailing" secondItem="XER-oB-mRT" secondAttribute="trailing" type="default" id="fZv-m1-rHQ"/>
-                            <constraint firstAttribute="bottom" secondItem="Ako-i4-NUl" secondAttribute="bottom" constant="176" id="g1U-Up-zY8"/>
-                            <constraint firstItem="v0j-38-tib" firstAttribute="leading" secondItem="ZxD-oU-oEI" secondAttribute="leading" type="default" id="nk7-Yq-ugQ"/>
+                            <constraint firstItem="9J2-jL-S1B" firstAttribute="leading" secondItem="ZxD-oU-oEI" secondAttribute="leading" type="default" id="jfc-xZ-aLu"/>
+                            <constraint firstItem="fzM-hy-OTj" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="153" id="mzr-Dz-I8I"/>
+                            <constraint firstItem="XER-oB-mRT" firstAttribute="centerX" secondItem="byF-Jf-LUO" secondAttribute="centerX" type="default" id="qZO-Ol-Mi5"/>
                             <constraint firstItem="fzM-hy-OTj" firstAttribute="bottom" secondItem="d4D-92-2Ho" secondAttribute="bottom" type="default" id="qbA-Nx-shb"/>
+                            <constraint firstItem="fzM-hy-OTj" firstAttribute="centerX" secondItem="d4D-92-2Ho" secondAttribute="centerX" type="default" id="tVp-8o-H8y"/>
+                            <constraint firstItem="9J2-jL-S1B" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" type="default" id="uuF-kJ-VbN"/>
+                            <constraint firstItem="fzM-hy-OTj" firstAttribute="leading" secondItem="XER-oB-mRT" secondAttribute="leading" type="default" id="v85-Cf-hXm"/>
                             <constraint firstItem="byF-Jf-LUO" firstAttribute="leading" secondItem="ZxD-oU-oEI" secondAttribute="leading" type="default" id="xI9-Oh-P8b"/>
-                            <constraint firstItem="fzM-hy-OTj" firstAttribute="leading" secondItem="XER-oB-mRT" secondAttribute="leading" type="default" id="xw3-vt-Tpd"/>
+                            <constraint firstItem="XER-oB-mRT" firstAttribute="centerX" secondItem="7g1-v5-b24" secondAttribute="centerX" type="default" id="xmm-4z-Cf1"/>
+                            <constraint firstItem="fzM-hy-OTj" firstAttribute="leading" secondItem="ZxD-oU-oEI" secondAttribute="leading" constant="50" id="zQE-YP-5bX"/>
+                            <constraint firstItem="41c-N0-281" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="173" id="zsb-bb-fcM"/>
                         </constraints>
                     </view>
                     <connections>
@@ -426,6 +420,7 @@
         <image name="cog.png" width="30" height="30"/>
         <image name="dashboard.png" width="30" height="30"/>
         <image name="pencil.png" width="30" height="30"/>
+        <image name="stdBg.png" width="640" height="1136"/>
         <image name="thumbs.png" width="30" height="30"/>
     </resources>
     <classes>
