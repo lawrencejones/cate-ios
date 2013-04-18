@@ -9,6 +9,7 @@
 #import "CATELoadViewController.h"
 #import "SMXMLDocument.h"
 #import "CATEDataExtractor.h"
+#import "CATERecord.h"
 
 @implementation CATELoadViewController
 
@@ -69,6 +70,11 @@
   NSData *xmlTermData = [xmlTermStr dataUsingEncoding:NSUTF8StringEncoding];
   CATETerm *term = [CATETerm term_with_data:xmlTermData];
   [appDelegate cache_term:&*term];
+  
+  NSString *xmlGradesStr = [CATEDataExtractor get_grades_xml:self.loadingWeb];
+  NSData *xmlGradesData = [xmlGradesStr dataUsingEncoding:NSUTF8StringEncoding];
+  CATERecord *record = [CATERecord record_with_data:xmlGradesData];
+  appDelegate.record = record;
   
   [self performSegueWithIdentifier:@"LoadMainView" sender:self];
 }

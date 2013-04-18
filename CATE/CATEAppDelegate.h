@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CATEIdentity.h"
 #import "CATETerm.h"
+#import "CATERecord.h"
 
 @interface CATEAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -22,6 +23,8 @@
 @property (retain, nonatomic) CATETerm *easter;
 @property (retain, nonatomic) CATETerm *june_july;
 @property (retain, nonatomic) CATETerm *august_september;
+@property (retain, nonatomic) CATERecord *record;
+
 
 @property (retain, nonatomic) NSString *userAtLogin;
 @property (retain, nonatomic) NSString *passwordAtLogin;
