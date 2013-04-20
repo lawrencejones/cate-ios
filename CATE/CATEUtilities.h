@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class CATEAppDelegate;
+#import "CATESharedData.h"
 
 @interface CATEUtilities : NSObject;
 

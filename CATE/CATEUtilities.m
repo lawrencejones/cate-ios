@@ -11,13 +11,9 @@
 
 @implementation CATEUtilities
 
-+ (CATEAppDelegate *) getAppDelegate {
-  return [[UIApplication sharedApplication] delegate];
-}
-
 
 + (void) setCateVersion:(NSString *)version {
-  [CATEUtilities getAppDelegate].cateVersion = version;
+  [CATESharedData instance].cateVersion = version;
 }
 
 

@@ -7,42 +7,8 @@
 //
 
 #import "CATEAppDelegate.h"
-#import "CATETerm.h"
 
 @implementation CATEAppDelegate
-
-@synthesize identity, userAtLogin, passwordAtLogin, cateVersion;
-
-
-- (void)cache_term:(CATETerm *)term {
-  // Saves the given term in the appropriate field
-  
-  NSString *period
-    = [[term.title componentsSeparatedByString: @" "] objectAtIndex:0];
-    
-  if ([period isEqualToString:@"Autumn"]) {
-    self.autumn = term;
-    
-  } else if ([period isEqualToString:@"Christmas"]) {
-    self.christmas = term;
-    
-  } else if ([period isEqualToString:@"Spring"]) {
-    self.spring = term;
-    
-  } else if ([period isEqualToString:@"Easter"]) {
-    self.easter = term;
-    
-  } else if ([period isEqualToString:@"Summer"]) {
-    self.summer = term;
-    
-  } else if ([period isEqualToString:@"June-July"]) {
-    self.june_july = term;
-    
-  } else if ([period isEqualToString:@"August-September"]) {
-    self.august_september = term;
-    
-  }
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

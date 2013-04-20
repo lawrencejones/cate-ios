@@ -10,6 +10,8 @@
 
 @implementation CATEFirstViewController
 
+@synthesize data = _data;
+
 - (void)changeNameLabel:(NSString *)name {
   if ([name length] == 0) {
     self.nameLabel.text = @"Placeholder name";
@@ -37,14 +39,16 @@
   
   [super viewDidLoad];
   
-  appDelegate = [[UIApplication sharedApplication] delegate];
+  _data = [CATESharedData instance];
   
-  [self changeNameLabel:appDelegate.identity.fullName];
-  [self changeLoginLabel:appDelegate.identity.login];
+  CATEIdentity *identity = _data.identity;
+  
+  [self changeNameLabel:identity.fullName];
+  [self changeLoginLabel:identity.login];
   
   NSString *imgUrl
   = [NSString stringWithFormat:@"https://cate.doc.ic.ac.uk/%@",
-     appDelegate.identity.profileImageSrc];
+     identity.profileImageSrc];
   
   NSData *imgData
     = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgUrl]];
@@ -67,6 +71,7 @@
   [_nameLabel release];
   [_loginLabel release];
   [_photoImage release];
+  [_data release];
   [super dealloc];
 }
 

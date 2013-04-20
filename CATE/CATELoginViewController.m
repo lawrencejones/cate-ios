@@ -18,7 +18,8 @@
 @synthesize userString = _userString;
 @synthesize passwordString = _passwordString;
 @synthesize keyboardToolbar, txtActiveField;
-@synthesize main_data = _main_data, ex_data = _ex_data, grade_data = _grade_data, fullHtml = _fullHtml, user = _user, password = _password;
+@synthesize main_data = _main_data, ex_data = _ex_data, grade_data = _grade_data,
+          fullHtml = _fullHtml, user = _user, password = _password, data = _data;
 
 #pragma mark- Initialisation
 
@@ -34,7 +35,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  appDelegate = [[UIApplication sharedApplication] delegate];
+  _data = [CATESharedData instance];
   // Set initial fullHtml value
   self.fullHtml = [self getFile:@"extraction_page" ofType:@"html"];
   [self initialiseAndConfigureBackgroundWebview];
@@ -172,8 +173,8 @@
   self.userString = self.user.text;
   self.passwordString = self.password.text;
   
-  appDelegate.userAtLogin = self.userString;
-  appDelegate.passwordAtLogin = self.passwordString;
+  _data.userAtLogin = self.userString;
+  _data.passwordAtLogin = self.passwordString;
   
   [self toggleLoginFieldsVisibility];
   
@@ -197,8 +198,8 @@
 - (void)getAllCATEData {
   NSArray *links =
    [NSArray arrayWithObjects:@"https://cate.doc.ic.ac.uk/",
-   [NSString stringWithFormat:@"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:4:c1:%@", appDelegate.userAtLogin],
-   [NSString stringWithFormat:@"https://cate.doc.ic.ac.uk/student.cgi?key=2012:c1:%@", appDelegate.userAtLogin], nil];
+   [NSString stringWithFormat:@"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:4:c1:%@", _data.userAtLogin],
+   [NSString stringWithFormat:@"https://cate.doc.ic.ac.uk/student.cgi?key=2012:c1:%@", _data.userAtLogin], nil];
   
   [self sendRequests:links];
 }
@@ -219,17 +220,17 @@
   
   NSString *xmlMainStr = [CATEDataExtractor get_main_xml:self.backgroundWeb];
   NSData *xmlMainData = [xmlMainStr dataUsingEncoding:NSUTF8StringEncoding];
-  appDelegate.identity = [CATEIdentity identity_with_data:xmlMainData];
+  [_data setIdentity:[CATEIdentity identity_with_data:xmlMainData]];
   
   NSString *xmlTermStr = [CATEDataExtractor get_exercises_xml:self.backgroundWeb];
   NSData *xmlTermData = [xmlTermStr dataUsingEncoding:NSUTF8StringEncoding];
   CATETerm *term = [CATETerm term_with_data:xmlTermData];
-  [appDelegate cache_term:&*term];
+  [_data cache_term:&*term];
   
   NSString *xmlGradesStr = [CATEDataExtractor get_grades_xml:self.backgroundWeb];
   NSData *xmlGradesData = [xmlGradesStr dataUsingEncoding:NSUTF8StringEncoding];
   CATERecord *record = [CATERecord record_with_data:xmlGradesData];
-  appDelegate.record = record;
+  _data.record = record;
   
   [self.progressBar stringByEvaluatingJavaScriptFromString:@"finished();"];
   
@@ -239,11 +240,11 @@
 }
 
 -(void)segueToDashboard {
-  double delayInSeconds = 2.0;
-  dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-  dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+  //double delayInSeconds = 2.0;
+  //dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+  //dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
     [self performSegueWithIdentifier:@"segueToDashboard" sender:self];
-  });
+  //});
 }
 
 #pragma mark - URL Requester
@@ -283,8 +284,8 @@ didReceiveAuthenticationChallenge:
   if ([challenge previousFailureCount] == 0) {
     NSURLCredential *creden
     = [[NSURLCredential alloc]
-       initWithUser:appDelegate.userAtLogin
-       password:appDelegate.passwordAtLogin
+       initWithUser:_data.userAtLogin
+       password:_data.passwordAtLogin
        persistence:NSURLCredentialPersistenceForSession];
     
     [[challenge sender] useCredential:creden
@@ -393,6 +394,7 @@ didReceiveAuthenticationChallenge:
   [_main_data release];
   [_ex_data release];
   [_grade_data release];
+  [_data release];
   [keyboardToolbar release];
   [txtActiveField release]; 
   [super dealloc];

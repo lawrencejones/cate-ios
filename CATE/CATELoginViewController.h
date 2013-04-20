@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "CATEAppDelegate.h"
+#import "CATESharedData.h"
 
 @interface CATELoginViewController : UIViewController
 <UITextFieldDelegate, UIWebViewDelegate, NSURLConnectionDataDelegate> {
-  CATEAppDelegate *appDelegate;
   UIToolbar *keyboardToolbar;
   UITextField *txtActiveField;
   NSMutableArray *connections;
@@ -20,6 +19,7 @@
   int count;
 }
 
+@property (retain, nonatomic) CATESharedData *data;
 @property (retain, nonatomic) IBOutlet UITextField *user;
 @property (retain, nonatomic) IBOutlet UITextField *password;
 @property (retain, nonatomic) IBOutlet UIWebView *progressBar, *backgroundWeb;
