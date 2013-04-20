@@ -1,15 +1,20 @@
 body {
-	width : 320px;
+	width : 320px; background-color: transparent;
 }
 
-#banner {position : fixed; width : 320px; top : 33%;}
+#banner {position : fixed; width : 320px; top : 10%;}
 
 #banner h3 {
+	font-family : "Helvetica";
+	font-weight: normal;
 	text-align: center;
+	color : #BDBDBD;
+	font-size : 13pt;
+	margin-top : -4px;
 }
 
 #loading_bar {
-	width : 85%; margin : 0 auto 0 auto;
+	width : 70%; height : 12px; margin : 0 auto 0 auto;
 }
 
 .hidden {

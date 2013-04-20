@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<script src="./jquery-1.9.1.min.js"></script>
-    <script src="./bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="./loading_page.css" type="text/css">
-		<script>
-      var current_width = 0;
-			$(document).ready(function () {
-        $('.hidden').hide();
-        if ($('#progress').css('width') == '0px') {
-          $('body').click(function () {
-            current_width = current_width + 25;
-            $('#progress').animate({width:current_width+'%'});
-          }).trigger('click');
-        }
-                        
-		});
-      
-		</script>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script src="./jquery-1.9.1.min.js"></script>
+  <script src="./bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="./loading_page.css" type="text/css">
+  <script>
+    var current_width = 0;
+    var no_of_stages = 1;
+    var authenticated = false;
 
-	</head>
+    function resetProgressBar(n) {
+      $('#progress').css('width','0');
+      current_width = 0;
+      $('#message').html('Authenticating');
+      authenticated = false;
+      no_of_stages = n;
+      $('body').trigger('click');
+    }
 
-	<body>
-		<div id="banner">
-			<h3>Loading CATe...</h3>
-			<div id="loading_bar" class="progress progress-striped active">
-				<div class="bar" id="progress" style="width : 0%;"></div>
-			</div>
-		</div>
+    function finishedAuthentication() {
+      if (!authenticated) {
+        $('#message').html('Loading CATe data...');
+      }
+    }
 
-	</body>
+    function finished() {
+      $('#message').html('Done!');
+    }
+
+    function advanceProgress() {
+      current_width = current_width + (100/no_of_stages);
+      $('#progress').animate({width:current_width+'%'},{duration : 100});
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <div id="banner">
+    <div id="loading_bar" class="progress progress-striped active">
+      <div class="bar" id="progress" style="width : 0%;"></div>
+    </div>
+    <h3 id="message">Authenticating</h3>
+  </div>
+
+</body>
 
 </html>

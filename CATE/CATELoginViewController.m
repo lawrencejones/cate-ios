@@ -9,12 +9,16 @@
 
 #import "CATELoginViewController.h"
 #import "CATEUtilities.h"
+#import "SMXMLDocument.h"
+#import "CATEDataExtractor.h"
+#import "CATERecord.h"
 
 @implementation CATELoginViewController
 
 @synthesize userString = _userString;
 @synthesize passwordString = _passwordString;
 @synthesize keyboardToolbar, txtActiveField;
+@synthesize main_data, ex_data, grade_data, fullHtml;
 
 #pragma mark- Initialisation
 - (id)initWithNibName:(NSString *)nib_name_or_nil
@@ -22,7 +26,7 @@
   
   self = [super initWithNibName:nib_name_or_nil bundle:nib_bunble_or_nil];
   if (self) {
-      // Custom initialization
+  
   }
   return self;
 }
@@ -30,9 +34,17 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   appDelegate = [[UIApplication sharedApplication] delegate];
-  //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"stdBg.png"]];
+  // Set initial fullHtml value
+  self.fullHtml = [self getFile:@"extraction_page" ofType:@"html"];
+  [self initialiseAndConfigureBackgroundWebview];
+  [self initialiseProgressBar];
   [self setTextFieldProperties];
   [self createInputAccessoryView];
+}
+
+- (void)initialiseAndConfigureBackgroundWebview {
+  self.backgroundWeb = [[[UIWebView alloc] initWithFrame:CGRectZero] autorelease];
+  [self.backgroundWeb setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +53,16 @@
 }
 
 #pragma mark- Setting UI Properties
+
+-(void)initialiseProgressBar {
+  [self.progressBar setOpaque:NO];
+  [self.progressBar setBackgroundColor:[UIColor clearColor]];
+  self.progressBar.alpha = 0;
+  NSString *link = [[NSBundle mainBundle] pathForResource:@"loading_page" ofType:@"html"];
+  NSURL *url = [NSURL fileURLWithPath:link];
+  [self.progressBar loadRequest:[NSURLRequest requestWithURL:url]];
+}
+
 - (void)setTextFieldProperties {
   [self.user setBackgroundColor:[UIColor clearColor]];
   [self.user setBorderStyle:UITextBorderStyleNone];
@@ -135,10 +157,14 @@
   [self.view endEditing:YES];
 }
 
-
 #pragma mark- CATe Connection
+
 - (IBAction)loginAttempt:(id)sender {
   // Called when the login button is tapped
+  [self.progressBar stringByEvaluatingJavaScriptFromString:@"resetProgressBar(3);"];
+  [UIWebView animateWithDuration:0.3 animations:^(void){
+    self.progressBar.alpha = 1;
+  }];
   
   self.userString = self.user.text;
   self.passwordString = self.password.text;
@@ -148,17 +174,93 @@
   
   [self toggleLoginFieldsVisibility];
   
-  // Ping the CATe server to check whether credentials are correct before
-  // loading transitioning to LoadView
-  [CATEUtilities initializeConnection:@"https://cate.doc.ic.ac.uk"
-                             delegate:self];
+  [self getAllCATEData];
 }
 
-#pragma mark- NSURLDelegate Methods
+- (void)authenticationFailed {
+  [UIWebView animateWithDuration:0.1
+                      animations:^(void){
+    self.progressBar.alpha = 0;
+  }];
+  for (int i = 0; i < [self->connections count]; i++) {
+    [[self->connections objectAtIndex:i] cancel];
+  }
+  [CATEUtilities showAlert:@"Error" message:@"Invalid credentials" delegate:nil cancel_bottom:@"OK"];
+  [self toggleLoginFieldsVisibility];
+}
+
+#pragma mark - Creating list of links
+
+- (void)getAllCATEData {
+  NSArray *links =
+   [NSArray arrayWithObjects:@"https://cate.doc.ic.ac.uk/",
+   [NSString stringWithFormat:@"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:4:c1:%@", appDelegate.userAtLogin],
+   [NSString stringWithFormat:@"https://cate.doc.ic.ac.uk/student.cgi?key=2012:c1:%@", appDelegate.userAtLogin], nil];
+  
+  [self sendRequests:links];
+}
+
+#pragma mark - Web View Finished? Moving on...
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+  // The WebView in LoadView is loaded more than once. We only want to
+  // do something after it's finished loading for the final time, hence:
+    
+  if (!self->complete) {
+    return;
+  }
+  
+  if (webView == self.backgroundWeb) {
+    NSLog(@"WebView loaded!");
+  }
+  
+  NSString *xmlMainStr = [CATEDataExtractor get_main_xml:self.backgroundWeb];
+  NSData *xmlMainData = [xmlMainStr dataUsingEncoding:NSUTF8StringEncoding];
+  CATEIdentity *identity = [CATEIdentity identity_with_data:xmlMainData];
+  appDelegate.identity = identity;
+  
+  NSString *xmlTermStr = [CATEDataExtractor get_exercises_xml:self.backgroundWeb];
+  NSData *xmlTermData = [xmlTermStr dataUsingEncoding:NSUTF8StringEncoding];
+  CATETerm *term = [CATETerm term_with_data:xmlTermData];
+  [appDelegate cache_term:&*term];
+  
+  NSString *xmlGradesStr = [CATEDataExtractor get_grades_xml:self.backgroundWeb];
+  NSData *xmlGradesData = [xmlGradesStr dataUsingEncoding:NSUTF8StringEncoding];
+  CATERecord *record = [CATERecord record_with_data:xmlGradesData];
+  appDelegate.record = record;
+  
+  [self.progressBar stringByEvaluatingJavaScriptFromString:@"finished();"];
+  [self segueToDashboard];
+
+
+}
+
+-(void)segueToDashboard {
+  [self performSegueWithIdentifier:@"segueToDashboard" sender:self];
+}
+
+#pragma mark - URL Requester
+
+-(void) sendRequests: (NSArray *) strLinks {
+  self->count = [strLinks count];
+  self->connections = [[NSMutableArray alloc] initWithCapacity:self->count];
+  for (int i = 0; i < [strLinks count]; i++) {
+    NSMutableURLRequest *request =
+    [NSMutableURLRequest
+     requestWithURL:[NSURL URLWithString:[strLinks objectAtIndex:i]]];
+    
+    [request addValue:@"text/html" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"GET"];
+    NSURLConnection *c =[[NSURLConnection alloc] initWithRequest:request delegate:self
+                            startImmediately:YES];
+    [self->connections insertObject:c atIndex:i];
+  }
+}
+
 
 - (BOOL)connection:(NSURLConnection *)connection
-        canAuthenticateAgainstProtectionSpace:
-            (NSURLProtectionSpace *)protectionSpace {
+canAuthenticateAgainstProtectionSpace:
+(NSURLProtectionSpace *)protectionSpace {
   
   if([protectionSpace.authenticationMethod
       isEqualToString:NSURLAuthenticationMethodHTTPBasic]) {
@@ -166,30 +268,110 @@
   } else return NO;
 }
 
-- (void)connection:(NSURLConnection *)connection
-    didReceiveData:(NSData *)data {
-  // Authentication successful
-  [self performSegueWithIdentifier:@"LoginToLoading" sender:self];
-}
 
 - (void)connection:(NSURLConnection *)connection
-        didReceiveAuthenticationChallenge:
-            (NSURLAuthenticationChallenge *)challenge {
+didReceiveAuthenticationChallenge:
+(NSURLAuthenticationChallenge *)challenge {
   
   if ([challenge previousFailureCount] == 0) {
     NSURLCredential *creden
-      = [[NSURLCredential alloc]
-            initWithUser:appDelegate.userAtLogin
-                password:appDelegate.passwordAtLogin
-             persistence:NSURLCredentialPersistenceForSession];
-
+    = [[NSURLCredential alloc]
+       initWithUser:appDelegate.userAtLogin
+       password:appDelegate.passwordAtLogin
+       persistence:NSURLCredentialPersistenceForSession];
+    
     [[challenge sender] useCredential:creden
            forAuthenticationChallenge:challenge];
+    
   } else {
-    // Failed to authenticate
-    [CATEUtilities showAlert:@"Error" message:@"Invalid credentials" delegate:nil cancel_bottom:@"OK"];
-    [self toggleLoginFieldsVisibility];
+    // Authentication failure (This is a precautionary measure. Credentials
+    // are in fact verified before this LoadView is even initiated.)
+    NSLog(@"Authentication failed.");
+    [self authenticationFailed];
   }
+  
+}
+
+
+- (void)connection:(NSURLConnection *)connection
+    didReceiveData:(NSData *)data {
+  
+  [self.progressBar stringByEvaluatingJavaScriptFromString:@"finishedAuthentication();"];
+  
+  NSString *path = [[[connection originalRequest] URL] relativePath];
+  
+  if ([path isEqualToString:@"/"]) {
+    self.main_data  = [[NSString alloc] initWithData:data
+                                            encoding:NSUTF8StringEncoding];
+    
+  } else if ([path isEqualToString:@"/timetable.cgi"]) {
+    self.ex_data    = [[NSString alloc] initWithData:data
+                                            encoding:NSUTF8StringEncoding];
+    
+  } else if ([path isEqualToString:@"/student.cgi"]) {
+    self.grade_data = [[NSString alloc] initWithData:data
+                                            encoding:NSUTF8StringEncoding];
+  }
+}
+
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+  
+  NSLog(@"Finished connection...");
+  [self injectCateHtml:connection];
+  [self.progressBar stringByEvaluatingJavaScriptFromString:
+   @"advanceProgress();"];
+  count--;
+  if (count == 0) {
+    self->complete = true;
+    [self.backgroundWeb loadHTMLString:self.fullHtml baseURL:NULL];
+  }
+}
+
+
+#pragma mark - Populate Html
+
+- (void)injectCateHtml:(NSURLConnection *)connection {
+  
+  NSString *data, *target, *start = @"<body bgcolor=\"#e0f9f9\">";
+  NSString *path = [[[connection originalRequest] URL] relativePath];
+  
+  if ([path isEqualToString:@"/"]) {
+    data = self.main_data;
+    target = @"#{MAIN_PAGE_BODY_STRING}";
+    
+  } else if ([path isEqualToString:@"/timetable.cgi"]) {
+    data = self.ex_data; start = @"<body>";
+    target = @"#{EXERCISE_PAGE_BODY_STRING}";
+    
+  } else /*if ([path isEqualToString:@"/student.cgi"]) */ {
+    data = self.grade_data;
+    target = @"#{GRADES_PAGE_BODY_STRING}";
+  }
+  
+  NSArray *tmp = [data componentsSeparatedByString: start];
+  NSString *body = [tmp objectAtIndex:1];
+  body = [[body componentsSeparatedByString:@"</body>"] objectAtIndex:0];
+  
+  self.fullHtml = [self.fullHtml
+                    stringByReplacingOccurrencesOfString:target
+                    withString:body];
+}
+
+#pragma mark - Utilities
+
+-(NSString*)replace:(NSString *)source p2:(NSString *)target
+                 p3:(NSString *)goal {
+  return [source stringByReplacingOccurrencesOfString:target withString:goal];
+}
+
+-(NSString*)getFile:(NSString *)res ofType:(NSString *)file_type {
+  
+  NSString *filePath
+  = [[NSBundle mainBundle] pathForResource:res ofType:file_type];
+  NSData *fileData
+  = [NSData dataWithContentsOfFile:filePath];
+  return [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
 }
 
 #pragma mark- Release iVars

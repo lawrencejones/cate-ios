@@ -53,8 +53,6 @@
 		0889EFBE171642F600FEB988 /* thumbs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFAE171642F600FEB988 /* thumbs@2x.png */; };
 		0889EFC0171645BA00FEB988 /* thb12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFBF171645BA00FEB988 /* thb12.jpg */; };
 		0889EFC1171645BA00FEB988 /* thb12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFBF171645BA00FEB988 /* thb12.jpg */; };
-		0889F00E1716585B00FEB988 /* CATELoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0889F00D1716585B00FEB988 /* CATELoadViewController.m */; };
-		0889F00F1716585B00FEB988 /* CATELoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0889F00D1716585B00FEB988 /* CATELoadViewController.m */; };
 		0889F0131716687500FEB988 /* myScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 0889F0121716687500FEB988 /* myScript.js */; };
 		0889F0141716687500FEB988 /* myScript.js in Sources */ = {isa = PBXBuildFile; fileRef = 0889F0121716687500FEB988 /* myScript.js */; };
 		08A6327D17186F7200986F47 /* CATEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A6327C17186F7200986F47 /* CATEUtilities.m */; };
@@ -72,6 +70,7 @@
 		FE4A6BF1172247E400CF56A1 /* extraction_page.html in Resources */ = {isa = PBXBuildFile; fileRef = FE4A6BE8172247E400CF56A1 /* extraction_page.html */; };
 		FE4A6BF2172247E400CF56A1 /* loading_page.html in Resources */ = {isa = PBXBuildFile; fileRef = FE4A6BE9172247E400CF56A1 /* loading_page.html */; };
 		FE4A6BF3172247E400CF56A1 /* loading_page.css in Resources */ = {isa = PBXBuildFile; fileRef = FE4A6BEB172247E400CF56A1 /* loading_page.css */; };
+		FE4A6BF8172268AB00CF56A1 /* baksheesh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE4A6BF7172268AB00CF56A1 /* baksheesh.ttf */; };
 		FED2F2221717BE7700B9B439 /* CATEDataExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = FED2F2211717BE7700B9B439 /* CATEDataExtractor.m */; };
 		FED2F22B171CCEAB00B9B439 /* basicLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2F227171CCEAB00B9B439 /* basicLogo.png */; };
 		FED2F22C171CCEAB00B9B439 /* basicLogo.psd in Resources */ = {isa = PBXBuildFile; fileRef = FED2F228171CCEAB00B9B439 /* basicLogo.psd */; };
@@ -141,8 +140,6 @@
 		0889EFAD171642F600FEB988 /* thumbs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbs.png; sourceTree = "<group>"; };
 		0889EFAE171642F600FEB988 /* thumbs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbs@2x.png"; sourceTree = "<group>"; };
 		0889EFBF171645BA00FEB988 /* thb12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thb12.jpg; sourceTree = "<group>"; };
-		0889F00C1716585B00FEB988 /* CATELoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATELoadViewController.h; sourceTree = "<group>"; };
-		0889F00D1716585B00FEB988 /* CATELoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATELoadViewController.m; sourceTree = "<group>"; };
 		0889F0121716687500FEB988 /* myScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = myScript.js; sourceTree = "<group>"; };
 		08A6327B17186F7200986F47 /* CATEUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEUtilities.h; sourceTree = "<group>"; };
 		08A6327C17186F7200986F47 /* CATEUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEUtilities.m; sourceTree = "<group>"; };
@@ -166,6 +163,7 @@
 		FE4A6BE8172247E400CF56A1 /* extraction_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = extraction_page.html; sourceTree = "<group>"; };
 		FE4A6BE9172247E400CF56A1 /* loading_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = loading_page.html; sourceTree = "<group>"; };
 		FE4A6BEB172247E400CF56A1 /* loading_page.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = loading_page.css; sourceTree = "<group>"; };
+		FE4A6BF7172268AB00CF56A1 /* baksheesh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = baksheesh.ttf; path = ../extraction/baksheesh.ttf; sourceTree = "<group>"; };
 		FED2F2201717BE7700B9B439 /* CATEDataExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEDataExtractor.h; sourceTree = "<group>"; };
 		FED2F2211717BE7700B9B439 /* CATEDataExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEDataExtractor.m; sourceTree = "<group>"; };
 		FED2F227171CCEAB00B9B439 /* basicLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basicLogo.png; sourceTree = "<group>"; };
@@ -403,8 +401,6 @@
 			children = (
 				08E5C6D6171713BA008DFED8 /* CATELoginViewController.h */,
 				08E5C6D7171713BA008DFED8 /* CATELoginViewController.m */,
-				0889F00C1716585B00FEB988 /* CATELoadViewController.h */,
-				0889F00D1716585B00FEB988 /* CATELoadViewController.m */,
 				0889EF741716299600FEB988 /* CATEFirstViewController.h */,
 				0889EF751716299600FEB988 /* CATEFirstViewController.m */,
 				0889EF7B1716299600FEB988 /* CATESecondViewController.h */,
@@ -471,6 +467,7 @@
 		FE4A6BEA172247E400CF56A1 /* styles */ = {
 			isa = PBXGroup;
 			children = (
+				FE4A6BF7172268AB00CF56A1 /* baksheesh.ttf */,
 				FE4A6BEB172247E400CF56A1 /* loading_page.css */,
 			);
 			path = styles;
@@ -607,6 +604,7 @@
 				0889EFBC171642F600FEB988 /* thumbs.png in Resources */,
 				0889EFBE171642F600FEB988 /* thumbs@2x.png in Resources */,
 				0889EFC1171645BA00FEB988 /* thb12.jpg in Resources */,
+				FE4A6BF8172268AB00CF56A1 /* baksheesh.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,7 +637,6 @@
 				0889EF7D1716299600FEB988 /* CATESecondViewController.m in Sources */,
 				0889EFA31716340F00FEB988 /* CATEThirdViewController.m in Sources */,
 				0889EFA61716341D00FEB988 /* CATEFourthViewController.m in Sources */,
-				0889F00E1716585B00FEB988 /* CATELoadViewController.m in Sources */,
 				08E5C6D8171713BA008DFED8 /* CATELoginViewController.m in Sources */,
 				08E5C6E4171724A0008DFED8 /* SMXMLDocument.m in Sources */,
 				08C67C2117174C07007D4C77 /* CATEIdentity.m in Sources */,
@@ -663,7 +660,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0889EF961716299600FEB988 /* CATETests.m in Sources */,
-				0889F00F1716585B00FEB988 /* CATELoadViewController.m in Sources */,
 				0889F0141716687500FEB988 /* myScript.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
