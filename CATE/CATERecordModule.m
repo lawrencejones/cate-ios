@@ -14,7 +14,7 @@
 @synthesize name, term, level, exercises;
 
 - (id) init_with_data:(SMXMLElement *)xml_elem {
-  [self init];
+  self = [self init];
   
   if (self) {
     name = [xml_elem valueWithPath:@"name"];

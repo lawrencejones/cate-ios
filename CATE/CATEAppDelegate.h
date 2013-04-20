@@ -12,6 +12,9 @@
 #import "CATERecord.h"
 
 @interface CATEAppDelegate : UIResponder <UIApplicationDelegate>
+{
+  CATEIdentity *identity;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

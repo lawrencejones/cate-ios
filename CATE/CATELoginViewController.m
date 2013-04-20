@@ -18,9 +18,10 @@
 @synthesize userString = _userString;
 @synthesize passwordString = _passwordString;
 @synthesize keyboardToolbar, txtActiveField;
-@synthesize main_data, ex_data, grade_data, fullHtml;
+@synthesize main_data = _main_data, ex_data = _ex_data, grade_data = _grade_data, fullHtml = _fullHtml, user = _user, password = _password;
 
 #pragma mark- Initialisation
+
 - (id)initWithNibName:(NSString *)nib_name_or_nil
                bundle:(NSBundle *)nib_bunble_or_nil {
   
@@ -40,6 +41,7 @@
   [self initialiseProgressBar];
   [self setTextFieldProperties];
   [self createInputAccessoryView];
+  
 }
 
 - (void)initialiseAndConfigureBackgroundWebview {
@@ -64,17 +66,18 @@
 }
 
 - (void)setTextFieldProperties {
-  [self.user setBackgroundColor:[UIColor clearColor]];
-  [self.user setBorderStyle:UITextBorderStyleNone];
-  [self.user setDelegate:self];
+  [_user setBackgroundColor:[UIColor clearColor]];
+  [_user setBorderStyle:UITextBorderStyleNone];
+  [_user setDelegate:self];
   
-  [self.password setBackgroundColor:[UIColor clearColor]];
-  [self.password setBorderStyle:UITextBorderStyleNone];
-  [self.password setDelegate:self];
+  [_password setBackgroundColor:[UIColor clearColor]];
+  [_password setBorderStyle:UITextBorderStyleNone];
+  [_password setDelegate:self];
 }
 
 
 #pragma mark- Text Entry Behaviour
+
 -(void)createInputAccessoryView
 {
   self.keyboardToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
@@ -88,30 +91,30 @@
   
   [self.keyboardToolbar setItems:[NSArray arrayWithObjects: previousButton, nextButton, flexSpace, doneButton, nil]];
   
-  [self.user setInputAccessoryView:self.keyboardToolbar];
-  [self.password setInputAccessoryView:self.keyboardToolbar];
+  [_user setInputAccessoryView:self.keyboardToolbar];
+  [_password setInputAccessoryView:self.keyboardToolbar];
 }
 
 
 -(void)gotoPrevTextfield
 {
-  if (self.txtActiveField == self.user)
+  if (self.txtActiveField == _user)
   {
     return;
   }
-  else if (self.txtActiveField == self.password)
+  else if (self.txtActiveField == _password)
   {
-    [self.user becomeFirstResponder];
+    [_user becomeFirstResponder];
   }
 }
 
 -(void)gotoNextTextfield
 {
-  if (self.txtActiveField == self.user)
+  if (self.txtActiveField == _user)
   {
-    [self.password becomeFirstResponder];
+    [_password becomeFirstResponder];
   }
-  else if (self.txtActiveField == self.password)
+  else if (self.txtActiveField == _password)
   {
     return;
   }
@@ -122,11 +125,11 @@
   if (self.button.alpha == 1) {
     // Everything is active, make it unactive
     
-    self.user.enabled = NO;
-    self.user.alpha = 0.5;
+    _user.enabled = NO;
+    _user.alpha = 0.5;
     
-    self.password.enabled = NO;
-    self.password.alpha = 0.5;
+    _password.enabled = NO;
+    _password.alpha = 0.5;
     
     [self.button setTitle:@"Logging in..." forState:UIControlStateNormal];
     self.button.enabled = NO;
@@ -135,12 +138,12 @@
   } else {
     // Everything is unactive, make it active
     
-    self.user.enabled = YES;
-    self.user.alpha = 1;
+    _user.enabled = YES;
+    _user.alpha = 1;
     
-    self.password.text = @"";
-    self.password.enabled = YES;
-    self.password.alpha = 1;
+    _password.text = @"";
+    _password.enabled = YES;
+    _password.alpha = 1;
     
     [self.button setTitle:@"Login" forState:UIControlStateNormal];
     self.button.enabled = YES;
@@ -216,8 +219,7 @@
   
   NSString *xmlMainStr = [CATEDataExtractor get_main_xml:self.backgroundWeb];
   NSData *xmlMainData = [xmlMainStr dataUsingEncoding:NSUTF8StringEncoding];
-  CATEIdentity *identity = [CATEIdentity identity_with_data:xmlMainData];
-  appDelegate.identity = identity;
+  appDelegate.identity = [CATEIdentity identity_with_data:xmlMainData];
   
   NSString *xmlTermStr = [CATEDataExtractor get_exercises_xml:self.backgroundWeb];
   NSData *xmlTermData = [xmlTermStr dataUsingEncoding:NSUTF8StringEncoding];
@@ -230,13 +232,18 @@
   appDelegate.record = record;
   
   [self.progressBar stringByEvaluatingJavaScriptFromString:@"finished();"];
+  
   [self segueToDashboard];
 
 
 }
 
 -(void)segueToDashboard {
-  [self performSegueWithIdentifier:@"segueToDashboard" sender:self];
+  double delayInSeconds = 2.0;
+  dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+  dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    [self performSegueWithIdentifier:@"segueToDashboard" sender:self];
+  });
 }
 
 #pragma mark - URL Requester
@@ -301,15 +308,15 @@ didReceiveAuthenticationChallenge:
   NSString *path = [[[connection originalRequest] URL] relativePath];
   
   if ([path isEqualToString:@"/"]) {
-    self.main_data  = [[NSString alloc] initWithData:data
+    _main_data  = [[NSString alloc] initWithData:data
                                             encoding:NSUTF8StringEncoding];
     
   } else if ([path isEqualToString:@"/timetable.cgi"]) {
-    self.ex_data    = [[NSString alloc] initWithData:data
+    _ex_data    = [[NSString alloc] initWithData:data
                                             encoding:NSUTF8StringEncoding];
     
   } else if ([path isEqualToString:@"/student.cgi"]) {
-    self.grade_data = [[NSString alloc] initWithData:data
+    _grade_data = [[NSString alloc] initWithData:data
                                             encoding:NSUTF8StringEncoding];
   }
 }
@@ -337,15 +344,15 @@ didReceiveAuthenticationChallenge:
   NSString *path = [[[connection originalRequest] URL] relativePath];
   
   if ([path isEqualToString:@"/"]) {
-    data = self.main_data;
+    data = _main_data;
     target = @"#{MAIN_PAGE_BODY_STRING}";
     
   } else if ([path isEqualToString:@"/timetable.cgi"]) {
-    data = self.ex_data; start = @"<body>";
+    data = _ex_data; start = @"<body>";
     target = @"#{EXERCISE_PAGE_BODY_STRING}";
     
   } else /*if ([path isEqualToString:@"/student.cgi"]) */ {
-    data = self.grade_data;
+    data = _grade_data;
     target = @"#{GRADES_PAGE_BODY_STRING}";
   }
   
@@ -366,23 +373,28 @@ didReceiveAuthenticationChallenge:
 }
 
 -(NSString*)getFile:(NSString *)res ofType:(NSString *)file_type {
-  
+    
   NSString *filePath
   = [[NSBundle mainBundle] pathForResource:res ofType:file_type];
   NSData *fileData
   = [NSData dataWithContentsOfFile:filePath];
   return [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
+  
 }
 
 #pragma mark- Release iVars
+
 - (void)dealloc {
   [_user release];
   [_password release];
   [_user release];
   [_password release];
   [_button release];
+  [_main_data release];
+  [_ex_data release];
+  [_grade_data release];
   [keyboardToolbar release];
-  [txtActiveField release];
+  [txtActiveField release]; 
   [super dealloc];
 }
 @end

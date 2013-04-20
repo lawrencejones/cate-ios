@@ -52,6 +52,8 @@
   UIImage *img = [[UIImage alloc] initWithData:imgData ];
 
   [self changePhoto:img];
+  [img release];
+  
 }
 
 

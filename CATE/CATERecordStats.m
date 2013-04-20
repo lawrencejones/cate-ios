@@ -13,7 +13,7 @@
 @synthesize lastUpdate, submissionsCompleted, submissionsExtended, submissionsLate;
 
 - (id) init_with_data:(SMXMLElement *)xml_elem {
-  [super init];
+  self = [super init];
   
   if (self) {
     lastUpdate = [xml_elem valueWithPath:@"last_update"];

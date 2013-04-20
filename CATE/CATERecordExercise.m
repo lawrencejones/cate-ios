@@ -13,7 +13,7 @@
 @synthesize type, title, setBy, declaration, extension, submission, grade;
 
 - (id) init_with_data:(SMXMLElement *)xml_elem {
-  [self init];
+  self = [self init];
   
   if (self) {
     ident = [[xml_elem valueWithPath:@"id"] intValue];
