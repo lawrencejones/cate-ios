@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CATELoadViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CATEAppDelegate.h"
 
 @interface CATELoginViewController : UIViewController
 <UITextFieldDelegate, UIWebViewDelegate, NSURLConnectionDataDelegate> {
