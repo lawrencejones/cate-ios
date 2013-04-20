@@ -10,6 +10,7 @@
 #import "CATEAppDelegate.h"
 
 @interface CATELoadViewController : UIViewController
+<UIWebViewDelegate, NSURLConnectionDataDelegate>
 {
   CATEAppDelegate *appDelegate;
   NSString *main_data;
@@ -20,14 +21,10 @@
   int count;
 }
 
-@property (strong, nonatomic) IBOutlet UIWebView *loadingWeb;
+@property (strong, nonatomic) IBOutlet UIWebView *loadingWeb, *backgroundWeb;
 @property (retain, nonatomic) NSString *main_data;
 @property (retain, nonatomic) NSString *ex_data;
 @property (retain, nonatomic) NSString *grade_data;
 @property (retain, nonatomic) NSString *full_html;
-
-
--(NSString*)getFileContent:(NSString *) res :(NSString *) file_type;
-
 
 @end

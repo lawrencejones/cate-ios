@@ -57,7 +57,6 @@
 		0889F00F1716585B00FEB988 /* CATELoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0889F00D1716585B00FEB988 /* CATELoadViewController.m */; };
 		0889F0131716687500FEB988 /* myScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 0889F0121716687500FEB988 /* myScript.js */; };
 		0889F0141716687500FEB988 /* myScript.js in Sources */ = {isa = PBXBuildFile; fileRef = 0889F0121716687500FEB988 /* myScript.js */; };
-		08A63279171869EF00986F47 /* TestXml.xml in Resources */ = {isa = PBXBuildFile; fileRef = 08A63278171869EF00986F47 /* TestXml.xml */; };
 		08A6327D17186F7200986F47 /* CATEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A6327C17186F7200986F47 /* CATEUtilities.m */; };
 		08C67C2117174C07007D4C77 /* CATEIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C67C2017174C07007D4C77 /* CATEIdentity.m */; };
 		08C67C2717176CA1007D4C77 /* CATEExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C67C2617176CA1007D4C77 /* CATEExercise.m */; };
@@ -65,16 +64,15 @@
 		08C67C2D17177F58007D4C77 /* CATETerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C67C2C17177F58007D4C77 /* CATETerm.m */; };
 		08E5C6D8171713BA008DFED8 /* CATELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E5C6D7171713BA008DFED8 /* CATELoginViewController.m */; };
 		08E5C6E4171724A0008DFED8 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E5C6E3171724A0008DFED8 /* SMXMLDocument.m */; };
-		FE54171D1716FCAA00B3E497 /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = FE5417171716FCAA00B3E497 /* bootstrap.min.css */; };
-		FE54171E1716FCAA00B3E497 /* bootstrap.min.js in Sources */ = {isa = PBXBuildFile; fileRef = FE5417181716FCAA00B3E497 /* bootstrap.min.js */; };
-		FE54171F1716FCAA00B3E497 /* jquery-1.9.1.min.js in Sources */ = {isa = PBXBuildFile; fileRef = FE5417191716FCAA00B3E497 /* jquery-1.9.1.min.js */; };
-		FE5417201716FCAA00B3E497 /* extraction_tools.js in Sources */ = {isa = PBXBuildFile; fileRef = FE54171A1716FCAA00B3E497 /* extraction_tools.js */; };
-		FE5417211716FCAA00B3E497 /* loading_page.css in Resources */ = {isa = PBXBuildFile; fileRef = FE54171B1716FCAA00B3E497 /* loading_page.css */; };
-		FE5417221716FCAA00B3E497 /* loading_page.html in Resources */ = {isa = PBXBuildFile; fileRef = FE54171C1716FCAA00B3E497 /* loading_page.html */; };
+		FE4A6BEC172247E400CF56A1 /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = FE4A6BE2172247E400CF56A1 /* bootstrap.min.css */; };
+		FE4A6BED172247E400CF56A1 /* bootstrap.min.js in Sources */ = {isa = PBXBuildFile; fileRef = FE4A6BE3172247E400CF56A1 /* bootstrap.min.js */; };
+		FE4A6BEE172247E400CF56A1 /* jquery-1.9.1.min.js in Sources */ = {isa = PBXBuildFile; fileRef = FE4A6BE4172247E400CF56A1 /* jquery-1.9.1.min.js */; };
+		FE4A6BEF172247E400CF56A1 /* extraction_tools.coffee in Resources */ = {isa = PBXBuildFile; fileRef = FE4A6BE6172247E400CF56A1 /* extraction_tools.coffee */; };
+		FE4A6BF0172247E400CF56A1 /* extraction_tools.js in Sources */ = {isa = PBXBuildFile; fileRef = FE4A6BE7172247E400CF56A1 /* extraction_tools.js */; };
+		FE4A6BF1172247E400CF56A1 /* extraction_page.html in Resources */ = {isa = PBXBuildFile; fileRef = FE4A6BE8172247E400CF56A1 /* extraction_page.html */; };
+		FE4A6BF2172247E400CF56A1 /* loading_page.html in Resources */ = {isa = PBXBuildFile; fileRef = FE4A6BE9172247E400CF56A1 /* loading_page.html */; };
+		FE4A6BF3172247E400CF56A1 /* loading_page.css in Resources */ = {isa = PBXBuildFile; fileRef = FE4A6BEB172247E400CF56A1 /* loading_page.css */; };
 		FED2F2221717BE7700B9B439 /* CATEDataExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = FED2F2211717BE7700B9B439 /* CATEDataExtractor.m */; };
-		FED2F2231717CA7200B9B439 /* extraction_tools.js in Resources */ = {isa = PBXBuildFile; fileRef = FE54171A1716FCAA00B3E497 /* extraction_tools.js */; };
-		FED2F2241717CB5800B9B439 /* bootstrap.min.js in Resources */ = {isa = PBXBuildFile; fileRef = FE5417181716FCAA00B3E497 /* bootstrap.min.js */; };
-		FED2F2251717CB6C00B9B439 /* jquery-1.9.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = FE5417191716FCAA00B3E497 /* jquery-1.9.1.min.js */; };
 		FED2F22B171CCEAB00B9B439 /* basicLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2F227171CCEAB00B9B439 /* basicLogo.png */; };
 		FED2F22C171CCEAB00B9B439 /* basicLogo.psd in Resources */ = {isa = PBXBuildFile; fileRef = FED2F228171CCEAB00B9B439 /* basicLogo.psd */; };
 		FED2F22D171CCEAB00B9B439 /* stdBg.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2F229171CCEAB00B9B439 /* stdBg.png */; };
@@ -146,7 +144,6 @@
 		0889F00C1716585B00FEB988 /* CATELoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATELoadViewController.h; sourceTree = "<group>"; };
 		0889F00D1716585B00FEB988 /* CATELoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATELoadViewController.m; sourceTree = "<group>"; };
 		0889F0121716687500FEB988 /* myScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = myScript.js; sourceTree = "<group>"; };
-		08A63278171869EF00986F47 /* TestXml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TestXml.xml; sourceTree = "<group>"; };
 		08A6327B17186F7200986F47 /* CATEUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEUtilities.h; sourceTree = "<group>"; };
 		08A6327C17186F7200986F47 /* CATEUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEUtilities.m; sourceTree = "<group>"; };
 		08C67C1F17174C07007D4C77 /* CATEIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEIdentity.h; sourceTree = "<group>"; };
@@ -161,12 +158,14 @@
 		08E5C6D7171713BA008DFED8 /* CATELoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATELoginViewController.m; sourceTree = "<group>"; };
 		08E5C6E2171724A0008DFED8 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
 		08E5C6E3171724A0008DFED8 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
-		FE5417171716FCAA00B3E497 /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
-		FE5417181716FCAA00B3E497 /* bootstrap.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.min.js; sourceTree = "<group>"; };
-		FE5417191716FCAA00B3E497 /* jquery-1.9.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.9.1.min.js"; sourceTree = "<group>"; };
-		FE54171A1716FCAA00B3E497 /* extraction_tools.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = extraction_tools.js; path = placeholder/extraction_tools.js; sourceTree = "<group>"; };
-		FE54171B1716FCAA00B3E497 /* loading_page.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = loading_page.css; path = placeholder/loading_page.css; sourceTree = "<group>"; };
-		FE54171C1716FCAA00B3E497 /* loading_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = loading_page.html; path = placeholder/loading_page.html; sourceTree = "<group>"; };
+		FE4A6BE2172247E400CF56A1 /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
+		FE4A6BE3172247E400CF56A1 /* bootstrap.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.min.js; sourceTree = "<group>"; };
+		FE4A6BE4172247E400CF56A1 /* jquery-1.9.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.9.1.min.js"; sourceTree = "<group>"; };
+		FE4A6BE6172247E400CF56A1 /* extraction_tools.coffee */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = extraction_tools.coffee; sourceTree = "<group>"; };
+		FE4A6BE7172247E400CF56A1 /* extraction_tools.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = extraction_tools.js; sourceTree = "<group>"; };
+		FE4A6BE8172247E400CF56A1 /* extraction_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = extraction_page.html; sourceTree = "<group>"; };
+		FE4A6BE9172247E400CF56A1 /* loading_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = loading_page.html; sourceTree = "<group>"; };
+		FE4A6BEB172247E400CF56A1 /* loading_page.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = loading_page.css; sourceTree = "<group>"; };
 		FED2F2201717BE7700B9B439 /* CATEDataExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEDataExtractor.h; sourceTree = "<group>"; };
 		FED2F2211717BE7700B9B439 /* CATEDataExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEDataExtractor.m; sourceTree = "<group>"; };
 		FED2F227171CCEAB00B9B439 /* basicLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basicLogo.png; sourceTree = "<group>"; };
@@ -281,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				0889EF5F1716299600FEB988 /* CATE */,
+				FE4A6BE0172247E400CF56A1 /* WebContent */,
 				0889EF8E1716299600FEB988 /* CATETests */,
 				0889EF581716299600FEB988 /* Frameworks */,
 				0889EF571716299600FEB988 /* Products */,
@@ -315,7 +315,6 @@
 				08C67C2417176C5F007D4C77 /* Data Structures */,
 				08C67C2317174C59007D4C77 /* Plugins */,
 				08C67C2217174C38007D4C77 /* Views */,
-				FE5417151716FC8F00B3E497 /* Placeholder */,
 				0889F0111716686600FEB988 /* JavaScripts */,
 				0889F010171665EE00FEB988 /* Images */,
 				0889EF681716299600FEB988 /* CATEAppDelegate.h */,
@@ -437,27 +436,44 @@
 			name = "Data Structures";
 			sourceTree = "<group>";
 		};
-		FE5417151716FC8F00B3E497 /* Placeholder */ = {
+		FE4A6BE0172247E400CF56A1 /* WebContent */ = {
 			isa = PBXGroup;
 			children = (
-				08A63278171869EF00986F47 /* TestXml.xml */,
-				FE5417161716FCAA00B3E497 /* bootstrap */,
-				FE54171A1716FCAA00B3E497 /* extraction_tools.js */,
-				FE54171B1716FCAA00B3E497 /* loading_page.css */,
-				FE54171C1716FCAA00B3E497 /* loading_page.html */,
+				FE4A6BE1172247E400CF56A1 /* bootstrap */,
+				FE4A6BE5172247E400CF56A1 /* extraction */,
+				FE4A6BE8172247E400CF56A1 /* extraction_page.html */,
+				FE4A6BE9172247E400CF56A1 /* loading_page.html */,
+				FE4A6BEA172247E400CF56A1 /* styles */,
 			);
-			name = Placeholder;
+			name = WebContent;
+			path = CATE/WebContent;
 			sourceTree = "<group>";
 		};
-		FE5417161716FCAA00B3E497 /* bootstrap */ = {
+		FE4A6BE1172247E400CF56A1 /* bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				FE5417171716FCAA00B3E497 /* bootstrap.min.css */,
-				FE5417181716FCAA00B3E497 /* bootstrap.min.js */,
-				FE5417191716FCAA00B3E497 /* jquery-1.9.1.min.js */,
+				FE4A6BE2172247E400CF56A1 /* bootstrap.min.css */,
+				FE4A6BE3172247E400CF56A1 /* bootstrap.min.js */,
+				FE4A6BE4172247E400CF56A1 /* jquery-1.9.1.min.js */,
 			);
-			name = bootstrap;
-			path = placeholder/bootstrap;
+			path = bootstrap;
+			sourceTree = "<group>";
+		};
+		FE4A6BE5172247E400CF56A1 /* extraction */ = {
+			isa = PBXGroup;
+			children = (
+				FE4A6BE6172247E400CF56A1 /* extraction_tools.coffee */,
+				FE4A6BE7172247E400CF56A1 /* extraction_tools.js */,
+			);
+			path = extraction;
+			sourceTree = "<group>";
+		};
+		FE4A6BEA172247E400CF56A1 /* styles */ = {
+			isa = PBXGroup;
+			children = (
+				FE4A6BEB172247E400CF56A1 /* loading_page.css */,
+			);
+			path = styles;
 			sourceTree = "<group>";
 		};
 		FED2F226171CCEAB00B9B439 /* image_res */ = {
@@ -544,9 +560,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FED2F2251717CB6C00B9B439 /* jquery-1.9.1.min.js in Resources */,
-				FED2F2241717CB5800B9B439 /* bootstrap.min.js in Resources */,
-				FED2F2231717CA7200B9B439 /* extraction_tools.js in Resources */,
 				0889F0131716687500FEB988 /* myScript.js in Resources */,
 				0889EF641716299600FEB988 /* InfoPlist.strings in Resources */,
 				0889EF6C1716299600FEB988 /* Default.png in Resources */,
@@ -566,16 +579,17 @@
 				0889EFBB171642F600FEB988 /* thumbs.png in Resources */,
 				0889EFBD171642F600FEB988 /* thumbs@2x.png in Resources */,
 				0889EFC0171645BA00FEB988 /* thb12.jpg in Resources */,
-				FE54171D1716FCAA00B3E497 /* bootstrap.min.css in Resources */,
-				FE5417211716FCAA00B3E497 /* loading_page.css in Resources */,
-				FE5417221716FCAA00B3E497 /* loading_page.html in Resources */,
 				087FC01317178E7300529DC5 /* exerciseData.xml in Resources */,
-				08A63279171869EF00986F47 /* TestXml.xml in Resources */,
 				FED2F22B171CCEAB00B9B439 /* basicLogo.png in Resources */,
 				FED2F22C171CCEAB00B9B439 /* basicLogo.psd in Resources */,
 				FED2F22D171CCEAB00B9B439 /* stdBg.png in Resources */,
 				FED2F22E171CCEAB00B9B439 /* stdBg.psd in Resources */,
 				FED2F239171CF6E400B9B439 /* btnLogin.png in Resources */,
+				FE4A6BEC172247E400CF56A1 /* bootstrap.min.css in Resources */,
+				FE4A6BEF172247E400CF56A1 /* extraction_tools.coffee in Resources */,
+				FE4A6BF1172247E400CF56A1 /* extraction_page.html in Resources */,
+				FE4A6BF2172247E400CF56A1 /* loading_page.html in Resources */,
+				FE4A6BF3172247E400CF56A1 /* loading_page.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,9 +640,6 @@
 				0889EFA31716340F00FEB988 /* CATEThirdViewController.m in Sources */,
 				0889EFA61716341D00FEB988 /* CATEFourthViewController.m in Sources */,
 				0889F00E1716585B00FEB988 /* CATELoadViewController.m in Sources */,
-				FE54171E1716FCAA00B3E497 /* bootstrap.min.js in Sources */,
-				FE54171F1716FCAA00B3E497 /* jquery-1.9.1.min.js in Sources */,
-				FE5417201716FCAA00B3E497 /* extraction_tools.js in Sources */,
 				08E5C6D8171713BA008DFED8 /* CATELoginViewController.m in Sources */,
 				08E5C6E4171724A0008DFED8 /* SMXMLDocument.m in Sources */,
 				08C67C2117174C07007D4C77 /* CATEIdentity.m in Sources */,
@@ -641,6 +652,9 @@
 				084D3541171CB8F3007AB292 /* CATERecordStats.m in Sources */,
 				084D3545171CB904007AB292 /* CATERecordModule.m in Sources */,
 				084D3549171CB91A007AB292 /* CATERecordExercise.m in Sources */,
+				FE4A6BED172247E400CF56A1 /* bootstrap.min.js in Sources */,
+				FE4A6BEE172247E400CF56A1 /* jquery-1.9.1.min.js in Sources */,
+				FE4A6BF0172247E400CF56A1 /* extraction_tools.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

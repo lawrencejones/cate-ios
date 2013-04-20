@@ -2,16 +2,10 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
-    <script>
-            #{JQUERY_JS_STRING}
-            #{BOOTSTRAP_JS_STRING}
-            #{EXTRACTION_TOOLS_JS_STRING}
-    </script>
-    <style>
-            #{BOOTSTRAP_CSS_STRING}
-            #{LOADING_PAGE_CSS_STRING}
-    </style>
+		<script src="./jquery-1.9.1.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="./loading_page.css" type="text/css">
 		<script>
       var current_width = 0;
 			$(document).ready(function () {
@@ -23,7 +17,7 @@
           }).trigger('click');
         }
                         
-			});
+		});
       
 		</script>
 
@@ -38,15 +32,5 @@
 		</div>
 
 	</body>
-  
-  <div id="main_page_xml" style="top : 110%; position : absolute;" class="hidden">
-    #{MAIN_PAGE_BODY_STRING}
-  </div>
-  <div id="exercise_page_xml" style="top : 110%; position : absolute;" class="hidden">
-    #{EXERCISE_PAGE_BODY_STRING}
-  </div>
-  <div id="grades_page_xml" style="top : 110%; position : absolute;" class="hidden">
-    #{GRADES_PAGE_BODY_STRING}
-  </div>
 
 </html>
