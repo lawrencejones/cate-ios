@@ -18,6 +18,7 @@
 @synthesize userString = _userString;
 @synthesize passwordString = _passwordString;
 @synthesize keyboardToolbar, txtActiveField;
+@synthesize fieldBg = _fieldBg, button = _button;
 @synthesize main_data = _main_data, ex_data = _ex_data, grade_data = _grade_data,
           fullHtml = _fullHtml, user = _user, password = _password, data = _data;
 
@@ -41,8 +42,9 @@
   [self initialiseAndConfigureBackgroundWebview];
   [self initialiseProgressBar];
   [self setTextFieldProperties];
+  [self createLogo];
   [self createInputAccessoryView];
-  
+  [self initialAnimation];
 }
 
 - (void)initialiseAndConfigureBackgroundWebview {
@@ -74,6 +76,53 @@
   [_password setBackgroundColor:[UIColor clearColor]];
   [_password setBorderStyle:UITextBorderStyleNone];
   [_password setDelegate:self];
+
+}
+
+- (void)createLogo {
+  NSString *path = [[NSBundle mainBundle] pathForResource:@"basicLogo" ofType:@"png"];
+  UIImage *logoImg = [[UIImage alloc] initWithContentsOfFile:path];
+  self.logo = [[UIImageView alloc] initWithImage:logoImg];
+  self.logo.alpha = 0;
+  self.logo.frame = CGRectMake(90, 200, 320, 200);
+  self.logo.center = CGPointMake(160, 260);
+  self.logo.contentMode = UIViewContentModeScaleAspectFit;
+  [self.view addSubview:self.logo];
+}
+
+#pragma mark - Animation Methods
+
+-(void)initialAnimation {
+  [UIView animateWithDuration:0.3 delay:0.3
+                      options:(UIViewAnimationCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction)
+                   animations:^{
+                     [self.logo setAlpha:1];
+                   }
+                   completion:^(BOOL finished){
+                     [self animateLogoSlide];
+                     [self animateFieldFadeIn];
+                   }];
+}
+
+-(void)animateLogoSlide {
+  [UIView animateWithDuration:0.5 delay:0.1
+                      options:(UIViewAnimationCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction)
+                   animations:^{
+    self.logo.center = CGPointMake(160, 90);
+  }completion:^(BOOL finished){
+    //do next
+  }];
+}
+
+-(void)animateFieldFadeIn {
+  [UIView animateWithDuration:0.3 delay:0.6
+                      options:(UIViewAnimationCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction)
+                   animations:^{
+                     _fieldBg.alpha  = 1;
+                     _user.alpha     = 1;
+                     _password.alpha = 1;
+                     _button.alpha   = 1;
+                   } completion:nil];
 }
 
 

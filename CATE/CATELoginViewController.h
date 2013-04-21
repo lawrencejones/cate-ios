@@ -15,15 +15,20 @@
   UIToolbar *keyboardToolbar;
   UITextField *txtActiveField;
   NSMutableArray *connections;
+  CGPoint *endPos;
   BOOL complete;
   int count;
 }
 
-@property (retain, nonatomic) CATESharedData *data;
+
 @property (retain, nonatomic) IBOutlet UITextField *user;
 @property (retain, nonatomic) IBOutlet UITextField *password;
+@property (retain, nonatomic) IBOutlet UIButton *button;
 @property (retain, nonatomic) IBOutlet UIWebView *progressBar, *backgroundWeb;
+@property (retain, nonatomic) IBOutlet UIImageView *fieldBg;
+@property (retain, nonatomic) UIImageView *logo;
 
+@property (retain, nonatomic) CATESharedData *data;
 @property (copy, nonatomic) NSString *userString;
 @property (copy, nonatomic) NSString *passwordString;
 @property (retain, nonatomic) NSString *fullHtml,
@@ -31,7 +36,6 @@
                                        *ex_data,
                                        *grade_data,
                                        *full_html;
-@property (retain, nonatomic) IBOutlet UIButton *button;
 @property (retain, nonatomic) UIToolbar *keyboardToolbar;
 @property (retain, nonatomic) UITextField *txtActiveField;
 
