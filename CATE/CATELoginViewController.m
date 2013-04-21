@@ -403,8 +403,8 @@ didReceiveAuthenticationChallenge:
   
   NSLog(@"Finished connection...");
   [self injectCateHtml:connection];
-  [self.progressBar stringByEvaluatingJavaScriptFromString:
-   @"advanceProgress();"];
+  NSLog([self.progressBar stringByEvaluatingJavaScriptFromString:
+   @"advanceProgress();"]);
   count--;
   if (count == 0) {
     self->complete = true;

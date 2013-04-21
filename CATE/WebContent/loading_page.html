@@ -16,13 +16,14 @@
       current_width = 0;
       authenticated = false;
       no_of_stages = n;
-      $('body').trigger('click');
     }
 
 
     function advanceProgress() {
+      if (!$) { return "jQuery is undefined!!!"; }
       current_width = current_width + (100/no_of_stages);
       $('#progress').animate({width:current_width+'%'},{duration : 100});
+      return $('#progress').css('width');
     }
 
   </script>
