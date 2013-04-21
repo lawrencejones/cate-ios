@@ -39,6 +39,7 @@
   _data = [CATESharedData instance];
   // Set initial fullHtml value
   self.fullHtml = [self getFile:@"extraction_page" ofType:@"html"];
+  [self initialiseLoginButtonImages];
   [self initialiseAndConfigureBackgroundWebview];
   [self initialiseProgressBar];
   [self setTextFieldProperties];
@@ -66,6 +67,13 @@
   NSString *link = [[NSBundle mainBundle] pathForResource:@"loading_page" ofType:@"html"];
   NSURL *url = [NSURL fileURLWithPath:link];
   [self.progressBar loadRequest:[NSURLRequest requestWithURL:url]];
+}
+
+-(void)initialiseLoginButtonImages {
+  self->loginDefault = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"wideDarkLogin" ofType:@"png"]];
+  self->loginAuth    = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"wideDarkLoginAuth" ofType:@"png"]];
+  self->loginLoading = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"wideDarkLoginLoading" ofType:@"png"]];
+  self->loginDone    = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"wideDarkLoginDone" ofType:@"png"]];
 }
 
 - (void)setTextFieldProperties {
@@ -125,6 +133,23 @@
                    } completion:nil];
 }
 
+#pragma mark - Login Button Status
+
+-(void)resetButton {
+  [_button setImage:self->loginDefault forState:UIControlStateNormal];
+}
+
+-(void)attemptAuth {
+  [_button setImage:self->loginAuth forState:UIControlStateNormal];
+}
+
+-(void)startLoad {
+  [_button setImage:self->loginLoading forState:UIControlStateNormal];
+}
+
+-(void)finishLoad {
+  [_button setImage:self->loginDone forState:UIControlStateNormal];
+}
 
 #pragma mark- Text Entry Behaviour
 
@@ -183,7 +208,7 @@
     
     [self.button setTitle:@"Logging in..." forState:UIControlStateNormal];
     self.button.enabled = NO;
-    self.button.alpha = 0.5;
+    self.button.alpha = 0.8;
     
   } else {
     // Everything is unactive, make it active
@@ -214,6 +239,7 @@
 
 - (IBAction)loginAttempt:(id)sender {
   // Called when the login button is tapped
+  [self attemptAuth];
   [self.progressBar stringByEvaluatingJavaScriptFromString:@"resetProgressBar(3);"];
   [UIWebView animateWithDuration:0.3 animations:^(void){
     self.progressBar.alpha = 1;
@@ -240,6 +266,7 @@
   }
   [CATEUtilities showAlert:@"Error" message:@"Invalid credentials" delegate:nil cancel_bottom:@"OK"];
   [self toggleLoginFieldsVisibility];
+  [self resetButton];
 }
 
 #pragma mark - Creating list of links
@@ -281,7 +308,7 @@
   CATERecord *record = [CATERecord record_with_data:xmlGradesData];
   _data.record = record;
   
-  [self.progressBar stringByEvaluatingJavaScriptFromString:@"finished();"];
+  [self finishLoad];
   
   [self segueToDashboard];
 
@@ -353,7 +380,7 @@ didReceiveAuthenticationChallenge:
 - (void)connection:(NSURLConnection *)connection
     didReceiveData:(NSData *)data {
   
-  [self.progressBar stringByEvaluatingJavaScriptFromString:@"finishedAuthentication();"];
+  [self startLoad];
   
   NSString *path = [[[connection originalRequest] URL] relativePath];
   

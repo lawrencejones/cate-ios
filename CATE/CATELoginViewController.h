@@ -16,6 +16,7 @@
   UITextField *txtActiveField;
   NSMutableArray *connections;
   CGPoint *endPos;
+  UIImage *loginDefault, *loginAuth, *loginLoading, *loginDone;
   BOOL complete;
   int count;
 }
