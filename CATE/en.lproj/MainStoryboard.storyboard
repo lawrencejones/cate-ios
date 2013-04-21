@@ -282,13 +282,11 @@
                             </textField>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ako-i4-NUl" userLabel="LoginButton">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="104" id="6fZ-VM-bz4"/>
-                                    <constraint firstAttribute="height" constant="47" id="wNA-ba-gXS"/>
+                                    <constraint firstAttribute="height" constant="52" id="eXm-TC-U7X"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" title="Login" image="btnLogin.png">
+                                <state key="normal" title="Login" image="wideDarkLogin.png">
                                     <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -310,23 +308,24 @@
                             <constraint firstItem="byF-Jf-LUO" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" type="default" id="0fF-Bt-CfC"/>
                             <constraint firstItem="Lam-ZX-Jlt" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="178" id="1Ih-Zy-1yN"/>
                             <constraint firstItem="byF-Jf-LUO" firstAttribute="trailing" secondItem="ZxD-oU-oEI" secondAttribute="trailing" type="default" id="2xa-37-eFg"/>
-                            <constraint firstItem="Ako-i4-NUl" firstAttribute="centerX" secondItem="GQF-Sm-hZO" secondAttribute="centerX" type="default" id="4oF-1E-PXr"/>
                             <constraint firstItem="GQF-Sm-hZO" firstAttribute="leading" secondItem="ZxD-oU-oEI" secondAttribute="leading" type="default" id="AUG-o8-7Gl"/>
                             <constraint firstItem="d4D-92-2Ho" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="196" id="C0c-3W-ZQq"/>
+                            <constraint firstItem="Ako-i4-NUl" firstAttribute="leading" secondItem="Lam-ZX-Jlt" secondAttribute="leading" type="default" id="Ji2-cm-X2u"/>
+                            <constraint firstItem="Ako-i4-NUl" firstAttribute="trailing" secondItem="Lam-ZX-Jlt" secondAttribute="trailing" type="default" id="LKS-P0-Bce"/>
+                            <constraint firstAttribute="bottom" secondItem="Ako-i4-NUl" secondAttribute="bottom" constant="186" id="LaP-y5-yhg"/>
                             <constraint firstItem="41c-N0-281" firstAttribute="leading" secondItem="d4D-92-2Ho" secondAttribute="leading" type="default" id="N51-JU-S6r"/>
+                            <constraint firstItem="Ako-i4-NUl" firstAttribute="centerX" secondItem="GQF-Sm-hZO" secondAttribute="centerX" type="default" id="R8U-JB-cW5"/>
                             <constraint firstItem="GQF-Sm-hZO" firstAttribute="trailing" secondItem="ZxD-oU-oEI" secondAttribute="trailing" type="default" id="SXC-uy-NEs"/>
-                            <constraint firstAttribute="bottom" secondItem="GQF-Sm-hZO" secondAttribute="bottom" constant="118" id="Si1-b8-d2B"/>
                             <constraint firstItem="byF-Jf-LUO" firstAttribute="bottom" secondItem="ZxD-oU-oEI" secondAttribute="bottom" type="default" id="WCJ-uo-uvX"/>
                             <constraint firstItem="9J2-jL-S1B" firstAttribute="trailing" secondItem="ZxD-oU-oEI" secondAttribute="trailing" type="default" id="WVx-VB-tsJ"/>
+                            <constraint firstAttribute="bottom" secondItem="GQF-Sm-hZO" secondAttribute="bottom" constant="67" id="XaH-IT-IMT"/>
                             <constraint firstItem="9J2-jL-S1B" firstAttribute="bottom" secondItem="ZxD-oU-oEI" secondAttribute="bottom" type="default" id="a9a-BR-82q"/>
                             <constraint firstItem="9J2-jL-S1B" firstAttribute="leading" secondItem="ZxD-oU-oEI" secondAttribute="leading" type="default" id="jfc-xZ-aLu"/>
                             <constraint firstItem="d4D-92-2Ho" firstAttribute="leading" secondItem="ZxD-oU-oEI" secondAttribute="leading" constant="65" id="mbD-Sf-dz9"/>
                             <constraint firstItem="41c-N0-281" firstAttribute="trailing" secondItem="d4D-92-2Ho" secondAttribute="trailing" type="default" id="q6j-yI-NlA"/>
                             <constraint firstItem="41c-N0-281" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" constant="251" id="qzE-nk-635"/>
                             <constraint firstItem="9J2-jL-S1B" firstAttribute="top" secondItem="ZxD-oU-oEI" secondAttribute="top" type="default" id="uuF-kJ-VbN"/>
-                            <constraint firstAttribute="bottom" secondItem="Ako-i4-NUl" secondAttribute="bottom" constant="221" id="xAW-lq-vtA"/>
                             <constraint firstItem="byF-Jf-LUO" firstAttribute="leading" secondItem="ZxD-oU-oEI" secondAttribute="leading" type="default" id="xI9-Oh-P8b"/>
-                            <constraint firstItem="Lam-ZX-Jlt" firstAttribute="centerX" secondItem="Ako-i4-NUl" secondAttribute="centerX" type="default" id="yHO-jw-0rR"/>
                         </constraints>
                     </view>
                     <connections>
@@ -365,13 +364,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btnLogin.png" width="331" height="148"/>
         <image name="cog.png" width="30" height="30"/>
         <image name="dashboard.png" width="30" height="30"/>
         <image name="loginFields.png" width="1427" height="558"/>
         <image name="pencil.png" width="30" height="30"/>
         <image name="stdBg.png" width="640" height="1136"/>
         <image name="thumbs.png" width="30" height="30"/>
+        <image name="wideDarkLogin.png" width="1205" height="219"/>
     </resources>
     <classes>
         <class className="CATEFirstViewController" superclassName="UIViewController">
@@ -393,7 +392,6 @@
                 <relationship kind="outlet" name="backgroundWeb" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="button" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fieldBg" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="logo" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="progressBar" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="user" candidateClass="UITextField"/>

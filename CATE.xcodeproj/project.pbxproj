@@ -67,6 +67,9 @@
 		FE434484172370B80032D132 /* loginFields.png in Resources */ = {isa = PBXBuildFile; fileRef = FE43447F172370B80032D132 /* loginFields.png */; };
 		FE434485172370B80032D132 /* loginFields.psd in Resources */ = {isa = PBXBuildFile; fileRef = FE434480172370B80032D132 /* loginFields.psd */; };
 		FE434486172370B80032D132 /* pattern.psd in Resources */ = {isa = PBXBuildFile; fileRef = FE434481172370B80032D132 /* pattern.psd */; };
+		FE43448A172387640032D132 /* basicWideDarkBtn.psd in Resources */ = {isa = PBXBuildFile; fileRef = FE434487172387640032D132 /* basicWideDarkBtn.psd */; };
+		FE43448B172387640032D132 /* wideDarkLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = FE434488172387640032D132 /* wideDarkLogin.png */; };
+		FE43448C172387640032D132 /* wideDarkLogin.psd in Resources */ = {isa = PBXBuildFile; fileRef = FE434489172387640032D132 /* wideDarkLogin.psd */; };
 		FE4A6BEC172247E400CF56A1 /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = FE4A6BE2172247E400CF56A1 /* bootstrap.min.css */; };
 		FE4A6BED172247E400CF56A1 /* bootstrap.min.js in Sources */ = {isa = PBXBuildFile; fileRef = FE4A6BE3172247E400CF56A1 /* bootstrap.min.js */; };
 		FE4A6BEE172247E400CF56A1 /* jquery-1.9.1.min.js in Sources */ = {isa = PBXBuildFile; fileRef = FE4A6BE4172247E400CF56A1 /* jquery-1.9.1.min.js */; };
@@ -166,6 +169,9 @@
 		FE43447F172370B80032D132 /* loginFields.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginFields.png; sourceTree = "<group>"; };
 		FE434480172370B80032D132 /* loginFields.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginFields.psd; sourceTree = "<group>"; };
 		FE434481172370B80032D132 /* pattern.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = pattern.psd; sourceTree = "<group>"; };
+		FE434487172387640032D132 /* basicWideDarkBtn.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = basicWideDarkBtn.psd; sourceTree = "<group>"; };
+		FE434488172387640032D132 /* wideDarkLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLogin.png; sourceTree = "<group>"; };
+		FE434489172387640032D132 /* wideDarkLogin.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = wideDarkLogin.psd; sourceTree = "<group>"; };
 		FE4A6BE2172247E400CF56A1 /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
 		FE4A6BE3172247E400CF56A1 /* bootstrap.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.min.js; sourceTree = "<group>"; };
 		FE4A6BE4172247E400CF56A1 /* jquery-1.9.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.9.1.min.js"; sourceTree = "<group>"; };
@@ -491,6 +497,9 @@
 		FED2F226171CCEAB00B9B439 /* image_res */ = {
 			isa = PBXGroup;
 			children = (
+				FE434487172387640032D132 /* basicWideDarkBtn.psd */,
+				FE434488172387640032D132 /* wideDarkLogin.png */,
+				FE434489172387640032D132 /* wideDarkLogin.psd */,
 				FE43447D172370B80032D132 /* btnLogin.psd */,
 				FE43447E172370B80032D132 /* btnTemplate.psd */,
 				FE43447F172370B80032D132 /* loginFields.png */,
@@ -612,6 +621,9 @@
 				FE434484172370B80032D132 /* loginFields.png in Resources */,
 				FE434485172370B80032D132 /* loginFields.psd in Resources */,
 				FE434486172370B80032D132 /* pattern.psd in Resources */,
+				FE43448A172387640032D132 /* basicWideDarkBtn.psd in Resources */,
+				FE43448B172387640032D132 /* wideDarkLogin.png in Resources */,
+				FE43448C172387640032D132 /* wideDarkLogin.psd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
