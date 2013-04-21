@@ -108,7 +108,7 @@
   [UIView animateWithDuration:0.5 delay:0.1
                       options:(UIViewAnimationCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction)
                    animations:^{
-    self.logo.center = CGPointMake(160, 90);
+    self.logo.center = CGPointMake(160, 80);
   }completion:^(BOOL finished){
     //do next
   }];
