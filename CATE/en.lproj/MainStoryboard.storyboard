@@ -34,9 +34,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ecc-1a-UHo">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="OyX-6m-J77"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Ecc-1a-UHo" secondAttribute="bottom" constant="162" id="1YK-wV-xo5"/>
                             <constraint firstItem="iP5-IF-oJX" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1gW-tL-ddu"/>
                             <constraint firstAttribute="bottom" secondItem="uZF-za-yHF" secondAttribute="bottom" constant="223" id="2se-QM-puq"/>
                             <constraint firstItem="PuP-HD-5lu" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="8Zm-HE-mnI"/>
@@ -47,6 +58,7 @@
                             <constraint firstItem="PuP-HD-5lu" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="fbU-to-GGb"/>
                             <constraint firstItem="80D-1E-Qu9" firstAttribute="top" secondItem="16" secondAttribute="top" constant="95" id="gg5-qc-E7P"/>
                             <constraint firstItem="uZF-za-yHF" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lf0-fG-BFC"/>
+                            <constraint firstItem="Ecc-1a-UHo" firstAttribute="centerX" secondItem="uZF-za-yHF" secondAttribute="centerX" type="default" id="n0T-tk-nnN"/>
                             <constraint firstItem="PuP-HD-5lu" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="nx0-Be-kM3"/>
                         </constraints>
                     </view>
