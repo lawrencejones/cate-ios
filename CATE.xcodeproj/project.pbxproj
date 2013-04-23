@@ -7,90 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		084D353D171CB8D5007AB292 /* CATERecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D353C171CB8D5007AB292 /* CATERecord.m */; };
-		084D3541171CB8F3007AB292 /* CATERecordStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D3540171CB8F3007AB292 /* CATERecordStats.m */; };
-		084D3545171CB904007AB292 /* CATERecordModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D3544171CB904007AB292 /* CATERecordModule.m */; };
-		084D3549171CB91A007AB292 /* CATERecordExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D3548171CB91A007AB292 /* CATERecordExercise.m */; };
-		087FC01317178E7300529DC5 /* exerciseData.xml in Resources */ = {isa = PBXBuildFile; fileRef = 087FC01217178E7300529DC5 /* exerciseData.xml */; };
 		0889EF5A1716299600FEB988 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889EF591716299600FEB988 /* UIKit.framework */; };
 		0889EF5C1716299600FEB988 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889EF5B1716299600FEB988 /* Foundation.framework */; };
 		0889EF5E1716299600FEB988 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889EF5D1716299600FEB988 /* CoreGraphics.framework */; };
-		0889EF641716299600FEB988 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0889EF621716299600FEB988 /* InfoPlist.strings */; };
-		0889EF661716299600FEB988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0889EF651716299600FEB988 /* main.m */; };
-		0889EF6A1716299600FEB988 /* CATEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0889EF691716299600FEB988 /* CATEAppDelegate.m */; };
-		0889EF6C1716299600FEB988 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EF6B1716299600FEB988 /* Default.png */; };
-		0889EF6E1716299600FEB988 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EF6D1716299600FEB988 /* Default@2x.png */; };
-		0889EF701716299600FEB988 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EF6F1716299600FEB988 /* Default-568h@2x.png */; };
-		0889EF731716299600FEB988 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0889EF711716299600FEB988 /* MainStoryboard.storyboard */; };
-		0889EF761716299600FEB988 /* CATEFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0889EF751716299600FEB988 /* CATEFirstViewController.m */; };
-		0889EF781716299600FEB988 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EF771716299600FEB988 /* first.png */; };
-		0889EF7A1716299600FEB988 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EF791716299600FEB988 /* first@2x.png */; };
-		0889EF7D1716299600FEB988 /* CATESecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0889EF7C1716299600FEB988 /* CATESecondViewController.m */; };
-		0889EF7F1716299600FEB988 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EF7E1716299600FEB988 /* second.png */; };
-		0889EF811716299600FEB988 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EF801716299600FEB988 /* second@2x.png */; };
 		0889EF891716299600FEB988 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889EF881716299600FEB988 /* SenTestingKit.framework */; };
 		0889EF8A1716299600FEB988 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889EF591716299600FEB988 /* UIKit.framework */; };
 		0889EF8B1716299600FEB988 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889EF5B1716299600FEB988 /* Foundation.framework */; };
 		0889EF931716299600FEB988 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0889EF911716299600FEB988 /* InfoPlist.strings */; };
 		0889EF961716299600FEB988 /* CATETests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0889EF951716299600FEB988 /* CATETests.m */; };
-		0889EFA31716340F00FEB988 /* CATEThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0889EFA21716340F00FEB988 /* CATEThirdViewController.m */; };
-		0889EFA61716341D00FEB988 /* CATEFourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0889EFA51716341D00FEB988 /* CATEFourthViewController.m */; };
-		0889EFAF171642F600FEB988 /* cog.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFA7171642F600FEB988 /* cog.png */; };
-		0889EFB0171642F600FEB988 /* cog.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFA7171642F600FEB988 /* cog.png */; };
-		0889EFB1171642F600FEB988 /* cog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFA8171642F600FEB988 /* cog@2x.png */; };
-		0889EFB2171642F600FEB988 /* cog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFA8171642F600FEB988 /* cog@2x.png */; };
-		0889EFB3171642F600FEB988 /* dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFA9171642F600FEB988 /* dashboard.png */; };
-		0889EFB4171642F600FEB988 /* dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFA9171642F600FEB988 /* dashboard.png */; };
-		0889EFB5171642F600FEB988 /* dashboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFAA171642F600FEB988 /* dashboard@2x.png */; };
-		0889EFB6171642F600FEB988 /* dashboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFAA171642F600FEB988 /* dashboard@2x.png */; };
-		0889EFB7171642F600FEB988 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFAB171642F600FEB988 /* pencil.png */; };
-		0889EFB8171642F600FEB988 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFAB171642F600FEB988 /* pencil.png */; };
-		0889EFB9171642F600FEB988 /* pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFAC171642F600FEB988 /* pencil@2x.png */; };
-		0889EFBA171642F600FEB988 /* pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFAC171642F600FEB988 /* pencil@2x.png */; };
-		0889EFBB171642F600FEB988 /* thumbs.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFAD171642F600FEB988 /* thumbs.png */; };
-		0889EFBC171642F600FEB988 /* thumbs.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFAD171642F600FEB988 /* thumbs.png */; };
-		0889EFBD171642F600FEB988 /* thumbs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFAE171642F600FEB988 /* thumbs@2x.png */; };
-		0889EFBE171642F600FEB988 /* thumbs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFAE171642F600FEB988 /* thumbs@2x.png */; };
-		0889EFC0171645BA00FEB988 /* thb12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFBF171645BA00FEB988 /* thb12.jpg */; };
-		0889EFC1171645BA00FEB988 /* thb12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0889EFBF171645BA00FEB988 /* thb12.jpg */; };
-		0889F0131716687500FEB988 /* myScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 0889F0121716687500FEB988 /* myScript.js */; };
-		0889F0141716687500FEB988 /* myScript.js in Sources */ = {isa = PBXBuildFile; fileRef = 0889F0121716687500FEB988 /* myScript.js */; };
-		08A6327D17186F7200986F47 /* CATEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A6327C17186F7200986F47 /* CATEUtilities.m */; };
-		08C67C2117174C07007D4C77 /* CATEIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C67C2017174C07007D4C77 /* CATEIdentity.m */; };
-		08C67C2717176CA1007D4C77 /* CATEExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C67C2617176CA1007D4C77 /* CATEExercise.m */; };
-		08C67C2A17177DA9007D4C77 /* CATEModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C67C2917177DA9007D4C77 /* CATEModule.m */; };
-		08C67C2D17177F58007D4C77 /* CATETerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C67C2C17177F58007D4C77 /* CATETerm.m */; };
-		08E5C6D8171713BA008DFED8 /* CATELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E5C6D7171713BA008DFED8 /* CATELoginViewController.m */; };
-		08E5C6E4171724A0008DFED8 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E5C6E3171724A0008DFED8 /* SMXMLDocument.m */; };
-		FE434482172370B80032D132 /* btnLogin.psd in Resources */ = {isa = PBXBuildFile; fileRef = FE43447D172370B80032D132 /* btnLogin.psd */; };
-		FE434483172370B80032D132 /* btnTemplate.psd in Resources */ = {isa = PBXBuildFile; fileRef = FE43447E172370B80032D132 /* btnTemplate.psd */; };
-		FE434484172370B80032D132 /* loginFields.png in Resources */ = {isa = PBXBuildFile; fileRef = FE43447F172370B80032D132 /* loginFields.png */; };
-		FE434485172370B80032D132 /* loginFields.psd in Resources */ = {isa = PBXBuildFile; fileRef = FE434480172370B80032D132 /* loginFields.psd */; };
-		FE434486172370B80032D132 /* pattern.psd in Resources */ = {isa = PBXBuildFile; fileRef = FE434481172370B80032D132 /* pattern.psd */; };
-		FE43448A172387640032D132 /* basicWideDarkBtn.psd in Resources */ = {isa = PBXBuildFile; fileRef = FE434487172387640032D132 /* basicWideDarkBtn.psd */; };
-		FE43448B172387640032D132 /* wideDarkLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = FE434488172387640032D132 /* wideDarkLogin.png */; };
-		FE43448C172387640032D132 /* wideDarkLogin.psd in Resources */ = {isa = PBXBuildFile; fileRef = FE434489172387640032D132 /* wideDarkLogin.psd */; };
-		FE4A6BFB172292AC00CF56A1 /* CATESharedData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4A6BFA172292AC00CF56A1 /* CATESharedData.m */; };
-		FED2F2221717BE7700B9B439 /* CATEDataExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = FED2F2211717BE7700B9B439 /* CATEDataExtractor.m */; };
-		FED2F22B171CCEAB00B9B439 /* basicLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2F227171CCEAB00B9B439 /* basicLogo.png */; };
-		FED2F22C171CCEAB00B9B439 /* basicLogo.psd in Resources */ = {isa = PBXBuildFile; fileRef = FED2F228171CCEAB00B9B439 /* basicLogo.psd */; };
-		FED2F22D171CCEAB00B9B439 /* stdBg.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2F229171CCEAB00B9B439 /* stdBg.png */; };
-		FED2F22E171CCEAB00B9B439 /* stdBg.psd in Resources */ = {isa = PBXBuildFile; fileRef = FED2F22A171CCEAB00B9B439 /* stdBg.psd */; };
-		FED2F239171CF6E400B9B439 /* btnLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2F238171CF6E400B9B439 /* btnLogin.png */; };
-		FEF3F80617239ADB00A8DAF1 /* wideDarkLoginAuth.png in Resources */ = {isa = PBXBuildFile; fileRef = FEF3F80317239ADB00A8DAF1 /* wideDarkLoginAuth.png */; };
-		FEF3F80717239ADB00A8DAF1 /* wideDarkLoginDone.png in Resources */ = {isa = PBXBuildFile; fileRef = FEF3F80417239ADB00A8DAF1 /* wideDarkLoginDone.png */; };
-		FEF3F80817239ADB00A8DAF1 /* wideDarkLoginLoading.png in Resources */ = {isa = PBXBuildFile; fileRef = FEF3F80517239ADB00A8DAF1 /* wideDarkLoginLoading.png */; };
-		FEF3F80D1723A04100A8DAF1 /* Icon.psd in Resources */ = {isa = PBXBuildFile; fileRef = FEF3F80B1723A04100A8DAF1 /* Icon.psd */; };
-		FEF3F80F1723A1AC00A8DAF1 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FEF3F80E1723A1AC00A8DAF1 /* Icon.png */; };
-		FEF3F8311723B5B600A8DAF1 /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = FEF3F8251723B5B600A8DAF1 /* bootstrap.min.css */; };
-		FEF3F8321723B5B600A8DAF1 /* bootstrap.min.js in Sources */ = {isa = PBXBuildFile; fileRef = FEF3F8261723B5B600A8DAF1 /* bootstrap.min.js */; };
-		FEF3F8331723B5B600A8DAF1 /* jquery-1.9.1.min.js in Sources */ = {isa = PBXBuildFile; fileRef = FEF3F8271723B5B600A8DAF1 /* jquery-1.9.1.min.js */; };
-		FEF3F8351723B5B600A8DAF1 /* extraction_tools.coffee in Resources */ = {isa = PBXBuildFile; fileRef = FEF3F82A1723B5B600A8DAF1 /* extraction_tools.coffee */; };
-		FEF3F8361723B5B600A8DAF1 /* extraction_tools.js in Sources */ = {isa = PBXBuildFile; fileRef = FEF3F82B1723B5B600A8DAF1 /* extraction_tools.js */; };
-		FEF3F8371723B5B600A8DAF1 /* extraction_page.html in Resources */ = {isa = PBXBuildFile; fileRef = FEF3F82C1723B5B600A8DAF1 /* extraction_page.html */; };
-		FEF3F8391723B5B600A8DAF1 /* loading_page.html in Resources */ = {isa = PBXBuildFile; fileRef = FEF3F82E1723B5B600A8DAF1 /* loading_page.html */; };
-		FEF3F83A1723B5B600A8DAF1 /* loading_page.css in Resources */ = {isa = PBXBuildFile; fileRef = FEF3F8301723B5B600A8DAF1 /* loading_page.css */; };
-		FEF3F83B1723B88400A8DAF1 /* jquery-1.9.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = FEF3F8271723B5B600A8DAF1 /* jquery-1.9.1.min.js */; };
+		FE66DF1D172634CA00EFAD98 /* CATEIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DEAE172634C900EFAD98 /* CATEIdentity.m */; };
+		FE66DF1E172634CA00EFAD98 /* CATERecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DEB1172634C900EFAD98 /* CATERecord.m */; };
+		FE66DF1F172634CA00EFAD98 /* CATERecordExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DEB4172634C900EFAD98 /* CATERecordExercise.m */; };
+		FE66DF20172634CA00EFAD98 /* CATERecordModule.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DEB7172634C900EFAD98 /* CATERecordModule.m */; };
+		FE66DF21172634CA00EFAD98 /* CATERecordStats.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DEBA172634C900EFAD98 /* CATERecordStats.m */; };
+		FE66DF22172634CA00EFAD98 /* CATEExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DEBE172634C900EFAD98 /* CATEExercise.m */; };
+		FE66DF23172634CA00EFAD98 /* CATEModule.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DEC1172634C900EFAD98 /* CATEModule.m */; };
+		FE66DF24172634CA00EFAD98 /* CATETerm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DEC3172634C900EFAD98 /* CATETerm.m */; };
+		FE66DF27172634CA00EFAD98 /* basicLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DECA172634C900EFAD98 /* basicLogo.png */; };
+		FE66DF29172634CA00EFAD98 /* btnLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DECC172634CA00EFAD98 /* btnLogin.png */; };
+		FE66DF2B172634CA00EFAD98 /* stdBgNoSig.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DECE172634CA00EFAD98 /* stdBgNoSig.png */; };
+		FE66DF2E172634CA00EFAD98 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DED4172634CA00EFAD98 /* Default-568h@2x.png */; };
+		FE66DF2F172634CA00EFAD98 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DED5172634CA00EFAD98 /* Default.png */; };
+		FE66DF30172634CA00EFAD98 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DED6172634CA00EFAD98 /* Default@2x.png */; };
+		FE66DF31172634CA00EFAD98 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DED7172634CA00EFAD98 /* first.png */; };
+		FE66DF32172634CA00EFAD98 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DED8172634CA00EFAD98 /* first@2x.png */; };
+		FE66DF34172634CA00EFAD98 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEDA172634CA00EFAD98 /* second.png */; };
+		FE66DF35172634CA00EFAD98 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEDB172634CA00EFAD98 /* second@2x.png */; };
+		FE66DF36172634CA00EFAD98 /* exerciseData.xml in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEDD172634CA00EFAD98 /* exerciseData.xml */; };
+		FE66DF37172634CA00EFAD98 /* get_exercises_xml_template.xml in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEDE172634CA00EFAD98 /* get_exercises_xml_template.xml */; };
+		FE66DF38172634CA00EFAD98 /* get_grades_xml_template.xml in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEDF172634CA00EFAD98 /* get_grades_xml_template.xml */; };
+		FE66DF39172634CA00EFAD98 /* get_main_xml_template.xml in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEE0172634CA00EFAD98 /* get_main_xml_template.xml */; };
+		FE66DF3A172634CA00EFAD98 /* TestXml.xml in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEE1172634CA00EFAD98 /* TestXml.xml */; };
+		FE66DF3B172634CA00EFAD98 /* thb12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEE2172634CA00EFAD98 /* thb12.jpg */; };
+		FE66DF3C172634CA00EFAD98 /* DashboardItem.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEE5172634CA00EFAD98 /* DashboardItem.png */; };
+		FE66DF3D172634CA00EFAD98 /* loginFields.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEE6172634CA00EFAD98 /* loginFields.png */; };
+		FE66DF3E172634CA00EFAD98 /* Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEE7172634CA00EFAD98 /* Menu.png */; };
+		FE66DF3F172634CA00EFAD98 /* ModulesButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEE8172634CA00EFAD98 /* ModulesButton.png */; };
+		FE66DF40172634CA00EFAD98 /* SearchBarActive.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEE9172634CA00EFAD98 /* SearchBarActive.png */; };
+		FE66DF41172634CA00EFAD98 /* SearchBarDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEEA172634CA00EFAD98 /* SearchBarDefault.png */; };
+		FE66DF42172634CA00EFAD98 /* wideDarkLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEEB172634CA00EFAD98 /* wideDarkLogin.png */; };
+		FE66DF43172634CA00EFAD98 /* wideDarkLoginAuth.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEEC172634CA00EFAD98 /* wideDarkLoginAuth.png */; };
+		FE66DF44172634CA00EFAD98 /* wideDarkLoginDone.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEED172634CA00EFAD98 /* wideDarkLoginDone.png */; };
+		FE66DF45172634CA00EFAD98 /* wideDarkLoginLoading.png in Resources */ = {isa = PBXBuildFile; fileRef = FE66DEEE172634CA00EFAD98 /* wideDarkLoginLoading.png */; };
+		FE66DF50172634CA00EFAD98 /* CATEDataExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DEFD172634CA00EFAD98 /* CATEDataExtractor.m */; };
+		FE66DF51172634CA00EFAD98 /* CATESharedData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DF00172634CA00EFAD98 /* CATESharedData.m */; };
+		FE66DF52172634CA00EFAD98 /* CATEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DF03172634CA00EFAD98 /* CATEUtilities.m */; };
+		FE66DF53172634CA00EFAD98 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DF06172634CA00EFAD98 /* SMXMLDocument.m */; };
+		FE66DF54172634CA00EFAD98 /* CATEDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DF0A172634CA00EFAD98 /* CATEDashboardViewController.m */; };
+		FE66DF55172634CA00EFAD98 /* CATEFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DF0D172634CA00EFAD98 /* CATEFirstViewController.m */; };
+		FE66DF56172634CA00EFAD98 /* CATELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DF10172634CA00EFAD98 /* CATELoginViewController.m */; };
+		FE66DF57172634CA00EFAD98 /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = FE66DF13172634CA00EFAD98 /* bootstrap.min.css */; };
+		FE66DF5C172634CA00EFAD98 /* extraction_page.html in Resources */ = {isa = PBXBuildFile; fileRef = FE66DF19172634CA00EFAD98 /* extraction_page.html */; };
+		FE66DF5D172634CA00EFAD98 /* loading_page.html in Resources */ = {isa = PBXBuildFile; fileRef = FE66DF1A172634CA00EFAD98 /* loading_page.html */; };
+		FE66DF5E172634CA00EFAD98 /* loading_page.css in Resources */ = {isa = PBXBuildFile; fileRef = FE66DF1C172634CA00EFAD98 /* loading_page.css */; };
+		FE66DFD21726360D00EFAD98 /* CATEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DF621726360C00EFAD98 /* CATEAppDelegate.m */; };
+		FE66E0131726379700EFAD98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DF871726360C00EFAD98 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,101 +75,178 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		084D353B171CB8D5007AB292 /* CATERecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATERecord.h; sourceTree = "<group>"; };
-		084D353C171CB8D5007AB292 /* CATERecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATERecord.m; sourceTree = "<group>"; };
-		084D353F171CB8F3007AB292 /* CATERecordStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATERecordStats.h; sourceTree = "<group>"; };
-		084D3540171CB8F3007AB292 /* CATERecordStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATERecordStats.m; sourceTree = "<group>"; };
-		084D3543171CB904007AB292 /* CATERecordModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATERecordModule.h; sourceTree = "<group>"; };
-		084D3544171CB904007AB292 /* CATERecordModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATERecordModule.m; sourceTree = "<group>"; };
-		084D3547171CB91A007AB292 /* CATERecordExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATERecordExercise.h; sourceTree = "<group>"; };
-		084D3548171CB91A007AB292 /* CATERecordExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATERecordExercise.m; sourceTree = "<group>"; };
-		087FC01217178E7300529DC5 /* exerciseData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = exerciseData.xml; sourceTree = "<group>"; };
 		0889EF561716299600FEB988 /* CATE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CATE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0889EF591716299600FEB988 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0889EF5B1716299600FEB988 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0889EF5D1716299600FEB988 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0889EF611716299600FEB988 /* CATE-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CATE-Info.plist"; sourceTree = "<group>"; };
 		0889EF631716299600FEB988 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0889EF651716299600FEB988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0889EF671716299600FEB988 /* CATE-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CATE-Prefix.pch"; sourceTree = "<group>"; };
-		0889EF681716299600FEB988 /* CATEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATEAppDelegate.h; sourceTree = "<group>"; };
-		0889EF691716299600FEB988 /* CATEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATEAppDelegate.m; sourceTree = "<group>"; };
-		0889EF6B1716299600FEB988 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		0889EF6D1716299600FEB988 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		0889EF6F1716299600FEB988 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		0889EF721716299600FEB988 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		0889EF741716299600FEB988 /* CATEFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATEFirstViewController.h; sourceTree = "<group>"; };
-		0889EF751716299600FEB988 /* CATEFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATEFirstViewController.m; sourceTree = "<group>"; };
-		0889EF771716299600FEB988 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		0889EF791716299600FEB988 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		0889EF7B1716299600FEB988 /* CATESecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATESecondViewController.h; sourceTree = "<group>"; };
-		0889EF7C1716299600FEB988 /* CATESecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATESecondViewController.m; sourceTree = "<group>"; };
-		0889EF7E1716299600FEB988 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		0889EF801716299600FEB988 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		0889EF871716299600FEB988 /* CATETests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CATETests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0889EF881716299600FEB988 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0889EF901716299600FEB988 /* CATETests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CATETests-Info.plist"; sourceTree = "<group>"; };
 		0889EF921716299600FEB988 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0889EF941716299600FEB988 /* CATETests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATETests.h; sourceTree = "<group>"; };
 		0889EF951716299600FEB988 /* CATETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATETests.m; sourceTree = "<group>"; };
-		0889EFA11716340F00FEB988 /* CATEThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEThirdViewController.h; sourceTree = "<group>"; };
-		0889EFA21716340F00FEB988 /* CATEThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEThirdViewController.m; sourceTree = "<group>"; };
-		0889EFA41716341C00FEB988 /* CATEFourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEFourthViewController.h; sourceTree = "<group>"; };
-		0889EFA51716341D00FEB988 /* CATEFourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEFourthViewController.m; sourceTree = "<group>"; };
-		0889EFA7171642F600FEB988 /* cog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog.png; sourceTree = "<group>"; };
-		0889EFA8171642F600FEB988 /* cog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog@2x.png"; sourceTree = "<group>"; };
-		0889EFA9171642F600FEB988 /* dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dashboard.png; sourceTree = "<group>"; };
-		0889EFAA171642F600FEB988 /* dashboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dashboard@2x.png"; sourceTree = "<group>"; };
-		0889EFAB171642F600FEB988 /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
-		0889EFAC171642F600FEB988 /* pencil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pencil@2x.png"; sourceTree = "<group>"; };
-		0889EFAD171642F600FEB988 /* thumbs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbs.png; sourceTree = "<group>"; };
-		0889EFAE171642F600FEB988 /* thumbs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbs@2x.png"; sourceTree = "<group>"; };
-		0889EFBF171645BA00FEB988 /* thb12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thb12.jpg; sourceTree = "<group>"; };
-		0889F0121716687500FEB988 /* myScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = myScript.js; sourceTree = "<group>"; };
-		08A6327B17186F7200986F47 /* CATEUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEUtilities.h; sourceTree = "<group>"; };
-		08A6327C17186F7200986F47 /* CATEUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEUtilities.m; sourceTree = "<group>"; };
-		08C67C1F17174C07007D4C77 /* CATEIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEIdentity.h; sourceTree = "<group>"; };
-		08C67C2017174C07007D4C77 /* CATEIdentity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEIdentity.m; sourceTree = "<group>"; };
-		08C67C2517176CA1007D4C77 /* CATEExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEExercise.h; sourceTree = "<group>"; };
-		08C67C2617176CA1007D4C77 /* CATEExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEExercise.m; sourceTree = "<group>"; };
-		08C67C2817177DA9007D4C77 /* CATEModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEModule.h; sourceTree = "<group>"; };
-		08C67C2917177DA9007D4C77 /* CATEModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEModule.m; sourceTree = "<group>"; };
-		08C67C2B17177F58007D4C77 /* CATETerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATETerm.h; sourceTree = "<group>"; };
-		08C67C2C17177F58007D4C77 /* CATETerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATETerm.m; sourceTree = "<group>"; };
-		08E5C6D6171713BA008DFED8 /* CATELoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATELoginViewController.h; sourceTree = "<group>"; };
-		08E5C6D7171713BA008DFED8 /* CATELoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATELoginViewController.m; sourceTree = "<group>"; };
-		08E5C6E2171724A0008DFED8 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
-		08E5C6E3171724A0008DFED8 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
-		FE43447D172370B80032D132 /* btnLogin.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = btnLogin.psd; sourceTree = "<group>"; };
-		FE43447E172370B80032D132 /* btnTemplate.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = btnTemplate.psd; sourceTree = "<group>"; };
-		FE43447F172370B80032D132 /* loginFields.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginFields.png; sourceTree = "<group>"; };
-		FE434480172370B80032D132 /* loginFields.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginFields.psd; sourceTree = "<group>"; };
-		FE434481172370B80032D132 /* pattern.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = pattern.psd; sourceTree = "<group>"; };
-		FE434487172387640032D132 /* basicWideDarkBtn.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = basicWideDarkBtn.psd; sourceTree = "<group>"; };
-		FE434488172387640032D132 /* wideDarkLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLogin.png; sourceTree = "<group>"; };
-		FE434489172387640032D132 /* wideDarkLogin.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = wideDarkLogin.psd; sourceTree = "<group>"; };
-		FE4A6BF9172292AC00CF56A1 /* CATESharedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATESharedData.h; sourceTree = "<group>"; };
-		FE4A6BFA172292AC00CF56A1 /* CATESharedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATESharedData.m; sourceTree = "<group>"; };
-		FED2F2201717BE7700B9B439 /* CATEDataExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEDataExtractor.h; sourceTree = "<group>"; };
-		FED2F2211717BE7700B9B439 /* CATEDataExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEDataExtractor.m; sourceTree = "<group>"; };
-		FED2F227171CCEAB00B9B439 /* basicLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basicLogo.png; sourceTree = "<group>"; };
-		FED2F228171CCEAB00B9B439 /* basicLogo.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = basicLogo.psd; sourceTree = "<group>"; };
-		FED2F229171CCEAB00B9B439 /* stdBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stdBg.png; sourceTree = "<group>"; };
-		FED2F22A171CCEAB00B9B439 /* stdBg.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = stdBg.psd; sourceTree = "<group>"; };
-		FED2F238171CF6E400B9B439 /* btnLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnLogin.png; sourceTree = "<group>"; };
-		FEF3F80317239ADB00A8DAF1 /* wideDarkLoginAuth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLoginAuth.png; sourceTree = "<group>"; };
-		FEF3F80417239ADB00A8DAF1 /* wideDarkLoginDone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLoginDone.png; sourceTree = "<group>"; };
-		FEF3F80517239ADB00A8DAF1 /* wideDarkLoginLoading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLoginLoading.png; sourceTree = "<group>"; };
-		FEF3F80B1723A04100A8DAF1 /* Icon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Icon.psd; sourceTree = "<group>"; };
-		FEF3F80E1723A1AC00A8DAF1 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		FEF3F8251723B5B600A8DAF1 /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
-		FEF3F8261723B5B600A8DAF1 /* bootstrap.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.min.js; sourceTree = "<group>"; };
-		FEF3F8271723B5B600A8DAF1 /* jquery-1.9.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.9.1.min.js"; sourceTree = "<group>"; };
-		FEF3F82A1723B5B600A8DAF1 /* extraction_tools.coffee */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = extraction_tools.coffee; sourceTree = "<group>"; };
-		FEF3F82B1723B5B600A8DAF1 /* extraction_tools.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = extraction_tools.js; sourceTree = "<group>"; };
-		FEF3F82C1723B5B600A8DAF1 /* extraction_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = extraction_page.html; sourceTree = "<group>"; };
-		FEF3F82E1723B5B600A8DAF1 /* loading_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = loading_page.html; sourceTree = "<group>"; };
-		FEF3F8301723B5B600A8DAF1 /* loading_page.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = loading_page.css; sourceTree = "<group>"; };
+		FE66DEAD172634C900EFAD98 /* CATEIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEIdentity.h; sourceTree = "<group>"; };
+		FE66DEAE172634C900EFAD98 /* CATEIdentity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEIdentity.m; sourceTree = "<group>"; };
+		FE66DEB0172634C900EFAD98 /* CATERecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATERecord.h; sourceTree = "<group>"; };
+		FE66DEB1172634C900EFAD98 /* CATERecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATERecord.m; sourceTree = "<group>"; };
+		FE66DEB3172634C900EFAD98 /* CATERecordExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATERecordExercise.h; sourceTree = "<group>"; };
+		FE66DEB4172634C900EFAD98 /* CATERecordExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATERecordExercise.m; sourceTree = "<group>"; };
+		FE66DEB6172634C900EFAD98 /* CATERecordModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATERecordModule.h; sourceTree = "<group>"; };
+		FE66DEB7172634C900EFAD98 /* CATERecordModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATERecordModule.m; sourceTree = "<group>"; };
+		FE66DEB9172634C900EFAD98 /* CATERecordStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATERecordStats.h; sourceTree = "<group>"; };
+		FE66DEBA172634C900EFAD98 /* CATERecordStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATERecordStats.m; sourceTree = "<group>"; };
+		FE66DEBD172634C900EFAD98 /* CATEExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEExercise.h; sourceTree = "<group>"; };
+		FE66DEBE172634C900EFAD98 /* CATEExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEExercise.m; sourceTree = "<group>"; };
+		FE66DEC0172634C900EFAD98 /* CATEModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEModule.h; sourceTree = "<group>"; };
+		FE66DEC1172634C900EFAD98 /* CATEModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEModule.m; sourceTree = "<group>"; };
+		FE66DEC2172634C900EFAD98 /* CATETerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATETerm.h; sourceTree = "<group>"; };
+		FE66DEC3172634C900EFAD98 /* CATETerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATETerm.m; sourceTree = "<group>"; };
+		FE66DEC6172634C900EFAD98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		FE66DEC8172634C900EFAD98 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FE66DECA172634C900EFAD98 /* basicLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basicLogo.png; sourceTree = "<group>"; };
+		FE66DECB172634CA00EFAD98 /* basicLogo.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = basicLogo.psd; sourceTree = "<group>"; };
+		FE66DECC172634CA00EFAD98 /* btnLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnLogin.png; sourceTree = "<group>"; };
+		FE66DECD172634CA00EFAD98 /* stdBg.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = stdBg.psd; sourceTree = "<group>"; };
+		FE66DECE172634CA00EFAD98 /* stdBgNoSig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stdBgNoSig.png; sourceTree = "<group>"; };
+		FE66DED4172634CA00EFAD98 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../SystemEssentials/Default-568h@2x.png"; sourceTree = "<group>"; };
+		FE66DED5172634CA00EFAD98 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../SystemEssentials/Default.png; sourceTree = "<group>"; };
+		FE66DED6172634CA00EFAD98 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../SystemEssentials/Default@2x.png"; sourceTree = "<group>"; };
+		FE66DED7172634CA00EFAD98 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = ../SystemEssentials/first.png; sourceTree = "<group>"; };
+		FE66DED8172634CA00EFAD98 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "../SystemEssentials/first@2x.png"; sourceTree = "<group>"; };
+		FE66DEDA172634CA00EFAD98 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = ../SystemEssentials/second.png; sourceTree = "<group>"; };
+		FE66DEDB172634CA00EFAD98 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "../SystemEssentials/second@2x.png"; sourceTree = "<group>"; };
+		FE66DEDD172634CA00EFAD98 /* exerciseData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = exerciseData.xml; sourceTree = "<group>"; };
+		FE66DEDE172634CA00EFAD98 /* get_exercises_xml_template.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = get_exercises_xml_template.xml; sourceTree = "<group>"; };
+		FE66DEDF172634CA00EFAD98 /* get_grades_xml_template.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = get_grades_xml_template.xml; sourceTree = "<group>"; };
+		FE66DEE0172634CA00EFAD98 /* get_main_xml_template.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = get_main_xml_template.xml; sourceTree = "<group>"; };
+		FE66DEE1172634CA00EFAD98 /* TestXml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TestXml.xml; sourceTree = "<group>"; };
+		FE66DEE2172634CA00EFAD98 /* thb12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thb12.jpg; sourceTree = "<group>"; };
+		FE66DEE5172634CA00EFAD98 /* DashboardItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DashboardItem.png; sourceTree = "<group>"; };
+		FE66DEE6172634CA00EFAD98 /* loginFields.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginFields.png; sourceTree = "<group>"; };
+		FE66DEE7172634CA00EFAD98 /* Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu.png; sourceTree = "<group>"; };
+		FE66DEE8172634CA00EFAD98 /* ModulesButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ModulesButton.png; sourceTree = "<group>"; };
+		FE66DEE9172634CA00EFAD98 /* SearchBarActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchBarActive.png; sourceTree = "<group>"; };
+		FE66DEEA172634CA00EFAD98 /* SearchBarDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchBarDefault.png; sourceTree = "<group>"; };
+		FE66DEEB172634CA00EFAD98 /* wideDarkLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLogin.png; sourceTree = "<group>"; };
+		FE66DEEC172634CA00EFAD98 /* wideDarkLoginAuth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLoginAuth.png; sourceTree = "<group>"; };
+		FE66DEED172634CA00EFAD98 /* wideDarkLoginDone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLoginDone.png; sourceTree = "<group>"; };
+		FE66DEEE172634CA00EFAD98 /* wideDarkLoginLoading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLoginLoading.png; sourceTree = "<group>"; };
+		FE66DEF0172634CA00EFAD98 /* basicWideDarkBtn.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = basicWideDarkBtn.psd; sourceTree = "<group>"; };
+		FE66DEF1172634CA00EFAD98 /* btnLogin.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = btnLogin.psd; sourceTree = "<group>"; };
+		FE66DEF2172634CA00EFAD98 /* btnTemplate.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = btnTemplate.psd; sourceTree = "<group>"; };
+		FE66DEF3172634CA00EFAD98 /* loginFields.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginFields.psd; sourceTree = "<group>"; };
+		FE66DEF4172634CA00EFAD98 /* MenuItem.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = MenuItem.psd; sourceTree = "<group>"; };
+		FE66DEF5172634CA00EFAD98 /* ModulesButton.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = ModulesButton.psd; sourceTree = "<group>"; };
+		FE66DEF6172634CA00EFAD98 /* Ring.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ring.psd; sourceTree = "<group>"; };
+		FE66DEF7172634CA00EFAD98 /* SearchBar.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = SearchBar.psd; sourceTree = "<group>"; };
+		FE66DEF8172634CA00EFAD98 /* TwoElementTabBar.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = TwoElementTabBar.psd; sourceTree = "<group>"; };
+		FE66DEF9172634CA00EFAD98 /* wideDarkLogin.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = wideDarkLogin.psd; sourceTree = "<group>"; };
+		FE66DEFC172634CA00EFAD98 /* CATEDataExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEDataExtractor.h; sourceTree = "<group>"; };
+		FE66DEFD172634CA00EFAD98 /* CATEDataExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEDataExtractor.m; sourceTree = "<group>"; };
+		FE66DEFF172634CA00EFAD98 /* CATESharedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATESharedData.h; sourceTree = "<group>"; };
+		FE66DF00172634CA00EFAD98 /* CATESharedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATESharedData.m; sourceTree = "<group>"; };
+		FE66DF02172634CA00EFAD98 /* CATEUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEUtilities.h; sourceTree = "<group>"; };
+		FE66DF03172634CA00EFAD98 /* CATEUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEUtilities.m; sourceTree = "<group>"; };
+		FE66DF05172634CA00EFAD98 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
+		FE66DF06172634CA00EFAD98 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
+		FE66DF09172634CA00EFAD98 /* CATEDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEDashboardViewController.h; sourceTree = "<group>"; };
+		FE66DF0A172634CA00EFAD98 /* CATEDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEDashboardViewController.m; sourceTree = "<group>"; };
+		FE66DF0C172634CA00EFAD98 /* CATEFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEFirstViewController.h; sourceTree = "<group>"; };
+		FE66DF0D172634CA00EFAD98 /* CATEFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEFirstViewController.m; sourceTree = "<group>"; };
+		FE66DF0F172634CA00EFAD98 /* CATELoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATELoginViewController.h; sourceTree = "<group>"; };
+		FE66DF10172634CA00EFAD98 /* CATELoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATELoginViewController.m; sourceTree = "<group>"; };
+		FE66DF13172634CA00EFAD98 /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
+		FE66DF14172634CA00EFAD98 /* bootstrap.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.min.js; sourceTree = "<group>"; };
+		FE66DF15172634CA00EFAD98 /* jquery-1.9.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.9.1.min.js"; sourceTree = "<group>"; };
+		FE66DF17172634CA00EFAD98 /* extraction_tools.coffee */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = extraction_tools.coffee; sourceTree = "<group>"; };
+		FE66DF18172634CA00EFAD98 /* extraction_tools.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = extraction_tools.js; sourceTree = "<group>"; };
+		FE66DF19172634CA00EFAD98 /* extraction_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = extraction_page.html; sourceTree = "<group>"; };
+		FE66DF1A172634CA00EFAD98 /* loading_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = loading_page.html; sourceTree = "<group>"; };
+		FE66DF1C172634CA00EFAD98 /* loading_page.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = loading_page.css; sourceTree = "<group>"; };
+		FE66DF5F1726360C00EFAD98 /* CATE-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CATE-Info.plist"; sourceTree = "<group>"; };
+		FE66DF601726360C00EFAD98 /* CATE-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATE-Prefix.pch"; sourceTree = "<group>"; };
+		FE66DF611726360C00EFAD98 /* CATEAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEAppDelegate.h; sourceTree = "<group>"; };
+		FE66DF621726360C00EFAD98 /* CATEAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEAppDelegate.m; sourceTree = "<group>"; };
+		FE66DF651726360C00EFAD98 /* CATEIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEIdentity.h; sourceTree = "<group>"; };
+		FE66DF661726360C00EFAD98 /* CATEIdentity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEIdentity.m; sourceTree = "<group>"; };
+		FE66DF681726360C00EFAD98 /* CATERecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATERecord.h; sourceTree = "<group>"; };
+		FE66DF691726360C00EFAD98 /* CATERecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATERecord.m; sourceTree = "<group>"; };
+		FE66DF6B1726360C00EFAD98 /* CATERecordExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATERecordExercise.h; sourceTree = "<group>"; };
+		FE66DF6C1726360C00EFAD98 /* CATERecordExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATERecordExercise.m; sourceTree = "<group>"; };
+		FE66DF6E1726360C00EFAD98 /* CATERecordModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATERecordModule.h; sourceTree = "<group>"; };
+		FE66DF6F1726360C00EFAD98 /* CATERecordModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATERecordModule.m; sourceTree = "<group>"; };
+		FE66DF711726360C00EFAD98 /* CATERecordStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATERecordStats.h; sourceTree = "<group>"; };
+		FE66DF721726360C00EFAD98 /* CATERecordStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATERecordStats.m; sourceTree = "<group>"; };
+		FE66DF751726360C00EFAD98 /* CATEExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEExercise.h; sourceTree = "<group>"; };
+		FE66DF761726360C00EFAD98 /* CATEExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEExercise.m; sourceTree = "<group>"; };
+		FE66DF781726360C00EFAD98 /* CATEModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEModule.h; sourceTree = "<group>"; };
+		FE66DF791726360C00EFAD98 /* CATEModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEModule.m; sourceTree = "<group>"; };
+		FE66DF7A1726360C00EFAD98 /* CATETerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATETerm.h; sourceTree = "<group>"; };
+		FE66DF7B1726360C00EFAD98 /* CATETerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATETerm.m; sourceTree = "<group>"; };
+		FE66DF7E1726360C00EFAD98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		FE66DF801726360C00EFAD98 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FE66DF821726360C00EFAD98 /* basicLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basicLogo.png; sourceTree = "<group>"; };
+		FE66DF831726360C00EFAD98 /* basicLogo.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = basicLogo.psd; sourceTree = "<group>"; };
+		FE66DF841726360C00EFAD98 /* btnLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnLogin.png; sourceTree = "<group>"; };
+		FE66DF851726360C00EFAD98 /* stdBg.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = stdBg.psd; sourceTree = "<group>"; };
+		FE66DF861726360C00EFAD98 /* stdBgNoSig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stdBgNoSig.png; sourceTree = "<group>"; };
+		FE66DF871726360C00EFAD98 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE66DF891726360C00EFAD98 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FE66DF8A1726360C00EFAD98 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FE66DF8B1726360C00EFAD98 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FE66DF8C1726360C00EFAD98 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		FE66DF8D1726360C00EFAD98 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		FE66DF8E1726360C00EFAD98 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		FE66DF8F1726360C00EFAD98 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		FE66DF911726360C00EFAD98 /* exerciseData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = exerciseData.xml; sourceTree = "<group>"; };
+		FE66DF921726360C00EFAD98 /* get_exercises_xml_template.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = get_exercises_xml_template.xml; sourceTree = "<group>"; };
+		FE66DF931726360C00EFAD98 /* get_grades_xml_template.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = get_grades_xml_template.xml; sourceTree = "<group>"; };
+		FE66DF941726360C00EFAD98 /* get_main_xml_template.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = get_main_xml_template.xml; sourceTree = "<group>"; };
+		FE66DF951726360C00EFAD98 /* TestXml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TestXml.xml; sourceTree = "<group>"; };
+		FE66DF961726360C00EFAD98 /* thb12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thb12.jpg; sourceTree = "<group>"; };
+		FE66DF991726360C00EFAD98 /* DashboardItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DashboardItem.png; sourceTree = "<group>"; };
+		FE66DF9A1726360C00EFAD98 /* loginFields.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginFields.png; sourceTree = "<group>"; };
+		FE66DF9B1726360C00EFAD98 /* Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu.png; sourceTree = "<group>"; };
+		FE66DF9C1726360C00EFAD98 /* ModulesButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ModulesButton.png; sourceTree = "<group>"; };
+		FE66DF9D1726360C00EFAD98 /* SearchBarActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchBarActive.png; sourceTree = "<group>"; };
+		FE66DF9E1726360C00EFAD98 /* SearchBarDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchBarDefault.png; sourceTree = "<group>"; };
+		FE66DF9F1726360C00EFAD98 /* wideDarkLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLogin.png; sourceTree = "<group>"; };
+		FE66DFA01726360C00EFAD98 /* wideDarkLoginAuth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLoginAuth.png; sourceTree = "<group>"; };
+		FE66DFA11726360C00EFAD98 /* wideDarkLoginDone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLoginDone.png; sourceTree = "<group>"; };
+		FE66DFA21726360C00EFAD98 /* wideDarkLoginLoading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wideDarkLoginLoading.png; sourceTree = "<group>"; };
+		FE66DFA41726360C00EFAD98 /* basicWideDarkBtn.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = basicWideDarkBtn.psd; sourceTree = "<group>"; };
+		FE66DFA51726360C00EFAD98 /* btnLogin.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = btnLogin.psd; sourceTree = "<group>"; };
+		FE66DFA61726360C00EFAD98 /* btnTemplate.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = btnTemplate.psd; sourceTree = "<group>"; };
+		FE66DFA71726360C00EFAD98 /* loginFields.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginFields.psd; sourceTree = "<group>"; };
+		FE66DFA81726360C00EFAD98 /* MenuItem.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = MenuItem.psd; sourceTree = "<group>"; };
+		FE66DFA91726360C00EFAD98 /* ModulesButton.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = ModulesButton.psd; sourceTree = "<group>"; };
+		FE66DFAA1726360C00EFAD98 /* Ring.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ring.psd; sourceTree = "<group>"; };
+		FE66DFAB1726360C00EFAD98 /* SearchBar.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = SearchBar.psd; sourceTree = "<group>"; };
+		FE66DFAC1726360C00EFAD98 /* TwoElementTabBar.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = TwoElementTabBar.psd; sourceTree = "<group>"; };
+		FE66DFAD1726360D00EFAD98 /* wideDarkLogin.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = wideDarkLogin.psd; sourceTree = "<group>"; };
+		FE66DFB01726360D00EFAD98 /* CATEDataExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEDataExtractor.h; sourceTree = "<group>"; };
+		FE66DFB11726360D00EFAD98 /* CATEDataExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEDataExtractor.m; sourceTree = "<group>"; };
+		FE66DFB31726360D00EFAD98 /* CATESharedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATESharedData.h; sourceTree = "<group>"; };
+		FE66DFB41726360D00EFAD98 /* CATESharedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATESharedData.m; sourceTree = "<group>"; };
+		FE66DFB61726360D00EFAD98 /* CATEUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEUtilities.h; sourceTree = "<group>"; };
+		FE66DFB71726360D00EFAD98 /* CATEUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEUtilities.m; sourceTree = "<group>"; };
+		FE66DFB91726360D00EFAD98 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
+		FE66DFBA1726360D00EFAD98 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
+		FE66DFBD1726360D00EFAD98 /* CATEDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEDashboardViewController.h; sourceTree = "<group>"; };
+		FE66DFBE1726360D00EFAD98 /* CATEDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEDashboardViewController.m; sourceTree = "<group>"; };
+		FE66DFC01726360D00EFAD98 /* CATEFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATEFirstViewController.h; sourceTree = "<group>"; };
+		FE66DFC11726360D00EFAD98 /* CATEFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATEFirstViewController.m; sourceTree = "<group>"; };
+		FE66DFC31726360D00EFAD98 /* CATELoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATELoginViewController.h; sourceTree = "<group>"; };
+		FE66DFC41726360D00EFAD98 /* CATELoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATELoginViewController.m; sourceTree = "<group>"; };
+		FE66DFC71726360D00EFAD98 /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
+		FE66DFC81726360D00EFAD98 /* bootstrap.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.min.js; sourceTree = "<group>"; };
+		FE66DFC91726360D00EFAD98 /* jquery-1.9.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.9.1.min.js"; sourceTree = "<group>"; };
+		FE66DFCB1726360D00EFAD98 /* extraction_tools.coffee */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = extraction_tools.coffee; sourceTree = "<group>"; };
+		FE66DFCC1726360D00EFAD98 /* extraction_tools.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = extraction_tools.js; sourceTree = "<group>"; };
+		FE66DFCD1726360D00EFAD98 /* extraction_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = extraction_page.html; sourceTree = "<group>"; };
+		FE66DFCE1726360D00EFAD98 /* loading_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = loading_page.html; sourceTree = "<group>"; };
+		FE66DFD01726360D00EFAD98 /* loading_page.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = loading_page.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,87 +273,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		084D3536171CB897007AB292 /* CATEIdentity */ = {
-			isa = PBXGroup;
-			children = (
-				08C67C1F17174C07007D4C77 /* CATEIdentity.h */,
-				08C67C2017174C07007D4C77 /* CATEIdentity.m */,
-			);
-			name = CATEIdentity;
-			sourceTree = "<group>";
-		};
-		084D3537171CB8A3007AB292 /* CATETerm */ = {
-			isa = PBXGroup;
-			children = (
-				084D3539171CB8B9007AB292 /* CATEModule */,
-				084D3538171CB8B0007AB292 /* CATEExercise */,
-				08C67C2B17177F58007D4C77 /* CATETerm.h */,
-				08C67C2C17177F58007D4C77 /* CATETerm.m */,
-			);
-			name = CATETerm;
-			sourceTree = "<group>";
-		};
-		084D3538171CB8B0007AB292 /* CATEExercise */ = {
-			isa = PBXGroup;
-			children = (
-				08C67C2517176CA1007D4C77 /* CATEExercise.h */,
-				08C67C2617176CA1007D4C77 /* CATEExercise.m */,
-			);
-			name = CATEExercise;
-			sourceTree = "<group>";
-		};
-		084D3539171CB8B9007AB292 /* CATEModule */ = {
-			isa = PBXGroup;
-			children = (
-				08C67C2817177DA9007D4C77 /* CATEModule.h */,
-				08C67C2917177DA9007D4C77 /* CATEModule.m */,
-			);
-			name = CATEModule;
-			sourceTree = "<group>";
-		};
-		084D353A171CB8C9007AB292 /* CATERecord */ = {
-			isa = PBXGroup;
-			children = (
-				084D3546171CB908007AB292 /* CATERecordExercise */,
-				084D3542171CB8F6007AB292 /* CATERecordModule */,
-				084D353E171CB8E1007AB292 /* CATERecordStats */,
-				084D353B171CB8D5007AB292 /* CATERecord.h */,
-				084D353C171CB8D5007AB292 /* CATERecord.m */,
-			);
-			name = CATERecord;
-			sourceTree = "<group>";
-		};
-		084D353E171CB8E1007AB292 /* CATERecordStats */ = {
-			isa = PBXGroup;
-			children = (
-				084D353F171CB8F3007AB292 /* CATERecordStats.h */,
-				084D3540171CB8F3007AB292 /* CATERecordStats.m */,
-			);
-			name = CATERecordStats;
-			sourceTree = "<group>";
-		};
-		084D3542171CB8F6007AB292 /* CATERecordModule */ = {
-			isa = PBXGroup;
-			children = (
-				084D3543171CB904007AB292 /* CATERecordModule.h */,
-				084D3544171CB904007AB292 /* CATERecordModule.m */,
-			);
-			name = CATERecordModule;
-			sourceTree = "<group>";
-		};
-		084D3546171CB908007AB292 /* CATERecordExercise */ = {
-			isa = PBXGroup;
-			children = (
-				084D3547171CB91A007AB292 /* CATERecordExercise.h */,
-				084D3548171CB91A007AB292 /* CATERecordExercise.m */,
-			);
-			name = CATERecordExercise;
-			sourceTree = "<group>";
-		};
 		0889EF4D1716299600FEB988 = {
 			isa = PBXGroup;
 			children = (
-				FEF3F80E1723A1AC00A8DAF1 /* Icon.png */,
 				0889EF5F1716299600FEB988 /* CATE */,
 				0889EF8E1716299600FEB988 /* CATETests */,
 				0889EF581716299600FEB988 /* Frameworks */,
@@ -336,36 +306,31 @@
 		0889EF5F1716299600FEB988 /* CATE */ = {
 			isa = PBXGroup;
 			children = (
-				FEF3F8231723B5B600A8DAF1 /* WebContent */,
-				FED2F226171CCEAB00B9B439 /* image_res */,
-				08A6327A17186F4E00986F47 /* Utilities */,
-				08C67C2417176C5F007D4C77 /* Data Structures */,
-				08C67C2317174C59007D4C77 /* Plugins */,
-				08C67C2217174C38007D4C77 /* Views */,
-				0889F0111716686600FEB988 /* JavaScripts */,
-				0889F010171665EE00FEB988 /* Images */,
-				0889EF681716299600FEB988 /* CATEAppDelegate.h */,
-				0889EF691716299600FEB988 /* CATEAppDelegate.m */,
-				FE4A6BF9172292AC00CF56A1 /* CATESharedData.h */,
-				FE4A6BFA172292AC00CF56A1 /* CATESharedData.m */,
-				0889EF711716299600FEB988 /* MainStoryboard.storyboard */,
-				0889EF601716299600FEB988 /* Supporting Files */,
+				FE66DF7F1726360C00EFAD98 /* MainStoryboard.storyboard */,
+				FE66DF5F1726360C00EFAD98 /* CATE-Info.plist */,
+				FE66DF601726360C00EFAD98 /* CATE-Prefix.pch */,
+				FE66DF611726360C00EFAD98 /* CATEAppDelegate.h */,
+				FE66DF621726360C00EFAD98 /* CATEAppDelegate.m */,
+				FE66DF631726360C00EFAD98 /* DataStructures */,
+				FE66DF7C1726360C00EFAD98 /* en.lproj */,
+				FE66DF811726360C00EFAD98 /* ImageResources */,
+				FE66DF871726360C00EFAD98 /* main.m */,
+				FE66DF881726360C00EFAD98 /* SystemEssentials */,
+				FE66DF901726360C00EFAD98 /* TestingData */,
+				FE66DF971726360C00EFAD98 /* UIComponents */,
+				FE66DFAE1726360D00EFAD98 /* Utilities */,
+				FE66DFBB1726360D00EFAD98 /* ViewControllers */,
+				FE66DFC51726360D00EFAD98 /* WebContent */,
+				FE66DEAB172634C900EFAD98 /* DataStructures */,
+				FE66DEC4172634C900EFAD98 /* en.lproj */,
+				FE66DEC9172634C900EFAD98 /* ImageResources */,
+				FE66DEDC172634CA00EFAD98 /* TestingData */,
+				FE66DEE3172634CA00EFAD98 /* UIComponents */,
+				FE66DEFA172634CA00EFAD98 /* Utilities */,
+				FE66DF07172634CA00EFAD98 /* ViewControllers */,
+				FE66DF11172634CA00EFAD98 /* WebContent */,
 			);
 			path = CATE;
-			sourceTree = "<group>";
-		};
-		0889EF601716299600FEB988 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0889EF611716299600FEB988 /* CATE-Info.plist */,
-				0889EF621716299600FEB988 /* InfoPlist.strings */,
-				0889EF651716299600FEB988 /* main.m */,
-				0889EF671716299600FEB988 /* CATE-Prefix.pch */,
-				0889EF6B1716299600FEB988 /* Default.png */,
-				0889EF6D1716299600FEB988 /* Default@2x.png */,
-				0889EF6F1716299600FEB988 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		0889EF8E1716299600FEB988 /* CATETests */ = {
@@ -387,149 +352,597 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0889F010171665EE00FEB988 /* Images */ = {
+		FE66DEAB172634C900EFAD98 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
-				0889EF771716299600FEB988 /* first.png */,
-				0889EF791716299600FEB988 /* first@2x.png */,
-				0889EF7E1716299600FEB988 /* second.png */,
-				0889EF801716299600FEB988 /* second@2x.png */,
-				0889EFBF171645BA00FEB988 /* thb12.jpg */,
-				0889EFA7171642F600FEB988 /* cog.png */,
-				0889EFA8171642F600FEB988 /* cog@2x.png */,
-				0889EFA9171642F600FEB988 /* dashboard.png */,
-				0889EFAA171642F600FEB988 /* dashboard@2x.png */,
-				0889EFAB171642F600FEB988 /* pencil.png */,
-				0889EFAC171642F600FEB988 /* pencil@2x.png */,
-				0889EFAD171642F600FEB988 /* thumbs.png */,
-				0889EFAE171642F600FEB988 /* thumbs@2x.png */,
+				FE66DEAC172634C900EFAD98 /* CATEIdentity */,
+				FE66DEAF172634C900EFAD98 /* CATERecord */,
+				FE66DEBB172634C900EFAD98 /* CATETerm */,
 			);
-			name = Images;
+			path = DataStructures;
 			sourceTree = "<group>";
 		};
-		0889F0111716686600FEB988 /* JavaScripts */ = {
+		FE66DEAC172634C900EFAD98 /* CATEIdentity */ = {
 			isa = PBXGroup;
 			children = (
-				0889F0121716687500FEB988 /* myScript.js */,
-				087FC01217178E7300529DC5 /* exerciseData.xml */,
+				FE66DEAD172634C900EFAD98 /* CATEIdentity.h */,
+				FE66DEAE172634C900EFAD98 /* CATEIdentity.m */,
 			);
-			name = JavaScripts;
+			path = CATEIdentity;
 			sourceTree = "<group>";
 		};
-		08A6327A17186F4E00986F47 /* Utilities */ = {
+		FE66DEAF172634C900EFAD98 /* CATERecord */ = {
 			isa = PBXGroup;
 			children = (
-				08A6327B17186F7200986F47 /* CATEUtilities.h */,
-				08A6327C17186F7200986F47 /* CATEUtilities.m */,
-				FED2F2201717BE7700B9B439 /* CATEDataExtractor.h */,
-				FED2F2211717BE7700B9B439 /* CATEDataExtractor.m */,
+				FE66DEB0172634C900EFAD98 /* CATERecord.h */,
+				FE66DEB1172634C900EFAD98 /* CATERecord.m */,
+				FE66DEB2172634C900EFAD98 /* CATERecordExercise */,
+				FE66DEB5172634C900EFAD98 /* CATERecordModule */,
+				FE66DEB8172634C900EFAD98 /* CATERecordStats */,
 			);
-			name = Utilities;
+			path = CATERecord;
 			sourceTree = "<group>";
 		};
-		08C67C2217174C38007D4C77 /* Views */ = {
+		FE66DEB2172634C900EFAD98 /* CATERecordExercise */ = {
 			isa = PBXGroup;
 			children = (
-				08E5C6D6171713BA008DFED8 /* CATELoginViewController.h */,
-				08E5C6D7171713BA008DFED8 /* CATELoginViewController.m */,
-				0889EF741716299600FEB988 /* CATEFirstViewController.h */,
-				0889EF751716299600FEB988 /* CATEFirstViewController.m */,
-				0889EF7B1716299600FEB988 /* CATESecondViewController.h */,
-				0889EF7C1716299600FEB988 /* CATESecondViewController.m */,
-				0889EFA11716340F00FEB988 /* CATEThirdViewController.h */,
-				0889EFA21716340F00FEB988 /* CATEThirdViewController.m */,
-				0889EFA41716341C00FEB988 /* CATEFourthViewController.h */,
-				0889EFA51716341D00FEB988 /* CATEFourthViewController.m */,
+				FE66DEB3172634C900EFAD98 /* CATERecordExercise.h */,
+				FE66DEB4172634C900EFAD98 /* CATERecordExercise.m */,
 			);
-			name = Views;
+			path = CATERecordExercise;
 			sourceTree = "<group>";
 		};
-		08C67C2317174C59007D4C77 /* Plugins */ = {
+		FE66DEB5172634C900EFAD98 /* CATERecordModule */ = {
 			isa = PBXGroup;
 			children = (
-				08E5C6E2171724A0008DFED8 /* SMXMLDocument.h */,
-				08E5C6E3171724A0008DFED8 /* SMXMLDocument.m */,
+				FE66DEB6172634C900EFAD98 /* CATERecordModule.h */,
+				FE66DEB7172634C900EFAD98 /* CATERecordModule.m */,
 			);
-			name = Plugins;
+			path = CATERecordModule;
 			sourceTree = "<group>";
 		};
-		08C67C2417176C5F007D4C77 /* Data Structures */ = {
+		FE66DEB8172634C900EFAD98 /* CATERecordStats */ = {
 			isa = PBXGroup;
 			children = (
-				084D353A171CB8C9007AB292 /* CATERecord */,
-				084D3537171CB8A3007AB292 /* CATETerm */,
-				084D3536171CB897007AB292 /* CATEIdentity */,
+				FE66DEB9172634C900EFAD98 /* CATERecordStats.h */,
+				FE66DEBA172634C900EFAD98 /* CATERecordStats.m */,
 			);
-			name = "Data Structures";
+			path = CATERecordStats;
 			sourceTree = "<group>";
 		};
-		FED2F226171CCEAB00B9B439 /* image_res */ = {
+		FE66DEBB172634C900EFAD98 /* CATETerm */ = {
 			isa = PBXGroup;
 			children = (
-				FEF3F80B1723A04100A8DAF1 /* Icon.psd */,
-				FEF3F80917239E9700A8DAF1 /* LoginView */,
-				FED2F229171CCEAB00B9B439 /* stdBg.png */,
-				FED2F22A171CCEAB00B9B439 /* stdBg.psd */,
+				FE66DEBC172634C900EFAD98 /* CATEExercise */,
+				FE66DEBF172634C900EFAD98 /* CATEModule */,
+				FE66DEC2172634C900EFAD98 /* CATETerm.h */,
+				FE66DEC3172634C900EFAD98 /* CATETerm.m */,
 			);
-			path = image_res;
+			path = CATETerm;
 			sourceTree = "<group>";
 		};
-		FEF3F80917239E9700A8DAF1 /* LoginView */ = {
+		FE66DEBC172634C900EFAD98 /* CATEExercise */ = {
 			isa = PBXGroup;
 			children = (
-				FEF3F80317239ADB00A8DAF1 /* wideDarkLoginAuth.png */,
-				FEF3F80417239ADB00A8DAF1 /* wideDarkLoginDone.png */,
-				FEF3F80517239ADB00A8DAF1 /* wideDarkLoginLoading.png */,
-				FE434487172387640032D132 /* basicWideDarkBtn.psd */,
-				FE434488172387640032D132 /* wideDarkLogin.png */,
-				FE434489172387640032D132 /* wideDarkLogin.psd */,
-				FE43447D172370B80032D132 /* btnLogin.psd */,
-				FE43447E172370B80032D132 /* btnTemplate.psd */,
-				FE43447F172370B80032D132 /* loginFields.png */,
-				FE434480172370B80032D132 /* loginFields.psd */,
-				FE434481172370B80032D132 /* pattern.psd */,
-				FED2F238171CF6E400B9B439 /* btnLogin.png */,
-				FED2F227171CCEAB00B9B439 /* basicLogo.png */,
-				FED2F228171CCEAB00B9B439 /* basicLogo.psd */,
+				FE66DEBD172634C900EFAD98 /* CATEExercise.h */,
+				FE66DEBE172634C900EFAD98 /* CATEExercise.m */,
 			);
-			name = LoginView;
+			path = CATEExercise;
 			sourceTree = "<group>";
 		};
-		FEF3F8231723B5B600A8DAF1 /* WebContent */ = {
+		FE66DEBF172634C900EFAD98 /* CATEModule */ = {
 			isa = PBXGroup;
 			children = (
-				FEF3F8241723B5B600A8DAF1 /* bootstrap */,
-				FEF3F8281723B5B600A8DAF1 /* extraction */,
-				FEF3F82C1723B5B600A8DAF1 /* extraction_page.html */,
-				FEF3F82E1723B5B600A8DAF1 /* loading_page.html */,
-				FEF3F82F1723B5B600A8DAF1 /* styles */,
+				FE66DEC0172634C900EFAD98 /* CATEModule.h */,
+				FE66DEC1172634C900EFAD98 /* CATEModule.m */,
+			);
+			path = CATEModule;
+			sourceTree = "<group>";
+		};
+		FE66DEC4172634C900EFAD98 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				0889EF621716299600FEB988 /* InfoPlist.strings */,
+				FE66DED4172634CA00EFAD98 /* Default-568h@2x.png */,
+				FE66DED5172634CA00EFAD98 /* Default.png */,
+				FE66DED6172634CA00EFAD98 /* Default@2x.png */,
+				FE66DED7172634CA00EFAD98 /* first.png */,
+				FE66DED8172634CA00EFAD98 /* first@2x.png */,
+				FE66DEDA172634CA00EFAD98 /* second.png */,
+				FE66DEC7172634C900EFAD98 /* MainStoryboard.storyboard */,
+				FE66DEDB172634CA00EFAD98 /* second@2x.png */,
+				FE66DEC5172634C900EFAD98 /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		FE66DEC9172634C900EFAD98 /* ImageResources */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DECA172634C900EFAD98 /* basicLogo.png */,
+				FE66DECB172634CA00EFAD98 /* basicLogo.psd */,
+				FE66DECC172634CA00EFAD98 /* btnLogin.png */,
+				FE66DECD172634CA00EFAD98 /* stdBg.psd */,
+				FE66DECE172634CA00EFAD98 /* stdBgNoSig.png */,
+			);
+			path = ImageResources;
+			sourceTree = "<group>";
+		};
+		FE66DEDC172634CA00EFAD98 /* TestingData */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DEDD172634CA00EFAD98 /* exerciseData.xml */,
+				FE66DEDE172634CA00EFAD98 /* get_exercises_xml_template.xml */,
+				FE66DEDF172634CA00EFAD98 /* get_grades_xml_template.xml */,
+				FE66DEE0172634CA00EFAD98 /* get_main_xml_template.xml */,
+				FE66DEE1172634CA00EFAD98 /* TestXml.xml */,
+				FE66DEE2172634CA00EFAD98 /* thb12.jpg */,
+			);
+			path = TestingData;
+			sourceTree = "<group>";
+		};
+		FE66DEE3172634CA00EFAD98 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DEE4172634CA00EFAD98 /* PNG */,
+				FE66DEEF172634CA00EFAD98 /* PSD */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		FE66DEE4172634CA00EFAD98 /* PNG */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DEE5172634CA00EFAD98 /* DashboardItem.png */,
+				FE66DEE6172634CA00EFAD98 /* loginFields.png */,
+				FE66DEE7172634CA00EFAD98 /* Menu.png */,
+				FE66DEE8172634CA00EFAD98 /* ModulesButton.png */,
+				FE66DEE9172634CA00EFAD98 /* SearchBarActive.png */,
+				FE66DEEA172634CA00EFAD98 /* SearchBarDefault.png */,
+				FE66DEEB172634CA00EFAD98 /* wideDarkLogin.png */,
+				FE66DEEC172634CA00EFAD98 /* wideDarkLoginAuth.png */,
+				FE66DEED172634CA00EFAD98 /* wideDarkLoginDone.png */,
+				FE66DEEE172634CA00EFAD98 /* wideDarkLoginLoading.png */,
+			);
+			path = PNG;
+			sourceTree = "<group>";
+		};
+		FE66DEEF172634CA00EFAD98 /* PSD */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DEF0172634CA00EFAD98 /* basicWideDarkBtn.psd */,
+				FE66DEF1172634CA00EFAD98 /* btnLogin.psd */,
+				FE66DEF2172634CA00EFAD98 /* btnTemplate.psd */,
+				FE66DEF3172634CA00EFAD98 /* loginFields.psd */,
+				FE66DEF4172634CA00EFAD98 /* MenuItem.psd */,
+				FE66DEF5172634CA00EFAD98 /* ModulesButton.psd */,
+				FE66DEF6172634CA00EFAD98 /* Ring.psd */,
+				FE66DEF7172634CA00EFAD98 /* SearchBar.psd */,
+				FE66DEF8172634CA00EFAD98 /* TwoElementTabBar.psd */,
+				FE66DEF9172634CA00EFAD98 /* wideDarkLogin.psd */,
+			);
+			path = PSD;
+			sourceTree = "<group>";
+		};
+		FE66DEFA172634CA00EFAD98 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DEFB172634CA00EFAD98 /* CATEDataExtractor */,
+				FE66DEFE172634CA00EFAD98 /* CATESharedData */,
+				FE66DF01172634CA00EFAD98 /* CATEUtilities */,
+				FE66DF04172634CA00EFAD98 /* SMXMLDocument */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FE66DEFB172634CA00EFAD98 /* CATEDataExtractor */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DEFC172634CA00EFAD98 /* CATEDataExtractor.h */,
+				FE66DEFD172634CA00EFAD98 /* CATEDataExtractor.m */,
+			);
+			path = CATEDataExtractor;
+			sourceTree = "<group>";
+		};
+		FE66DEFE172634CA00EFAD98 /* CATESharedData */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DEFF172634CA00EFAD98 /* CATESharedData.h */,
+				FE66DF00172634CA00EFAD98 /* CATESharedData.m */,
+			);
+			path = CATESharedData;
+			sourceTree = "<group>";
+		};
+		FE66DF01172634CA00EFAD98 /* CATEUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF02172634CA00EFAD98 /* CATEUtilities.h */,
+				FE66DF03172634CA00EFAD98 /* CATEUtilities.m */,
+			);
+			path = CATEUtilities;
+			sourceTree = "<group>";
+		};
+		FE66DF04172634CA00EFAD98 /* SMXMLDocument */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF05172634CA00EFAD98 /* SMXMLDocument.h */,
+				FE66DF06172634CA00EFAD98 /* SMXMLDocument.m */,
+			);
+			path = SMXMLDocument;
+			sourceTree = "<group>";
+		};
+		FE66DF07172634CA00EFAD98 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF08172634CA00EFAD98 /* CATEDashboardViewController */,
+				FE66DF0B172634CA00EFAD98 /* CATEFirstViewController */,
+				FE66DF0E172634CA00EFAD98 /* CATELoginViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FE66DF08172634CA00EFAD98 /* CATEDashboardViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF09172634CA00EFAD98 /* CATEDashboardViewController.h */,
+				FE66DF0A172634CA00EFAD98 /* CATEDashboardViewController.m */,
+			);
+			path = CATEDashboardViewController;
+			sourceTree = "<group>";
+		};
+		FE66DF0B172634CA00EFAD98 /* CATEFirstViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF0C172634CA00EFAD98 /* CATEFirstViewController.h */,
+				FE66DF0D172634CA00EFAD98 /* CATEFirstViewController.m */,
+			);
+			path = CATEFirstViewController;
+			sourceTree = "<group>";
+		};
+		FE66DF0E172634CA00EFAD98 /* CATELoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF0F172634CA00EFAD98 /* CATELoginViewController.h */,
+				FE66DF10172634CA00EFAD98 /* CATELoginViewController.m */,
+			);
+			path = CATELoginViewController;
+			sourceTree = "<group>";
+		};
+		FE66DF11172634CA00EFAD98 /* WebContent */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF12172634CA00EFAD98 /* bootstrap */,
+				FE66DF16172634CA00EFAD98 /* extraction */,
+				FE66DF19172634CA00EFAD98 /* extraction_page.html */,
+				FE66DF1A172634CA00EFAD98 /* loading_page.html */,
+				FE66DF1B172634CA00EFAD98 /* styles */,
 			);
 			path = WebContent;
 			sourceTree = "<group>";
 		};
-		FEF3F8241723B5B600A8DAF1 /* bootstrap */ = {
+		FE66DF12172634CA00EFAD98 /* bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				FEF3F8251723B5B600A8DAF1 /* bootstrap.min.css */,
-				FEF3F8261723B5B600A8DAF1 /* bootstrap.min.js */,
-				FEF3F8271723B5B600A8DAF1 /* jquery-1.9.1.min.js */,
+				FE66DF13172634CA00EFAD98 /* bootstrap.min.css */,
+				FE66DF14172634CA00EFAD98 /* bootstrap.min.js */,
+				FE66DF15172634CA00EFAD98 /* jquery-1.9.1.min.js */,
 			);
 			path = bootstrap;
 			sourceTree = "<group>";
 		};
-		FEF3F8281723B5B600A8DAF1 /* extraction */ = {
+		FE66DF16172634CA00EFAD98 /* extraction */ = {
 			isa = PBXGroup;
 			children = (
-				FEF3F82A1723B5B600A8DAF1 /* extraction_tools.coffee */,
-				FEF3F82B1723B5B600A8DAF1 /* extraction_tools.js */,
+				FE66DF17172634CA00EFAD98 /* extraction_tools.coffee */,
+				FE66DF18172634CA00EFAD98 /* extraction_tools.js */,
 			);
 			path = extraction;
 			sourceTree = "<group>";
 		};
-		FEF3F82F1723B5B600A8DAF1 /* styles */ = {
+		FE66DF1B172634CA00EFAD98 /* styles */ = {
 			isa = PBXGroup;
 			children = (
-				FEF3F8301723B5B600A8DAF1 /* loading_page.css */,
+				FE66DF1C172634CA00EFAD98 /* loading_page.css */,
+			);
+			path = styles;
+			sourceTree = "<group>";
+		};
+		FE66DF631726360C00EFAD98 /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF641726360C00EFAD98 /* CATEIdentity */,
+				FE66DF671726360C00EFAD98 /* CATERecord */,
+				FE66DF731726360C00EFAD98 /* CATETerm */,
+			);
+			path = DataStructures;
+			sourceTree = "<group>";
+		};
+		FE66DF641726360C00EFAD98 /* CATEIdentity */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF651726360C00EFAD98 /* CATEIdentity.h */,
+				FE66DF661726360C00EFAD98 /* CATEIdentity.m */,
+			);
+			path = CATEIdentity;
+			sourceTree = "<group>";
+		};
+		FE66DF671726360C00EFAD98 /* CATERecord */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF681726360C00EFAD98 /* CATERecord.h */,
+				FE66DF691726360C00EFAD98 /* CATERecord.m */,
+				FE66DF6A1726360C00EFAD98 /* CATERecordExercise */,
+				FE66DF6D1726360C00EFAD98 /* CATERecordModule */,
+				FE66DF701726360C00EFAD98 /* CATERecordStats */,
+			);
+			path = CATERecord;
+			sourceTree = "<group>";
+		};
+		FE66DF6A1726360C00EFAD98 /* CATERecordExercise */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF6B1726360C00EFAD98 /* CATERecordExercise.h */,
+				FE66DF6C1726360C00EFAD98 /* CATERecordExercise.m */,
+			);
+			path = CATERecordExercise;
+			sourceTree = "<group>";
+		};
+		FE66DF6D1726360C00EFAD98 /* CATERecordModule */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF6E1726360C00EFAD98 /* CATERecordModule.h */,
+				FE66DF6F1726360C00EFAD98 /* CATERecordModule.m */,
+			);
+			path = CATERecordModule;
+			sourceTree = "<group>";
+		};
+		FE66DF701726360C00EFAD98 /* CATERecordStats */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF711726360C00EFAD98 /* CATERecordStats.h */,
+				FE66DF721726360C00EFAD98 /* CATERecordStats.m */,
+			);
+			path = CATERecordStats;
+			sourceTree = "<group>";
+		};
+		FE66DF731726360C00EFAD98 /* CATETerm */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF741726360C00EFAD98 /* CATEExercise */,
+				FE66DF771726360C00EFAD98 /* CATEModule */,
+				FE66DF7A1726360C00EFAD98 /* CATETerm.h */,
+				FE66DF7B1726360C00EFAD98 /* CATETerm.m */,
+			);
+			path = CATETerm;
+			sourceTree = "<group>";
+		};
+		FE66DF741726360C00EFAD98 /* CATEExercise */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF751726360C00EFAD98 /* CATEExercise.h */,
+				FE66DF761726360C00EFAD98 /* CATEExercise.m */,
+			);
+			path = CATEExercise;
+			sourceTree = "<group>";
+		};
+		FE66DF771726360C00EFAD98 /* CATEModule */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF781726360C00EFAD98 /* CATEModule.h */,
+				FE66DF791726360C00EFAD98 /* CATEModule.m */,
+			);
+			path = CATEModule;
+			sourceTree = "<group>";
+		};
+		FE66DF7C1726360C00EFAD98 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF7D1726360C00EFAD98 /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		FE66DF811726360C00EFAD98 /* ImageResources */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF821726360C00EFAD98 /* basicLogo.png */,
+				FE66DF831726360C00EFAD98 /* basicLogo.psd */,
+				FE66DF841726360C00EFAD98 /* btnLogin.png */,
+				FE66DF851726360C00EFAD98 /* stdBg.psd */,
+				FE66DF861726360C00EFAD98 /* stdBgNoSig.png */,
+			);
+			path = ImageResources;
+			sourceTree = "<group>";
+		};
+		FE66DF881726360C00EFAD98 /* SystemEssentials */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF891726360C00EFAD98 /* Default-568h@2x.png */,
+				FE66DF8A1726360C00EFAD98 /* Default.png */,
+				FE66DF8B1726360C00EFAD98 /* Default@2x.png */,
+				FE66DF8C1726360C00EFAD98 /* first.png */,
+				FE66DF8D1726360C00EFAD98 /* first@2x.png */,
+				FE66DF8E1726360C00EFAD98 /* second.png */,
+				FE66DF8F1726360C00EFAD98 /* second@2x.png */,
+			);
+			path = SystemEssentials;
+			sourceTree = "<group>";
+		};
+		FE66DF901726360C00EFAD98 /* TestingData */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF911726360C00EFAD98 /* exerciseData.xml */,
+				FE66DF921726360C00EFAD98 /* get_exercises_xml_template.xml */,
+				FE66DF931726360C00EFAD98 /* get_grades_xml_template.xml */,
+				FE66DF941726360C00EFAD98 /* get_main_xml_template.xml */,
+				FE66DF951726360C00EFAD98 /* TestXml.xml */,
+				FE66DF961726360C00EFAD98 /* thb12.jpg */,
+			);
+			path = TestingData;
+			sourceTree = "<group>";
+		};
+		FE66DF971726360C00EFAD98 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF981726360C00EFAD98 /* PNG */,
+				FE66DFA31726360C00EFAD98 /* PSD */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		FE66DF981726360C00EFAD98 /* PNG */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF991726360C00EFAD98 /* DashboardItem.png */,
+				FE66DF9A1726360C00EFAD98 /* loginFields.png */,
+				FE66DF9B1726360C00EFAD98 /* Menu.png */,
+				FE66DF9C1726360C00EFAD98 /* ModulesButton.png */,
+				FE66DF9D1726360C00EFAD98 /* SearchBarActive.png */,
+				FE66DF9E1726360C00EFAD98 /* SearchBarDefault.png */,
+				FE66DF9F1726360C00EFAD98 /* wideDarkLogin.png */,
+				FE66DFA01726360C00EFAD98 /* wideDarkLoginAuth.png */,
+				FE66DFA11726360C00EFAD98 /* wideDarkLoginDone.png */,
+				FE66DFA21726360C00EFAD98 /* wideDarkLoginLoading.png */,
+			);
+			path = PNG;
+			sourceTree = "<group>";
+		};
+		FE66DFA31726360C00EFAD98 /* PSD */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFA41726360C00EFAD98 /* basicWideDarkBtn.psd */,
+				FE66DFA51726360C00EFAD98 /* btnLogin.psd */,
+				FE66DFA61726360C00EFAD98 /* btnTemplate.psd */,
+				FE66DFA71726360C00EFAD98 /* loginFields.psd */,
+				FE66DFA81726360C00EFAD98 /* MenuItem.psd */,
+				FE66DFA91726360C00EFAD98 /* ModulesButton.psd */,
+				FE66DFAA1726360C00EFAD98 /* Ring.psd */,
+				FE66DFAB1726360C00EFAD98 /* SearchBar.psd */,
+				FE66DFAC1726360C00EFAD98 /* TwoElementTabBar.psd */,
+				FE66DFAD1726360D00EFAD98 /* wideDarkLogin.psd */,
+			);
+			path = PSD;
+			sourceTree = "<group>";
+		};
+		FE66DFAE1726360D00EFAD98 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFAF1726360D00EFAD98 /* CATEDataExtractor */,
+				FE66DFB21726360D00EFAD98 /* CATESharedData */,
+				FE66DFB51726360D00EFAD98 /* CATEUtilities */,
+				FE66DFB81726360D00EFAD98 /* SMXMLDocument */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FE66DFAF1726360D00EFAD98 /* CATEDataExtractor */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFB01726360D00EFAD98 /* CATEDataExtractor.h */,
+				FE66DFB11726360D00EFAD98 /* CATEDataExtractor.m */,
+			);
+			path = CATEDataExtractor;
+			sourceTree = "<group>";
+		};
+		FE66DFB21726360D00EFAD98 /* CATESharedData */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFB31726360D00EFAD98 /* CATESharedData.h */,
+				FE66DFB41726360D00EFAD98 /* CATESharedData.m */,
+			);
+			path = CATESharedData;
+			sourceTree = "<group>";
+		};
+		FE66DFB51726360D00EFAD98 /* CATEUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFB61726360D00EFAD98 /* CATEUtilities.h */,
+				FE66DFB71726360D00EFAD98 /* CATEUtilities.m */,
+			);
+			path = CATEUtilities;
+			sourceTree = "<group>";
+		};
+		FE66DFB81726360D00EFAD98 /* SMXMLDocument */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFB91726360D00EFAD98 /* SMXMLDocument.h */,
+				FE66DFBA1726360D00EFAD98 /* SMXMLDocument.m */,
+			);
+			path = SMXMLDocument;
+			sourceTree = "<group>";
+		};
+		FE66DFBB1726360D00EFAD98 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFBC1726360D00EFAD98 /* CATEDashboardViewController */,
+				FE66DFBF1726360D00EFAD98 /* CATEFirstViewController */,
+				FE66DFC21726360D00EFAD98 /* CATELoginViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FE66DFBC1726360D00EFAD98 /* CATEDashboardViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFBD1726360D00EFAD98 /* CATEDashboardViewController.h */,
+				FE66DFBE1726360D00EFAD98 /* CATEDashboardViewController.m */,
+			);
+			path = CATEDashboardViewController;
+			sourceTree = "<group>";
+		};
+		FE66DFBF1726360D00EFAD98 /* CATEFirstViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFC01726360D00EFAD98 /* CATEFirstViewController.h */,
+				FE66DFC11726360D00EFAD98 /* CATEFirstViewController.m */,
+			);
+			path = CATEFirstViewController;
+			sourceTree = "<group>";
+		};
+		FE66DFC21726360D00EFAD98 /* CATELoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFC31726360D00EFAD98 /* CATELoginViewController.h */,
+				FE66DFC41726360D00EFAD98 /* CATELoginViewController.m */,
+			);
+			path = CATELoginViewController;
+			sourceTree = "<group>";
+		};
+		FE66DFC51726360D00EFAD98 /* WebContent */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFC61726360D00EFAD98 /* bootstrap */,
+				FE66DFCA1726360D00EFAD98 /* extraction */,
+				FE66DFCD1726360D00EFAD98 /* extraction_page.html */,
+				FE66DFCE1726360D00EFAD98 /* loading_page.html */,
+				FE66DFCF1726360D00EFAD98 /* styles */,
+			);
+			path = WebContent;
+			sourceTree = "<group>";
+		};
+		FE66DFC61726360D00EFAD98 /* bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFC71726360D00EFAD98 /* bootstrap.min.css */,
+				FE66DFC81726360D00EFAD98 /* bootstrap.min.js */,
+				FE66DFC91726360D00EFAD98 /* jquery-1.9.1.min.js */,
+			);
+			path = bootstrap;
+			sourceTree = "<group>";
+		};
+		FE66DFCA1726360D00EFAD98 /* extraction */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFCB1726360D00EFAD98 /* extraction_tools.coffee */,
+				FE66DFCC1726360D00EFAD98 /* extraction_tools.js */,
+			);
+			path = extraction;
+			sourceTree = "<group>";
+		};
+		FE66DFCF1726360D00EFAD98 /* styles */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DFD01726360D00EFAD98 /* loading_page.css */,
 			);
 			path = styles;
 			sourceTree = "<group>";
@@ -606,50 +1019,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0889F0131716687500FEB988 /* myScript.js in Resources */,
-				0889EF641716299600FEB988 /* InfoPlist.strings in Resources */,
-				0889EF6C1716299600FEB988 /* Default.png in Resources */,
-				0889EF6E1716299600FEB988 /* Default@2x.png in Resources */,
-				0889EF701716299600FEB988 /* Default-568h@2x.png in Resources */,
-				0889EF731716299600FEB988 /* MainStoryboard.storyboard in Resources */,
-				0889EF781716299600FEB988 /* first.png in Resources */,
-				0889EF7A1716299600FEB988 /* first@2x.png in Resources */,
-				0889EF7F1716299600FEB988 /* second.png in Resources */,
-				0889EF811716299600FEB988 /* second@2x.png in Resources */,
-				0889EFAF171642F600FEB988 /* cog.png in Resources */,
-				0889EFB1171642F600FEB988 /* cog@2x.png in Resources */,
-				0889EFB3171642F600FEB988 /* dashboard.png in Resources */,
-				FEF3F83B1723B88400A8DAF1 /* jquery-1.9.1.min.js in Resources */,
-				0889EFB5171642F600FEB988 /* dashboard@2x.png in Resources */,
-				0889EFB7171642F600FEB988 /* pencil.png in Resources */,
-				0889EFB9171642F600FEB988 /* pencil@2x.png in Resources */,
-				0889EFBB171642F600FEB988 /* thumbs.png in Resources */,
-				0889EFBD171642F600FEB988 /* thumbs@2x.png in Resources */,
-				0889EFC0171645BA00FEB988 /* thb12.jpg in Resources */,
-				087FC01317178E7300529DC5 /* exerciseData.xml in Resources */,
-				FED2F22B171CCEAB00B9B439 /* basicLogo.png in Resources */,
-				FED2F22C171CCEAB00B9B439 /* basicLogo.psd in Resources */,
-				FED2F22D171CCEAB00B9B439 /* stdBg.png in Resources */,
-				FED2F22E171CCEAB00B9B439 /* stdBg.psd in Resources */,
-				FED2F239171CF6E400B9B439 /* btnLogin.png in Resources */,
-				FE434482172370B80032D132 /* btnLogin.psd in Resources */,
-				FE434483172370B80032D132 /* btnTemplate.psd in Resources */,
-				FE434484172370B80032D132 /* loginFields.png in Resources */,
-				FE434485172370B80032D132 /* loginFields.psd in Resources */,
-				FE434486172370B80032D132 /* pattern.psd in Resources */,
-				FE43448A172387640032D132 /* basicWideDarkBtn.psd in Resources */,
-				FE43448B172387640032D132 /* wideDarkLogin.png in Resources */,
-				FE43448C172387640032D132 /* wideDarkLogin.psd in Resources */,
-				FEF3F80617239ADB00A8DAF1 /* wideDarkLoginAuth.png in Resources */,
-				FEF3F80717239ADB00A8DAF1 /* wideDarkLoginDone.png in Resources */,
-				FEF3F80817239ADB00A8DAF1 /* wideDarkLoginLoading.png in Resources */,
-				FEF3F80D1723A04100A8DAF1 /* Icon.psd in Resources */,
-				FEF3F80F1723A1AC00A8DAF1 /* Icon.png in Resources */,
-				FEF3F8311723B5B600A8DAF1 /* bootstrap.min.css in Resources */,
-				FEF3F8351723B5B600A8DAF1 /* extraction_tools.coffee in Resources */,
-				FEF3F8371723B5B600A8DAF1 /* extraction_page.html in Resources */,
-				FEF3F8391723B5B600A8DAF1 /* loading_page.html in Resources */,
-				FEF3F83A1723B5B600A8DAF1 /* loading_page.css in Resources */,
+				FE66DF27172634CA00EFAD98 /* basicLogo.png in Resources */,
+				FE66DF29172634CA00EFAD98 /* btnLogin.png in Resources */,
+				FE66DF2B172634CA00EFAD98 /* stdBgNoSig.png in Resources */,
+				FE66DF2E172634CA00EFAD98 /* Default-568h@2x.png in Resources */,
+				FE66DF2F172634CA00EFAD98 /* Default.png in Resources */,
+				FE66DF30172634CA00EFAD98 /* Default@2x.png in Resources */,
+				FE66DF31172634CA00EFAD98 /* first.png in Resources */,
+				FE66DF32172634CA00EFAD98 /* first@2x.png in Resources */,
+				FE66DF34172634CA00EFAD98 /* second.png in Resources */,
+				FE66DF35172634CA00EFAD98 /* second@2x.png in Resources */,
+				FE66DF36172634CA00EFAD98 /* exerciseData.xml in Resources */,
+				FE66DF37172634CA00EFAD98 /* get_exercises_xml_template.xml in Resources */,
+				FE66DF38172634CA00EFAD98 /* get_grades_xml_template.xml in Resources */,
+				FE66DF39172634CA00EFAD98 /* get_main_xml_template.xml in Resources */,
+				FE66DF3A172634CA00EFAD98 /* TestXml.xml in Resources */,
+				FE66DF3B172634CA00EFAD98 /* thb12.jpg in Resources */,
+				FE66DF3C172634CA00EFAD98 /* DashboardItem.png in Resources */,
+				FE66DF3D172634CA00EFAD98 /* loginFields.png in Resources */,
+				FE66DF3E172634CA00EFAD98 /* Menu.png in Resources */,
+				FE66DF3F172634CA00EFAD98 /* ModulesButton.png in Resources */,
+				FE66DF40172634CA00EFAD98 /* SearchBarActive.png in Resources */,
+				FE66DF41172634CA00EFAD98 /* SearchBarDefault.png in Resources */,
+				FE66DF42172634CA00EFAD98 /* wideDarkLogin.png in Resources */,
+				FE66DF43172634CA00EFAD98 /* wideDarkLoginAuth.png in Resources */,
+				FE66DF44172634CA00EFAD98 /* wideDarkLoginDone.png in Resources */,
+				FE66DF45172634CA00EFAD98 /* wideDarkLoginLoading.png in Resources */,
+				FE66DF57172634CA00EFAD98 /* bootstrap.min.css in Resources */,
+				FE66DF5C172634CA00EFAD98 /* extraction_page.html in Resources */,
+				FE66DF5D172634CA00EFAD98 /* loading_page.html in Resources */,
+				FE66DF5E172634CA00EFAD98 /* loading_page.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,15 +1057,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0889EF931716299600FEB988 /* InfoPlist.strings in Resources */,
-				0889EFB0171642F600FEB988 /* cog.png in Resources */,
-				0889EFB2171642F600FEB988 /* cog@2x.png in Resources */,
-				0889EFB4171642F600FEB988 /* dashboard.png in Resources */,
-				0889EFB6171642F600FEB988 /* dashboard@2x.png in Resources */,
-				0889EFB8171642F600FEB988 /* pencil.png in Resources */,
-				0889EFBA171642F600FEB988 /* pencil@2x.png in Resources */,
-				0889EFBC171642F600FEB988 /* thumbs.png in Resources */,
-				0889EFBE171642F600FEB988 /* thumbs@2x.png in Resources */,
-				0889EFC1171645BA00FEB988 /* thb12.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,28 +1083,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0889EF661716299600FEB988 /* main.m in Sources */,
-				0889EF6A1716299600FEB988 /* CATEAppDelegate.m in Sources */,
-				0889EF761716299600FEB988 /* CATEFirstViewController.m in Sources */,
-				0889EF7D1716299600FEB988 /* CATESecondViewController.m in Sources */,
-				0889EFA31716340F00FEB988 /* CATEThirdViewController.m in Sources */,
-				0889EFA61716341D00FEB988 /* CATEFourthViewController.m in Sources */,
-				08E5C6D8171713BA008DFED8 /* CATELoginViewController.m in Sources */,
-				08E5C6E4171724A0008DFED8 /* SMXMLDocument.m in Sources */,
-				08C67C2117174C07007D4C77 /* CATEIdentity.m in Sources */,
-				08C67C2717176CA1007D4C77 /* CATEExercise.m in Sources */,
-				08C67C2A17177DA9007D4C77 /* CATEModule.m in Sources */,
-				08C67C2D17177F58007D4C77 /* CATETerm.m in Sources */,
-				FED2F2221717BE7700B9B439 /* CATEDataExtractor.m in Sources */,
-				08A6327D17186F7200986F47 /* CATEUtilities.m in Sources */,
-				084D353D171CB8D5007AB292 /* CATERecord.m in Sources */,
-				084D3541171CB8F3007AB292 /* CATERecordStats.m in Sources */,
-				084D3545171CB904007AB292 /* CATERecordModule.m in Sources */,
-				084D3549171CB91A007AB292 /* CATERecordExercise.m in Sources */,
-				FE4A6BFB172292AC00CF56A1 /* CATESharedData.m in Sources */,
-				FEF3F8321723B5B600A8DAF1 /* bootstrap.min.js in Sources */,
-				FEF3F8331723B5B600A8DAF1 /* jquery-1.9.1.min.js in Sources */,
-				FEF3F8361723B5B600A8DAF1 /* extraction_tools.js in Sources */,
+				FE66E0131726379700EFAD98 /* main.m in Sources */,
+				FE66DF1D172634CA00EFAD98 /* CATEIdentity.m in Sources */,
+				FE66DF1E172634CA00EFAD98 /* CATERecord.m in Sources */,
+				FE66DF1F172634CA00EFAD98 /* CATERecordExercise.m in Sources */,
+				FE66DF20172634CA00EFAD98 /* CATERecordModule.m in Sources */,
+				FE66DF21172634CA00EFAD98 /* CATERecordStats.m in Sources */,
+				FE66DF22172634CA00EFAD98 /* CATEExercise.m in Sources */,
+				FE66DF23172634CA00EFAD98 /* CATEModule.m in Sources */,
+				FE66DF24172634CA00EFAD98 /* CATETerm.m in Sources */,
+				FE66DF50172634CA00EFAD98 /* CATEDataExtractor.m in Sources */,
+				FE66DF51172634CA00EFAD98 /* CATESharedData.m in Sources */,
+				FE66DF52172634CA00EFAD98 /* CATEUtilities.m in Sources */,
+				FE66DF53172634CA00EFAD98 /* SMXMLDocument.m in Sources */,
+				FE66DF54172634CA00EFAD98 /* CATEDashboardViewController.m in Sources */,
+				FE66DF55172634CA00EFAD98 /* CATEFirstViewController.m in Sources */,
+				FE66DF56172634CA00EFAD98 /* CATELoginViewController.m in Sources */,
+				FE66DFD21726360D00EFAD98 /* CATEAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,7 +1108,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0889EF961716299600FEB988 /* CATETests.m in Sources */,
-				0889F0141716687500FEB988 /* myScript.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,14 +1128,7 @@
 				0889EF631716299600FEB988 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0889EF711716299600FEB988 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0889EF721716299600FEB988 /* en */,
-			);
-			name = MainStoryboard.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		0889EF911716299600FEB988 /* InfoPlist.strings */ = {
@@ -760,6 +1137,39 @@
 				0889EF921716299600FEB988 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FE66DEC5172634C900EFAD98 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE66DEC6172634C900EFAD98 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FE66DEC7172634C900EFAD98 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE66DEC8172634C900EFAD98 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		FE66DF7D1726360C00EFAD98 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE66DF7E1726360C00EFAD98 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FE66DF7F1726360C00EFAD98 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE66DF801726360C00EFAD98 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -832,7 +1242,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lawrence Jones (H6NSGS6YTM)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CATE/CATE-Prefix.pch";
-				INFOPLIST_FILE = "CATE/CATE-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CATE/CATE-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -852,7 +1262,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lawrence Jones (H6NSGS6YTM)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CATE/CATE-Prefix.pch";
-				INFOPLIST_FILE = "CATE/CATE-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CATE/CATE-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
