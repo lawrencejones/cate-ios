@@ -4,10 +4,10 @@ Lets face it, CATe's not cool. She's the odd one out,
 the turquoise/yellow-black sheep in the flock.
 Her only saving grace? She's pretty damn clever.
 
-##About CateMate
 This app works by downloading the content directly from CATe, 
 after which it processes the data and presents it in (what we think) 
-is a sexier form.
+is a sexier form. CATe's basic functionality is (as of now) totally untouched. 
+We take the good stuff so that you don't have to deal with the bad.
 
 ##What Content?
 CATe provides students with a few main feeds of information about their studies.
