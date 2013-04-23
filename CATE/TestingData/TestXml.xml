@@ -1,0 +1,61 @@
+<data>
+  <term_title>Summer</term_title>
+  <start>2013-04-29</start>
+  <end>2013-06-29</end>
+
+  <modules>
+
+    <module>
+      <exercises>
+        <exercise>
+          <id>1</id>
+          <type>CW</type>
+          <start>2013-01-20</start>
+          <end>2013-01-27</end>
+          <moduleName>Architecture</moduleName>
+          <name>Tutorial Sheet 1: Assembly</name>
+          <mailto>lec@doc.ic.ac.uk</mailto>
+          <spec>http://www.web.com/specification.pdf</spec>
+          <givens>http://www.web.com/givens.html</givens>
+          <handin>http://www.web.com/handin.html</handin>
+        </exercise>
+        <exercise>
+          <id>3</id>
+          <type>TUT</type>
+          <start>2012-01-20</start>
+          <end>2012-03-12</end>
+          <moduleName>Architecture</moduleName>
+          <name>Tutorial Sheet 2: Assembly Again</name>
+          <mailto>lec@doc.ic.ac.uk</mailto>
+          <spec>http://www.web.com/specification2.pdf</spec>
+          <givens>http://www.web.com/givens2.html</givens>
+          <handin>http://www.web.com/handin2.html</handin>
+        </exercise>
+      </exercises>
+      <id>142</id>
+      <name>Architecture</name>
+      <notesLink>http://www.web.com/notesForArchitecture/</notesLink>
+    </module>
+
+    <module>
+      <exercises>
+        <exercise>
+          <id>3</id>
+          <type>TUT</type>
+          <start>2013-02-10</start>
+          <end>2013-03-18</end>
+          <moduleName>Reasoning About Programs</moduleName>
+          <name>Induction: With Typos</name>
+          <mailto>other-lec@doc.ic.ac.uk</mailto>
+          <spec>http://www.web.com/specificationr.pdf</spec>
+          <givens>http://www.web.com/givensr.html</givens>
+          <handin>http://www.web.com/handinr.html</handin>
+        </exercise>
+      </exercises>
+      <id>112</id>
+      <name>Reasoning About Programs</name>
+      <notesLink>http://www.web.com/notesForRAP/</notesLink>
+    </module>
+  </modules>
+
+</data>
