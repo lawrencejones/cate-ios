@@ -62,6 +62,8 @@
 		FE66DF5E172634CA00EFAD98 /* loading_page.css in Resources */ = {isa = PBXBuildFile; fileRef = FE66DF1C172634CA00EFAD98 /* loading_page.css */; };
 		FE66DFD21726360D00EFAD98 /* CATEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DF621726360C00EFAD98 /* CATEAppDelegate.m */; };
 		FE66E0131726379700EFAD98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DF871726360C00EFAD98 /* main.m */; };
+		FEE856591732CB0500EA8CF2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE66DF7F1726360C00EFAD98 /* MainStoryboard.storyboard */; };
+		FEE8565B1732CB8A00EA8CF2 /* stdBg.png in Resources */ = {isa = PBXBuildFile; fileRef = FEE8565A1732CB8A00EA8CF2 /* stdBg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,6 +249,7 @@
 		FE66DFCD1726360D00EFAD98 /* extraction_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = extraction_page.html; sourceTree = "<group>"; };
 		FE66DFCE1726360D00EFAD98 /* loading_page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = loading_page.html; sourceTree = "<group>"; };
 		FE66DFD01726360D00EFAD98 /* loading_page.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = loading_page.css; sourceTree = "<group>"; };
+		FEE8565A1732CB8A00EA8CF2 /* stdBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stdBg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -745,6 +748,7 @@
 		FE66DF811726360C00EFAD98 /* ImageResources */ = {
 			isa = PBXGroup;
 			children = (
+				FEE8565A1732CB8A00EA8CF2 /* stdBg.png */,
 				FE66DF821726360C00EFAD98 /* basicLogo.png */,
 				FE66DF831726360C00EFAD98 /* basicLogo.psd */,
 				FE66DF841726360C00EFAD98 /* btnLogin.png */,
@@ -1019,6 +1023,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEE856591732CB0500EA8CF2 /* MainStoryboard.storyboard in Resources */,
 				FE66DF27172634CA00EFAD98 /* basicLogo.png in Resources */,
 				FE66DF29172634CA00EFAD98 /* btnLogin.png in Resources */,
 				FE66DF2B172634CA00EFAD98 /* stdBgNoSig.png in Resources */,
@@ -1049,6 +1054,7 @@
 				FE66DF5C172634CA00EFAD98 /* extraction_page.html in Resources */,
 				FE66DF5D172634CA00EFAD98 /* loading_page.html in Resources */,
 				FE66DF5E172634CA00EFAD98 /* loading_page.css in Resources */,
+				FEE8565B1732CB8A00EA8CF2 /* stdBg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

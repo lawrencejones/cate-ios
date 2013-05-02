@@ -378,11 +378,11 @@
     <resources>
         <image name="cog.png" width="30" height="30"/>
         <image name="dashboard.png" width="30" height="30"/>
-        <image name="loginFields.png" width="16" height="16"/>
+        <image name="loginFields.png" width="1427" height="558"/>
         <image name="pencil.png" width="30" height="30"/>
-        <image name="stdBg.png" width="16" height="16"/>
+        <image name="stdBg.png" width="640" height="1136"/>
         <image name="thumbs.png" width="30" height="30"/>
-        <image name="wideDarkLogin.png" width="16" height="16"/>
+        <image name="wideDarkLogin.png" width="1205" height="219"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
