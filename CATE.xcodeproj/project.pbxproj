@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		087AC291174D429A00C33AEF /* CATESharedDataNew.m in Sources */ = {isa = PBXBuildFile; fileRef = 087AC290174D429A00C33AEF /* CATESharedDataNew.m */; };
+		087AC29D174D4CCB00C33AEF /* CATEModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 087AC29C174D4CCB00C33AEF /* CATEModule.m */; };
+		087AC2A0174D4F3400C33AEF /* CATEExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 087AC29F174D4F3400C33AEF /* CATEExercise.m */; };
 		0889EF5A1716299600FEB988 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889EF591716299600FEB988 /* UIKit.framework */; };
 		0889EF5C1716299600FEB988 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889EF5B1716299600FEB988 /* Foundation.framework */; };
 		0889EF5E1716299600FEB988 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889EF5D1716299600FEB988 /* CoreGraphics.framework */; };
@@ -77,6 +80,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		087AC28F174D429A00C33AEF /* CATESharedDataNew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATESharedDataNew.h; sourceTree = "<group>"; };
+		087AC290174D429A00C33AEF /* CATESharedDataNew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATESharedDataNew.m; sourceTree = "<group>"; };
+		087AC29B174D4CCB00C33AEF /* CATEModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CATEModule.h; path = CATEModule/CATEModule.h; sourceTree = "<group>"; };
+		087AC29C174D4CCB00C33AEF /* CATEModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CATEModule.m; path = CATEModule/CATEModule.m; sourceTree = "<group>"; };
+		087AC29F174D4F3400C33AEF /* CATEExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CATEExercise.m; path = CATEExercise/CATEExercise.m; sourceTree = "<group>"; };
+		087AC2A1174D500E00C33AEF /* CATEExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CATEExercise.h; path = CATEExercise/CATEExercise.h; sourceTree = "<group>"; };
 		0889EF561716299600FEB988 /* CATE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CATE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0889EF591716299600FEB988 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0889EF5B1716299600FEB988 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -276,9 +285,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		087AC297174D4C9600C33AEF /* CATEModule */ = {
+			isa = PBXGroup;
+			children = (
+				087AC29B174D4CCB00C33AEF /* CATEModule.h */,
+				087AC29C174D4CCB00C33AEF /* CATEModule.m */,
+			);
+			name = CATEModule;
+			sourceTree = "<group>";
+		};
+		087AC298174D4CA400C33AEF /* CATEExercise */ = {
+			isa = PBXGroup;
+			children = (
+				087AC29F174D4F3400C33AEF /* CATEExercise.m */,
+				087AC2A1174D500E00C33AEF /* CATEExercise.h */,
+			);
+			name = CATEExercise;
+			sourceTree = "<group>";
+		};
+		087AC299174D4CAD00C33AEF /* CATEGrade */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CATEGrade;
+			sourceTree = "<group>";
+		};
+		087AC29A174D4CB500C33AEF /* CATEProject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CATEProject;
+			sourceTree = "<group>";
+		};
+		087AC2A2174D514900C33AEF /* OldDataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				FE66DF671726360C00EFAD98 /* CATERecord */,
+				FE66DF731726360C00EFAD98 /* CATETerm */,
+			);
+			name = OldDataStructures;
+			sourceTree = "<group>";
+		};
 		0889EF4D1716299600FEB988 = {
 			isa = PBXGroup;
 			children = (
+				087AC2A2174D514900C33AEF /* OldDataStructures */,
 				0889EF5F1716299600FEB988 /* CATE */,
 				0889EF8E1716299600FEB988 /* CATETests */,
 				0889EF581716299600FEB988 /* Frameworks */,
@@ -552,6 +603,8 @@
 			children = (
 				FE66DEFF172634CA00EFAD98 /* CATESharedData.h */,
 				FE66DF00172634CA00EFAD98 /* CATESharedData.m */,
+				087AC28F174D429A00C33AEF /* CATESharedDataNew.h */,
+				087AC290174D429A00C33AEF /* CATESharedDataNew.m */,
 			);
 			path = CATESharedData;
 			sourceTree = "<group>";
@@ -577,9 +630,9 @@
 		FE66DF07172634CA00EFAD98 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FE66DF0E172634CA00EFAD98 /* CATELoginViewController */,
 				FE66DF08172634CA00EFAD98 /* CATEDashboardViewController */,
 				FE66DF0B172634CA00EFAD98 /* CATEFirstViewController */,
-				FE66DF0E172634CA00EFAD98 /* CATELoginViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -653,9 +706,11 @@
 		FE66DF631726360C00EFAD98 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				087AC29A174D4CB500C33AEF /* CATEProject */,
+				087AC299174D4CAD00C33AEF /* CATEGrade */,
+				087AC298174D4CA400C33AEF /* CATEExercise */,
+				087AC297174D4C9600C33AEF /* CATEModule */,
 				FE66DF641726360C00EFAD98 /* CATEIdentity */,
-				FE66DF671726360C00EFAD98 /* CATERecord */,
-				FE66DF731726360C00EFAD98 /* CATETerm */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -678,7 +733,8 @@
 				FE66DF6D1726360C00EFAD98 /* CATERecordModule */,
 				FE66DF701726360C00EFAD98 /* CATERecordStats */,
 			);
-			path = CATERecord;
+			name = CATERecord;
+			path = CATE/DataStructures/CATERecord;
 			sourceTree = "<group>";
 		};
 		FE66DF6A1726360C00EFAD98 /* CATERecordExercise */ = {
@@ -716,7 +772,8 @@
 				FE66DF7A1726360C00EFAD98 /* CATETerm.h */,
 				FE66DF7B1726360C00EFAD98 /* CATETerm.m */,
 			);
-			path = CATETerm;
+			name = CATETerm;
+			path = CATE/DataStructures/CATETerm;
 			sourceTree = "<group>";
 		};
 		FE66DF741726360C00EFAD98 /* CATEExercise */ = {
@@ -1106,6 +1163,9 @@
 				FE66DF55172634CA00EFAD98 /* CATEFirstViewController.m in Sources */,
 				FE66DF56172634CA00EFAD98 /* CATELoginViewController.m in Sources */,
 				FE66DFD21726360D00EFAD98 /* CATEAppDelegate.m in Sources */,
+				087AC291174D429A00C33AEF /* CATESharedDataNew.m in Sources */,
+				087AC29D174D4CCB00C33AEF /* CATEModule.m in Sources */,
+				087AC2A0174D4F3400C33AEF /* CATEExercise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

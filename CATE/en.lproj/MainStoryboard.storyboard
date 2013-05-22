@@ -384,6 +384,32 @@
         <image name="thumbs.png" width="30" height="30"/>
         <image name="wideDarkLogin.png" width="1205" height="219"/>
     </resources>
+    <classes>
+        <class className="CATEFirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CATEFirstViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="photoImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="CATELoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CATELoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loginAttempt:"/>
+                <relationship kind="action" name="touchUpMyBody:"/>
+                <relationship kind="outlet" name="backgroundWeb" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="button" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="fieldBg" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="user" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

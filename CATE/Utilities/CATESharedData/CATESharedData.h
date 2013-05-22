@@ -12,8 +12,6 @@
 #import "CATERecord.h"
 
 @interface CATESharedData : NSObject
-{
-}
 
 @property (retain, nonatomic) CATEIdentity *identity;
 @property (retain, nonatomic) CATETerm *autumn;

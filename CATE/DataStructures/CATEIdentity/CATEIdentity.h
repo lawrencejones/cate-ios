@@ -12,7 +12,6 @@
   NSString *profileImageSrc;
   NSString *firstName;
   NSString *lastName;
-  NSString *fullName;
   NSString *login;
   NSString *category;
   NSString *candidateNumber;
@@ -23,7 +22,6 @@
 @property (retain) NSString *profileImageSrc;
 @property (retain) NSString *firstName;
 @property (retain) NSString *lastName;
-@property (retain) NSString *fullName;
 @property (retain) NSString *login;
 @property (retain) NSString *category;
 @property (retain) NSString *candidateNumber;
@@ -32,5 +30,7 @@
 
 - (id) init_with_data:(NSData *)xml;
 + (id) identity_with_data:(NSData *)xml;
+
+- (NSString *) fullName;
 
 @end

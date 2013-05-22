@@ -12,7 +12,7 @@
 
 @implementation CATEIdentity
 
-@synthesize profileImageSrc, firstName, lastName, fullName, login, category,
+@synthesize profileImageSrc, firstName, lastName, login, category,
             candidateNumber, cid, personalTutor;
 
 - (id) init_with_data:(NSData *)xml {
@@ -32,7 +32,6 @@
     profileImageSrc = [document.root valueWithPath:@"profile_image_src"];
     firstName = [document.root valueWithPath:@"first_name"];
     lastName = [document.root valueWithPath:@"last_name"];
-    fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
     login = [document.root valueWithPath:@"login"];
     category = [document.root valueWithPath:@"category"];
     candidateNumber = [document.root valueWithPath:@"candidate_number"];
@@ -46,6 +45,10 @@
 + (id) identity_with_data:(NSData *)xml {
   CATEIdentity *identity = [[[self alloc] init_with_data:xml] autorelease];
   return identity;
+}
+
+- (NSString *) fullName {
+  return [NSString stringWithFormat:@"%@ %@", firstName, lastName];
 }
 
 @end
