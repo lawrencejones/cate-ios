@@ -274,7 +274,7 @@
 - (void)getAllCATEData {
   NSArray *links =
    [NSArray arrayWithObjects:@"https://cate.doc.ic.ac.uk/",
-   [NSString stringWithFormat:@"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:4:c1:%@", _data.userAtLogin],
+   [NSString stringWithFormat:@"https://cate.doc.ic.ac.uk/timetable.cgi?keyt=2012:5:c1:%@", _data.userAtLogin],
    [NSString stringWithFormat:@"https://cate.doc.ic.ac.uk/student.cgi?key=2012:c1:%@", _data.userAtLogin], nil];
   
   [self sendRequests:links];
@@ -302,6 +302,7 @@
   NSData *xmlTermData = [xmlTermStr dataUsingEncoding:NSUTF8StringEncoding];
   CATETerm *term = [CATETerm term_with_data:xmlTermData];
   [_data cache_term:&*term];
+  NSLog([[NSString alloc]initWithData:xmlTermData encoding:NSUTF8StringEncoding]);
   
   NSString *xmlGradesStr = [CATEDataExtractor get_grades_xml:self.backgroundWeb];
   NSData *xmlGradesData = [xmlGradesStr dataUsingEncoding:NSUTF8StringEncoding];

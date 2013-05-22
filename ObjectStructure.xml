@@ -1,0 +1,895 @@
+<data>    <!--  MAIN PAGE STUFF   -->
+  <version>v7.1</version>
+  <profile_image_src>/photo/student/pics12/lmj112.jpg</profile_image_src>
+  <first_name>Lawrence</first_name>
+  <last_name>Jones</last_name>
+  <login>lmj112</login>
+  <category>COMPUTING 1(c1 - CO)mcgvi1</category>
+  <candidate_number>00730706</candidate_number>
+  <cid>00730706</cid>
+  <personal_tutor>Philippa Gardner(pg)</personal_tutor>
+  <year>
+    <year>
+      <y>2011-2012</y>
+      <a>personal.cgi?keyp=2011:lmj112</a>
+    </year>
+    <year>
+      <y>2010-2011</y>
+      <a>personal.cgi?keyp=2010:lmj112</a>
+    </year>
+    <year>
+      <y>2009-2010</y>
+      <a>personal.cgi?keyp=2009:lmj112</a>
+    </year>
+    <year>
+      <y>2008-2009</y>
+      <a>personal.cgi?keyp=2008:lmj112</a>
+    </year>
+    <year>
+      <y>2007-2008</y>
+      <a>personal.cgi?keyp=2007:lmj112</a>
+    </year>
+    <year>
+      <y>2006-2007</y>
+      <a>personal.cgi?keyp=2006:lmj112</a>
+    </year>
+    <year>
+      <y>2005-2006</y>
+      <a>personal.cgi?keyp=2005:lmj112</a>
+    </year>
+    <year>
+      <y>2004-2005</y>
+      <a>personal.cgi?keyp=2004:lmj112</a>
+    </year>
+    <year>
+      <y>2003-2004</y>
+      <a>personal.cgi?keyp=2003:lmj112</a>
+    </year>
+  </year>
+  <grading_schema_link>grading.cgi?key=2012:lmj112</grading_schema_link>
+  <documentation_link>documents.cgi?key=2012:lmj112</documentation_link>
+  <extensions_link>infoextend.cgi?key=2012:lmj112</extensions_link>
+  <projects_portal_link>projects/index.cgi?key=2012:lmj112</projects_portal_link>
+  <individual_records_link>student.cgi?key=2012:c1:lmj112</individual_records_link>
+  <default_class>c1</default_class>
+  <default_period>5</default_period>
+  <keyt>2012:none:none:lmj112</keyt>
+  <timetable_url>/timetable.cgi?period=5&amp;class=c1&amp;keyt=2012:none:none:lmj112</timetable_url>
+</data>
+
+
+
+
+<data>    <!--  GRADES PAGE STUFF   -->
+  <stats>
+    <last_update>Wed - 26 Sep 2012 - 21:32:13</last_update>
+    <submissions_completed>Level 3: 51 out of 54 (94.44 )</submissions_completed>
+    <submissions_extended>0 out of 51 (0.00 )</submissions_extended>
+    <submissions_late>5 out of 51 (9.80 )</submissions_late>
+  </stats>
+  <module>
+    <name>112 Hardware</name>
+    <term>Term(s): 1</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>1</id>
+        <type>CW</type>
+        <title>Combinatorial Design</title>
+        <set_by>dfg</set_by>
+        <declaration>Tue - 30 Oct (v1)</declaration>
+        <extension></extension>
+        <submission>h: Tue - 30 Octe(1): Tue - 30 Oct 12:10:02</submission>
+        <grade>A+</grade>
+      </exercise>
+      <exercise>
+        <id>2</id>
+        <type>CW</type>
+        <title>Sequential Design</title>
+        <set_by>dfg</set_by>
+        <declaration>Sun - 20 Jan (v1)</declaration>
+        <extension></extension>
+        <submission>h: Tue - 22 Jane(1): Tue - 22 Jan 16:15:17</submission>
+        <grade>A</grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>113 Architecture</name>
+    <term>Term(s): 2</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>4</id>
+        <type>CW</type>
+        <title>ASSESSED_EX1</title>
+        <set_by>nx210</set_by>
+        <declaration>Sun - 17 Feb (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Tue - 19 Feb 23:21:25</submission>
+        <grade>A</grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>120.1 Programming I</name>
+    <term>Term(s): 1</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>1</id>
+        <type>OT</type>
+        <title>Haskell practice test</title>
+        <set_by>ajf</set_by>
+        <declaration>No student interaction for this exercise</declaration>
+        <extension></extension>
+        <submission></submission>
+        <grade></grade>
+      </exercise>
+      <exercise>
+        <id>2</id>
+        <type>OT</type>
+        <title>Haskell driving test</title>
+        <set_by>ajf</set_by>
+        <declaration>Wed - 14 Nov (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Wed - 14 Nov 14:53:30</submission>
+        <grade>A*</grade>
+      </exercise>
+      <exercise>
+        <id>3</id>
+        <type>OT</type>
+        <title>Haskell final test</title>
+        <set_by>ajf</set_by>
+        <declaration>Wed - 16 Jan (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Wed - 16 Jan 18:47:19</submission>
+        <grade>A+</grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>120.2 Programming II</name>
+    <term>Term(s): 1,2</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>1</id>
+        <type>OT</type>
+        <title>Practice Java Test</title>
+        <set_by>tora</set_by>
+        <declaration>Thu - 03 Jan (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Thu - 03 Jan 11:58:32</submission>
+        <grade>A+</grade>
+      </exercise>
+      <exercise>
+        <id>7</id>
+        <type>OT</type>
+        <title>Driving Test Section B</title>
+        <set_by>ar3</set_by>
+        <declaration>Wed - 20 Mar (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Wed - 20 Mar 15:32:19</submission>
+        <grade>A*</grade>
+      </exercise>
+      <exercise>
+        <id>10</id>
+        <type>OT</type>
+        <title>ON-LINE TEST</title>
+        <set_by>ar3</set_by>
+        <declaration>Wed - 08 May (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Wed - 08 May 17:04:18</submission>
+        <grade>n/a</grade>
+      </exercise>
+      <exercise>
+        <id>19</id>
+        <type>OT</type>
+        <title>Driving Test Section A</title>
+        <set_by>afd</set_by>
+        <declaration>Wed - 20 Mar (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Wed - 20 Mar 15:32:19</submission>
+        <grade>A</grade>
+      </exercise>
+      <exercise>
+        <id>20</id>
+        <type>OT</type>
+        <title>Final Test - Section A</title>
+        <set_by>afd</set_by>
+        <declaration>Wed - 08 May (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Wed - 08 May 17:06:41</submission>
+        <grade>n/a</grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>120.3 Programming III</name>
+    <term>Term(s): 3</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>1</id>
+        <type>CW</type>
+        <title>ARM11 - Forming Groups</title>
+        <set_by>tora</set_by>
+        <declaration>Mon - 13 May (v5)</declaration>
+        <extension></extension>
+        <submission></submission>
+        <grade></grade>
+      </exercise>
+      <exercise>
+        <id>2</id>
+        <type>CW</type>
+        <title>ARM11 - Checkpoint</title>
+        <set_by>tora</set_by>
+        <declaration>No student interaction for this exercise</declaration>
+        <extension></extension>
+        <submission></submission>
+        <grade></grade>
+      </exercise>
+      <exercise>
+        <id>3</id>
+        <type>CW</type>
+        <title>ARM11 - Report</title>
+        <set_by>tora</set_by>
+        <declaration>No student interaction for this exercise</declaration>
+        <extension></extension>
+        <submission></submission>
+        <grade></grade>
+      </exercise>
+      <exercise>
+        <id>4</id>
+        <type>CW</type>
+        <title>ARM11 - Presentation Slides</title>
+        <set_by>tora</set_by>
+        <declaration>No student interaction for this exercise</declaration>
+        <extension></extension>
+        <submission></submission>
+        <grade></grade>
+      </exercise>
+      <exercise>
+        <id>5</id>
+        <type>OT</type>
+        <title>C Test</title>
+        <set_by>tora</set_by>
+        <declaration>No student interaction for this exercise</declaration>
+        <extension></extension>
+        <submission></submission>
+        <grade></grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>130 Databases I</name>
+    <term>Term(s): 2</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>1</id>
+        <type>T</type>
+        <title>CWTest 1500-1700</title>
+        <set_by>nd</set_by>
+        <declaration>Tue - 12 Feb (v1)</declaration>
+        <extension></extension>
+        <submission>h: Tue - 12 Feb</submission>
+        <grade>C</grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>140 Logic</name>
+    <term>Term(s): 1</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>1</id>
+        <type>PMT</type>
+        <title>Syntax</title>
+        <set_by>imh</set_by>
+        <declaration>Mon - 15 Oct (v1)</declaration>
+        <extension></extension>
+        <submission>h: Mon - 15 Oct</submission>
+        <grade>B</grade>
+      </exercise>
+      <exercise>
+        <id>2</id>
+        <type>PMT</type>
+        <title>Translations</title>
+        <set_by>imh</set_by>
+        <declaration>Mon - 22 Oct (v1)</declaration>
+        <extension></extension>
+        <submission>h: Mon - 22 Oct</submission>
+        <grade>B</grade>
+      </exercise>
+      <exercise>
+        <id>3</id>
+        <type>PMT</type>
+        <title>Arguments</title>
+        <set_by>imh</set_by>
+        <declaration>Mon - 29 Oct (v1)</declaration>
+        <extension></extension>
+        <submission>h: Mon - 29 Oct</submission>
+        <grade>B</grade>
+      </exercise>
+      <exercise>
+        <id>4</id>
+        <type>PMT</type>
+        <title>Equivs + nat ded</title>
+        <set_by>imh</set_by>
+        <declaration>Mon - 05 Nov (v1)</declaration>
+        <extension></extension>
+        <submission>h: Mon - 05 Nov</submission>
+        <grade>A+</grade>
+      </exercise>
+      <exercise>
+        <id>7</id>
+        <type>PMT</type>
+        <title>Semantics and translations</title>
+        <set_by>imh</set_by>
+        <declaration>Mon - 26 Nov (v1)</declaration>
+        <extension></extension>
+        <submission>h: Mon - 26 Nov</submission>
+        <grade>B</grade>
+      </exercise>
+      <exercise>
+        <id>11</id>
+        <type>T</type>
+        <title>Xmas test</title>
+        <set_by>imh</set_by>
+        <declaration>Thu - 13 Dec (v1)</declaration>
+        <extension></extension>
+        <submission>h: Thu - 13 Dec</submission>
+        <grade>E</grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>141 Reasoning about Programs</name>
+    <term>Term(s): 2</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>1</id>
+        <type>PMT</type>
+        <title>Structural_Induction</title>
+        <set_by>mjw03</set_by>
+        <declaration>Fri - 01 Feb (v1)</declaration>
+        <extension></extension>
+        <submission>h: Fri - 01 Feb</submission>
+        <grade>C</grade>
+      </exercise>
+      <exercise>
+        <id>2</id>
+        <type>PMT</type>
+        <title>Well-Founded Induction</title>
+        <set_by>mjw03</set_by>
+        <declaration>Fri - 08 Feb (v1)</declaration>
+        <extension></extension>
+        <submission>h: Fri - 08 Feb</submission>
+        <grade>A+</grade>
+      </exercise>
+      <exercise>
+        <id>3</id>
+        <type>PMT</type>
+        <title>Loops</title>
+        <set_by>mjw03</set_by>
+        <declaration>Fri - 22 Feb (v1)</declaration>
+        <extension></extension>
+        <submission>h: Fri - 22 Feb</submission>
+        <grade>F</grade>
+      </exercise>
+      <exercise>
+        <id>4</id>
+        <type>PMT</type>
+        <title>Loops - Part 2</title>
+        <set_by>mjw03</set_by>
+        <declaration>Fri - 08 Mar (v1)</declaration>
+        <extension></extension>
+        <submission>h: Fri - 08 Mar</submission>
+        <grade>A+</grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>142 Discrete Mathematics</name>
+    <term>Term(s): 1,2</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>1</id>
+        <type>PMT</type>
+        <title>Exercise1</title>
+        <set_by>yg</set_by>
+        <declaration>Thu - 22 Nov (v1)</declaration>
+        <extension>+2 &nbsp;                     LATE</extension>
+        <submission>h: Fri - 23 Nov</submission>
+        <grade>ZERO</grade>
+      </exercise>
+      <exercise>
+        <id>7</id>
+        <type>PMT</type>
+        <title>Graph Algorithms</title>
+        <set_by>iccp</set_by>
+        <declaration>Fri - 01 Mar (v1)</declaration>
+        <extension></extension>
+        <submission>h: Fri - 01 Mar</submission>
+        <grade>B</grade>
+      </exercise>
+      <exercise>
+        <id>9</id>
+        <type>PMT</type>
+        <title>Sorting</title>
+        <set_by>iccp</set_by>
+        <declaration>No student interaction for this exercise</declaration>
+        <extension></extension>
+        <submission></submission>
+        <grade></grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>145 Mathematical Methods</name>
+    <term>Term(s): 1</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>1</id>
+        <type>MMT</type>
+        <title>Diagnostic Test</title>
+        <set_by>jb</set_by>
+        <declaration>Thu - 11 Oct (v1)</declaration>
+        <extension></extension>
+        <submission>h: Thu - 11 Oct</submission>
+        <grade>A</grade>
+      </exercise>
+      <exercise>
+        <id>2</id>
+        <type>MMT</type>
+        <title>Sequences and Limits</title>
+        <set_by>jb</set_by>
+        <declaration>Mon - 22 Oct (v1)</declaration>
+        <extension></extension>
+        <submission>h: Mon - 22 Oct</submission>
+        <grade>A+</grade>
+      </exercise>
+      <exercise>
+        <id>3</id>
+        <type>MMT</type>
+        <title>Series</title>
+        <set_by>jb</set_by>
+        <declaration>Mon - 29 Oct (v1)</declaration>
+        <extension></extension>
+        <submission>h: Mon - 29 Oct</submission>
+        <grade>A+</grade>
+      </exercise>
+      <exercise>
+        <id>4</id>
+        <type>MMT</type>
+        <title>Power series</title>
+        <set_by>jb</set_by>
+        <declaration>Mon - 05 Nov (v1)</declaration>
+        <extension></extension>
+        <submission>h: Mon - 05 Nov</submission>
+        <grade>C</grade>
+      </exercise>
+      <exercise>
+        <id>5</id>
+        <type>MMT</type>
+        <title>Complex Numbers</title>
+        <set_by>jb</set_by>
+        <declaration>Mon - 12 Nov (v1)</declaration>
+        <extension></extension>
+        <submission>h: Mon - 12 Nov</submission>
+        <grade>A*</grade>
+      </exercise>
+      <exercise>
+        <id>6</id>
+        <type>MMT</type>
+        <title>Assessed Coursework</title>
+        <set_by>jb</set_by>
+        <declaration>Mon - 19 Nov (v1)</declaration>
+        <extension></extension>
+        <submission>h: Mon - 19 Nov</submission>
+        <grade>A*</grade>
+      </exercise>
+      <exercise>
+        <id>7</id>
+        <type>MMT</type>
+        <title>Vectors</title>
+        <set_by>jb</set_by>
+        <declaration>Mon - 26 Nov (v1)</declaration>
+        <extension></extension>
+        <submission>h: Mon - 26 Nov</submission>
+        <grade>A*</grade>
+      </exercise>
+      <exercise>
+        <id>8</id>
+        <type>MMT</type>
+        <title>Matrices</title>
+        <set_by>jb</set_by>
+        <declaration>Mon - 03 Dec (v1)</declaration>
+        <extension></extension>
+        <submission>h: Tue - 04 Dec</submission>
+        <grade>A*</grade>
+      </exercise>
+      <exercise>
+        <id>9</id>
+        <type>T</type>
+        <title>Christmas Test</title>
+        <set_by>jb</set_by>
+        <declaration>Thu - 13 Dec (v1)</declaration>
+        <extension></extension>
+        <submission>h: Thu - 13 Dec</submission>
+        <grade>E</grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>161 Laboratory 1</name>
+    <term>Term(s): 1,2,3</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>1</id>
+        <type>PPT</type>
+        <title>Haskell Quadratic</title>
+        <set_by>tora</set_by>
+        <declaration>Wed - 03 Oct (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Thu - 04 Oct 13:28:51</submission>
+        <grade>A+</grade>
+      </exercise>
+      <exercise>
+        <id>2</id>
+        <type>PPT</type>
+        <title>Haskell Recursion</title>
+        <set_by>tora</set_by>
+        <declaration>Fri - 12 Oct (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Fri - 12 Oct 17:06:39</submission>
+        <grade>A+</grade>
+      </exercise>
+      <exercise>
+        <id>3</id>
+        <type>PPT</type>
+        <title>Haskell HTML</title>
+        <set_by>tora</set_by>
+        <declaration>Fri - 19 Oct (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Fri - 19 Oct 11:21:53</submission>
+        <grade>B</grade>
+      </exercise>
+      <exercise>
+        <id>4</id>
+        <type>PPT</type>
+        <title>Haskell L Systems</title>
+        <set_by>tora</set_by>
+        <declaration>Fri - 26 Oct (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Fri - 26 Oct 18:43:18</submission>
+        <grade>A</grade>
+      </exercise>
+      <exercise>
+        <id>5</id>
+        <type>PPT</type>
+        <title>Haskell Calculus</title>
+        <set_by>tora</set_by>
+        <declaration>Tue - 06 Nov (v1)</declaration>
+        <extension>+0 &nbsp;Tue - 06 Nov</extension>
+        <submission>e(1): Tue - 06 Nov 22:04:42</submission>
+        <grade>C</grade>
+      </exercise>
+      <exercise>
+        <id>6</id>
+        <type>PPT</type>
+        <title>Haskell Expression Parsing</title>
+        <set_by>tora</set_by>
+        <declaration>Fri - 09 Nov (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Fri - 09 Nov 16:06:22</submission>
+        <grade>A</grade>
+      </exercise>
+      <exercise>
+        <id>7</id>
+        <type>PPT</type>
+        <title>Java Recursion</title>
+        <set_by>tora</set_by>
+        <declaration>Sun - 25 Nov (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Sun - 25 Nov 14:22:59</submission>
+        <grade>C</grade>
+      </exercise>
+      <exercise>
+        <id>8</id>
+        <type>PPT</type>
+        <title>Java Loops and Arrays</title>
+        <set_by>tora</set_by>
+        <declaration>Thu - 29 Nov (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Thu - 29 Nov 11:53:10</submission>
+        <grade>C</grade>
+      </exercise>
+      <exercise>
+        <id>9</id>
+        <type>PPT</type>
+        <title>Java Owari</title>
+        <set_by>tora</set_by>
+        <declaration>Fri - 30 Nov (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Fri - 30 Nov 17:18:36</submission>
+        <grade>A*</grade>
+      </exercise>
+      <exercise>
+        <id>10</id>
+        <type>PPT</type>
+        <title>Java Picture Processing</title>
+        <set_by>tora</set_by>
+        <declaration>Tue - 29 Jan (v1)</declaration>
+        <extension>+1 &nbsp;                     LATE</extension>
+        <submission>e(1): Tue - 29 Jan 15:09:11</submission>
+        <grade>ZERO</grade>
+      </exercise>
+      <exercise>
+        <id>11</id>
+        <type>PPT</type>
+        <title>Java Turtle Interpreter</title>
+        <set_by>tora</set_by>
+        <declaration>Mon - 11 Feb (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Mon - 11 Feb 18:57:54</submission>
+        <grade>D</grade>
+      </exercise>
+      <exercise>
+        <id>12</id>
+        <type>PPT</type>
+        <title>Java Discrete Event Simulation</title>
+        <set_by>tora</set_by>
+        <declaration>Tue - 12 Feb (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Mon - 18 Feb 14:33:39</submission>
+        <grade>B</grade>
+      </exercise>
+      <exercise>
+        <id>13</id>
+        <type>PPT</type>
+        <title>Java Spreadsheet</title>
+        <set_by>tora</set_by>
+        <declaration>Mon - 04 Mar (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Mon - 04 Mar 18:08:53</submission>
+        <grade>A*</grade>
+      </exercise>
+      <exercise>
+        <id>14</id>
+        <type>PPT</type>
+        <title>SQL Film Queries</title>
+        <set_by>tora</set_by>
+        <declaration>Sun - 24 Feb (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Mon - 25 Feb 18:57:40</submission>
+        <grade>A*</grade>
+      </exercise>
+      <exercise>
+        <id>15</id>
+        <type>PPT</type>
+        <title>Assembler Matrix Multiplication</title>
+        <set_by>tora</set_by>
+        <declaration>Mon - 04 Mar (v1)</declaration>
+        <extension>+0 &nbsp;                     LATE</extension>
+        <submission>e(1): Mon - 04 Mar 19:37:56</submission>
+        <grade>ZERO</grade>
+      </exercise>
+      <exercise>
+        <id>16</id>
+        <type>PPT</type>
+        <title>Java Dictionary</title>
+        <set_by>tora</set_by>
+        <declaration>Mon - 11 Mar (v1)</declaration>
+        <extension></extension>
+        <submission>e(1): Mon - 11 Mar 18:50:13</submission>
+        <grade>A*</grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>163 Computing Topics</name>
+    <term>Term(s): 2</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>1</id>
+        <type>PROJ</type>
+        <title>Webpages</title>
+        <set_by>mvalerae</set_by>
+        <declaration>Thu - 14 Mar (v5)</declaration>
+        <extension>+0 &nbsp;Thu - 14 Mar</extension>
+        <submission>e(1): Thu - 14 Mar 20:16:38</submission>
+        <grade>A</grade>
+      </exercise>
+      <exercise>
+        <id>2</id>
+        <type>PROJ</type>
+        <title>Presentation</title>
+        <set_by>mvalerae</set_by>
+        <declaration>Wed - 20 Mar (v5)</declaration>
+        <extension></extension>
+        <submission>e(1): Wed - 20 Mar 05:03:50</submission>
+        <grade>A+</grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>164 Ethics in Computing 1</name>
+    <term>Term(s): 2</term>
+    <submission>REQUIRED</submission>
+    <level>Level 3</level>
+    <exercises>
+      <exercise>
+        <id>1</id>
+        <type>CW</type>
+        <title>Ethics Coursework</title>
+        <set_by>ealpay</set_by>
+        <declaration>Fri - 08 Feb (v15)</declaration>
+        <extension></extension>
+        <submission>jlk11 (c1)e(1): Fri - 08 Feb 16:10:34</submission>
+        <grade>B</grade>
+      </exercise>
+    </exercises>
+  </module>
+  <module>
+    <name>191 Advanced Programming</name>
+    <term>Term(s): 1,2</term>
+    <submission>Extracurricular</submission>
+    <level></level>
+    <exercises></exercises>
+  </module>
+  <module>
+    <name>192 Tools for Program Reasoning</name>
+    <term>Term(s): 1,2</term>
+    <submission>Extracurricular</submission>
+    <level></level>
+    <exercises></exercises>
+  </module>
+  <module>
+    <name>701 Programming Competition Training</name>
+    <term>Term(s): 1,2,3</term>
+    <submission>Extracurricular</submission>
+    <level></level>
+    <exercises></exercises>
+  </module>
+</data>
+
+
+
+
+
+<data>    <!--  EXERCISES PAGE STUFF   -->
+  <term_title>Summer Term 2012-2013</term_title>
+  <start>2013-4-29</start>
+  <end>2013-6-28</end>
+  <module num="0">
+    <id>120.2</id>
+    <name>Programming II</name>
+    <noteslink>notes.cgi?key=2012:4:5:c1:new:lmj112</noteslink>
+    <exercises>
+      <exercise num="0">
+        <id>20</id>
+        <type>OT</type>
+        <start>2013-4-29</start>
+        <end>2013-4-29</end>
+        <modulename>Programming II</modulename>
+        <name></name>
+        <mailto>mailto:afd@doc.ic.ac.uk?subject=Module 120.2 'Programming II' - Exercise 20</mailto>
+        <spec></spec>
+        <givens></givens>
+        <handin></handin>
+      </exercise>
+      <exercise num="1">
+        <id>10</id>
+        <type>OT</type>
+        <start>2013-4-29</start>
+        <end>2013-4-29</end>
+        <modulename>Programming II</modulename>
+        <name></name>
+        <mailto>mailto:ar3@doc.ic.ac.uk?subject=Module 120.2 'Programming II' - Exercise 10</mailto>
+        <spec></spec>
+        <givens></givens>
+        <handin></handin>
+      </exercise>
+    </exercises>
+  </module>
+  <module num="1">
+    <id>120.3</id>
+    <name>Programming III</name>
+    <noteslink>notes.cgi?key=2012:5:5:c1:new:lmj112</noteslink>
+    <exercises>
+      <exercise num="0">
+        <id>1</id>
+        <type>CW</type>
+        <start>2013-5-13</start>
+        <end>2013-5-20</end>
+        <modulename>Programming III</modulename>
+        <name>ARM11 - Forming Groups</name>
+        <mailto>mailto:tora@doc.ic.ac.uk?subject=Module 120.3 'Programming III' - Exercise 1</mailto>
+        <spec>showfile.cgi?key=2012:5:1307:c1:SPECS:lmj112</spec>
+        <givens></givens>
+        <handin></handin>
+      </exercise>
+      <exercise num="1">
+        <id>3</id>
+        <type>CW</type>
+        <start>2013-5-23</start>
+        <end>2013-6-14</end>
+        <modulename>Programming III</modulename>
+        <name>ARM11 - Report</name>
+        <mailto>mailto:tora@doc.ic.ac.uk?subject=Module 120.3 'Programming III' - Exercise 3</mailto>
+        <spec></spec>
+        <givens></givens>
+        <handin></handin>
+      </exercise>
+      <exercise num="2">
+        <id>2</id>
+        <type>CW</type>
+        <start>2013-5-23</start>
+        <end>2013-5-31</end>
+        <modulename>Programming III</modulename>
+        <name>ARM11 - Checkpoint</name>
+        <mailto>mailto:tora@doc.ic.ac.uk?subject=Module 120.3 'Programming III' - Exercise 2</mailto>
+        <spec></spec>
+        <givens></givens>
+        <handin></handin>
+      </exercise>
+      <exercise num="3">
+        <id>4</id>
+        <type>CW</type>
+        <start>2013-6-10</start>
+        <end>2013-6-18</end>
+        <modulename>Programming III</modulename>
+        <name>ARM11 - Presentation Slides</name>
+        <mailto>mailto:tora@doc.ic.ac.uk?subject=Module 120.3 'Programming III' - Exercise 4</mailto>
+        <spec></spec>
+        <givens></givens>
+        <handin></handin>
+      </exercise>
+      <exercise num="4">
+        <id>5</id>
+        <type>OT</type>
+        <start>2013-6-11</start>
+        <end>2013-6-11</end>
+        <modulename>Programming III</modulename>
+        <name></name>
+        <mailto>mailto:tora@doc.ic.ac.uk?subject=Module 120.3 'Programming III' - Exercise 5</mailto>
+        <spec></spec>
+        <givens></givens>
+        <handin></handin>
+      </exercise>
+    </exercises>
+  </module>
+  <module num="2">
+    <id>161</id>
+    <name>Laboratory 1</name>
+    <noteslink>notes.cgi?key=2012:12:5:c1:new:lmj112</noteslink>
+    <exercises></exercises>
+  </module>
+  <module num="3">
+    <id>701</id>
+    <name>Programming Competition Training</name>
+    <noteslink></noteslink>
+    <exercises></exercises>
+  </module>
+</data>

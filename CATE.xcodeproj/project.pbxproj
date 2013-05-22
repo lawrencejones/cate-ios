@@ -67,6 +67,7 @@
 		FE66E0131726379700EFAD98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66DF871726360C00EFAD98 /* main.m */; };
 		FEE856591732CB0500EA8CF2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE66DF7F1726360C00EFAD98 /* MainStoryboard.storyboard */; };
 		FEE8565B1732CB8A00EA8CF2 /* stdBg.png in Resources */ = {isa = PBXBuildFile; fileRef = FEE8565A1732CB8A00EA8CF2 /* stdBg.png */; };
+		FEFBB5B7174D4C7A00E9F941 /* extraction_tools.js in Resources */ = {isa = PBXBuildFile; fileRef = FE66DFCC1726360D00EFAD98 /* extraction_tools.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -365,10 +366,10 @@
 				FE66DF601726360C00EFAD98 /* CATE-Prefix.pch */,
 				FE66DF611726360C00EFAD98 /* CATEAppDelegate.h */,
 				FE66DF621726360C00EFAD98 /* CATEAppDelegate.m */,
+				FE66DF871726360C00EFAD98 /* main.m */,
 				FE66DF631726360C00EFAD98 /* DataStructures */,
 				FE66DF7C1726360C00EFAD98 /* en.lproj */,
 				FE66DF811726360C00EFAD98 /* ImageResources */,
-				FE66DF871726360C00EFAD98 /* main.m */,
 				FE66DF881726360C00EFAD98 /* SystemEssentials */,
 				FE66DF901726360C00EFAD98 /* TestingData */,
 				FE66DF971726360C00EFAD98 /* UIComponents */,
@@ -1080,6 +1081,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEFBB5B7174D4C7A00E9F941 /* extraction_tools.js in Resources */,
 				FEE856591732CB0500EA8CF2 /* MainStoryboard.storyboard in Resources */,
 				FE66DF27172634CA00EFAD98 /* basicLogo.png in Resources */,
 				FE66DF29172634CA00EFAD98 /* btnLogin.png in Resources */,

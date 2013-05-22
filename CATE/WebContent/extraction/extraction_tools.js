@@ -78,7 +78,7 @@
         xml.append($("<" + key + "/>").html(value));
       }
     }
-    return xml.wrap('p').parent().html();
+    return xml.wrap('p').parent().html().replace(/&nbsp/gm, '');
   };
 
   extract_exercise_page_data = function(html) {
@@ -204,7 +204,7 @@
       };
     };
     process_exercises_from_cells = function(module, exercise_cells) {
-      var anchor, colSpan, current_date, end, ex_cell, exercise_data, givens, handin, href, hrefs, id, mailto, spec, type, _i, _j, _len, _len1, _ref, _ref1, _ref2, _results;
+      var anchor, colSpan, current_date, end, ex_cell, exercise_data, givens, handin, href, hrefs, id, mailto, spec, type, _i, _j, _len, _len1, _ref, _ref1, _ref2, _ref3, _results;
       if (exercise_cells == null) {
         return null;
       }
@@ -216,22 +216,25 @@
       _results = [];
       for (_i = 0, _len = exercise_cells.length; _i < _len; _i++) {
         ex_cell = exercise_cells[_i];
-        colSpan = parseInt($(ex_cell).attr('colspan'));
+        colSpan = parseFloat((_ref1 = $(ex_cell).attr('colspan')) != null ? _ref1 : 1);
+        if (colSpan === NaN) {
+          colSpan = 1;
+        }
         if (($(ex_cell).attr('bgcolor') != null) && $(ex_cell).find('a').length !== 0) {
-          _ref1 = $(ex_cell).find('b').eq(0).text().split(':'), id = _ref1[0], type = _ref1[1];
+          _ref2 = $(ex_cell).find('b').eq(0).text().split(':'), id = _ref2[0], type = _ref2[1];
           hrefs = (function() {
-            var _j, _len1, _ref2, _results1;
-            _ref2 = $(ex_cell).find('a');
+            var _j, _len1, _ref3, _results1;
+            _ref3 = $(ex_cell).find('a');
             _results1 = [];
-            for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
-              anchor = _ref2[_j];
+            for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
+              anchor = _ref3[_j];
               if ($(anchor).attr('href') != null) {
                 _results1.push($(anchor).attr('href'));
               }
             }
             return _results1;
           })();
-          _ref2 = [null, null, null, null], mailto = _ref2[0], spec = _ref2[1], givens = _ref2[2], handin = _ref2[3];
+          _ref3 = [null, null, null, null], mailto = _ref3[0], spec = _ref3[1], givens = _ref3[2], handin = _ref3[3];
           for (_j = 0, _len1 = hrefs.length; _j < _len1; _j++) {
             href = hrefs[_j];
             if (/mailto/i.test(href)) {
@@ -363,7 +366,7 @@
         $("<exercise/ num='" + i + "'>").appendTo(exs).append($('<id/>').html(exercise.id), $('<type/>').html(exercise.type), $('<start/>').html(format_date(exercise.start)), $('<end/>').html(format_date(exercise.end)), $('<moduleName/>').html(exercise.moduleName), $('<name/>').html(exercise.name), $('<mailto/>').html(exercise.mailto), $('<spec/>').html(exercise.spec), $('<givens/>').html(exercise.givens), $('<handin/>').html(exercise.handin));
       }
     }
-    return xml.wrap('p').parent().html();
+    return xml.wrap('p').parent().html().replace(/&nbsp/gm, '');
   };
 
   extract_notes_page_data = function(html) {
@@ -590,7 +593,7 @@
         }
       }
     }
-    return xml.wrap('p').parent().html();
+    return xml.wrap('p').parent().html().replace(/&nbsp/gm, '');
   };
 
 }).call(this);

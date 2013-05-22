@@ -69,7 +69,7 @@ window.process_main_xml = ->
       for v in value
         $('<year/>').append("<y>#{v.text}</y><a>#{v.href}</a>").appendTo year 
     else xml.append $("<#{key}/>").html(value)
-  return xml.wrap('p').parent().html()
+  return xml.wrap('p').parent().html().replace /&nbsp/gm, ''
 
 
 
@@ -165,7 +165,8 @@ extract_exercise_page_data = (html) ->
     current_date = parse_date dates.start
     current_date.setDate(current_date.getDate() - dates.colBufferToFirst)
     for ex_cell in exercise_cells
-      colSpan = parseInt $(ex_cell).attr('colspan')
+      colSpan = parseFloat($(ex_cell).attr('colspan') ? 1)
+      colSpan = 1 if colSpan == NaN
       if $(ex_cell).attr('bgcolor')? and $(ex_cell).find('a').length != 0
         [id, type] = $(ex_cell).find('b').eq(0).text().split(':')
         hrefs = ($(anchor).attr('href') for anchor in $(ex_cell).find('a') when $(anchor).attr('href')?)
@@ -234,7 +235,6 @@ extract_exercise_page_data = (html) ->
   }
 
 
-
 window.process_exercise_xml = ->
 
   format_date = (d) ->
@@ -263,7 +263,7 @@ window.process_exercise_xml = ->
                 $('<givens/>').html(exercise.givens),
                 $('<handin/>').html(exercise.handin)
     
-  return xml.wrap('p').parent().html()
+  return xml.wrap('p').parent().html().replace /&nbsp/gm, ''
 
 
 ###############################################################################
@@ -468,4 +468,4 @@ window.process_grades_xml = ->
       for own key, value of exercise
         e.append $("<#{key}/>").html(value)
 
-  return xml.wrap('p').parent().html()
+  return xml.wrap('p').parent().html().replace /&nbsp/gm, ''
